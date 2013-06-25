@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <cn.trinea.android.common.view.SlideOnePageGallery
+        android:id="@+id/app_app_image_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:paddingBottom="@dimen/dp_40"
+        android:spacing="4dp" />
+
+    <include layout="@layout/trinea_info" />
+
+</RelativeLayout>

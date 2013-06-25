@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="send_general_broadcast">发送广播</string>
+    <string name="send_local_broadcast">发送Local广播</string>
+    <string name="send_ordered_broadcast">发送有序广播</string>
+    <string name="send_sticky_broadcast">发送Sticky广播</string>
+    
+    <string name="start_general_service">启动普通服务</string>
+    <string name="stop_general_service">停止普通服务</string>
+    <string name="start_intent_service">启动Intent Service</string>
+    <string name="bound_service">绑定服务</string>
+    <string name="operate_bound_service">增加绑定服务的count属性</string>
+    <string name="get_bound_service_pro">获取绑定服务的count属性</string>
+    <string name="unbound_service">解除绑定服务</string>
+    <string name="start_aidl_service">启动AIDL服务</string>
+    <string name="stop_aidl_service">停止AIDL服务</string>
+    
+    <string name="app_status_download">点击下载美丽说APK</string>
+    <string name="app_status_downloaded">已下载过，点击重新下载</string>
+    <string name="app_status_download_fail">下载失败，点击重新下载</string>
+    <string name="progress_tip">下载进度:</string>
+    <string name="download_notification_title">美丽说</string>
+    <string name="download_begin">开始下载</string>
+    <string name="download_fail">下载失败</string>
+    <string name="app_status_pending">等待下载</string>
+    <string name="app_status_pause">暂停</string>
+    <string name="app_status_downloading">下载中</string>
+    <string name="tip_download_file">文件将下载到：</string>
+    
+    <string name="update_at">更新于:&#160;</string>
+
+</resources>

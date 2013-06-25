@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="pager_margin">45dp</dimen>
+    <dimen name="page_margin">15dp</dimen>
+    <dimen name="dp_8">8dp</dimen>
+    <dimen name="dp_60">60dp</dimen>
+    <dimen name="dp_40">40dp</dimen>
+    <dimen name="sp_16">16sp</dimen>
+    <dimen name="search_view_margin_left">35dp</dimen>
+
+</resources>

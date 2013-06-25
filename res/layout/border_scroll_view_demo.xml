@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <cn.trinea.android.common.view.BorderScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/dp_40"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/top_text"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:gravity="center"
+                android:text="top text" />
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/top_text"
+                android:gravity="center"
+                android:text="text1" />
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text1"
+                android:gravity="center"
+                android:text="text2" />
+
+            <TextView
+                android:id="@+id/bottom_text"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_below="@+id/text2"
+                android:gravity="center"
+                android:text="bottom text" />
+        </RelativeLayout>
+    </cn.trinea.android.common.view.BorderScrollView>
+
+    <include layout="@layout/trinea_info" />
+
+</RelativeLayout>

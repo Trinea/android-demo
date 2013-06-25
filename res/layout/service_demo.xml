@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/dp_40" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/startGeneralService"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/start_general_service" />
+
+            <Button
+                android:id="@+id/stopGeneralService"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/startGeneralService"
+                android:text="@string/stop_general_service" />
+
+            <Button
+                android:id="@+id/startIntentService"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/stopGeneralService"
+                android:text="@string/start_intent_service" />
+
+            <Button
+                android:id="@+id/boundService"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/startIntentService"
+                android:text="@string/bound_service" />
+
+            <Button
+                android:id="@+id/operateBoundService"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/boundService"
+                android:text="@string/operate_bound_service" />
+
+            <Button
+                android:id="@+id/getBoundServicePro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/operateBoundService"
+                android:text="@string/get_bound_service_pro" />
+
+            <Button
+                android:id="@+id/unboundService"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/getBoundServicePro"
+                android:text="@string/unbound_service" />
+
+            <Button
+                android:id="@+id/startAIDLService"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/unboundService"
+                android:text="@string/start_aidl_service" />
+
+            <Button
+                android:id="@+id/stopAIDLService"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/startAIDLService"
+                android:text="@string/stop_aidl_service" />
+        </RelativeLayout>
+    </ScrollView>
+
+    <include layout="@layout/trinea_info" />
+
+</RelativeLayout>

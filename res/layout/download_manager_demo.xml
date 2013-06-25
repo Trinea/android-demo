@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="20dp" >
+
+    <Button
+        android:id="@+id/download_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/download_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/download_precent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/download_size"
+        android:layout_marginRight="50dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:visibility="gone" />
+
+    <ProgressBar
+        android:id="@+id/download_progress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/download_size"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="50dp"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/download_cancel"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/download_progress"
+        android:layout_alignParentRight="true"
+        android:layout_alignRight="@+id/download_progress"
+        android:drawableBottom="@drawable/icon_stop"
+        android:gravity="bottom"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/download_tip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="70dp"
+        android:gravity="left" />
+
+    <include layout="@layout/trinea_info" />
+
+</RelativeLayout>

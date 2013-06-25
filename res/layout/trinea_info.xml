@@ -1,0 +1,9 @@
+<Button xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/trineaInfo"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_40"
+    android:layout_alignParentBottom="true"
+    android:background="@drawable/button_press_selector"
+    android:gravity="center"
+    android:textColor="@android:color/darker_gray"
+    android:textSize="@dimen/sp_16" />

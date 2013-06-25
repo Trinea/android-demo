@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- drop down list header font color -->
+    <color name="drop_down_list_header_font_color">#A72309</color>
+    <!-- drop down list header second font color -->
+    <color name="drop_down_list_header_second_font_color">#729045</color>
+    <!-- drop down list footer font color -->
+    <color name="drop_down_list_footer_font_color">#5200D5</color>
+
+</resources>
