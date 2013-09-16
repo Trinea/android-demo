@@ -13,4 +13,4 @@
 [Service Demo](http://www.cnblogs.com/trinea/archive/2012/11/08/2699856.html)  
 [BroadcastReceiver Demo](http://www.cnblogs.com/trinea/archive/2012/11/09/2763182.html)  
 <br/>
-**注意：**拉下代码后,需要将[TrineaAndroidCommon](https://github.com/Trinea/AndroidCommon)也拉下来做为公共库引入，可参考：[添加Android Common Lib](http://www.trinea.cn/android/%e6%b7%bb%e5%8a%a0android-common-lib%e6%b7%bb%e5%8a%a0%e5%8f%8agoogle-code%e5%92%8cgithub%e5%a6%82%e4%bd%95%e6%8b%89%e5%8f%96%e4%bb%a3%e7%a0%81/)  
+**注意：**拉下代码后,需要将[TrineaAndroidCommon](https://github.com/Trinea/AndroidCommon)也拉下来做为公共库引入，可参考[添加Android Common Lib](http://www.trinea.cn/android/%e6%b7%bb%e5%8a%a0android-common-lib%e6%b7%bb%e5%8a%a0%e5%8f%8agoogle-code%e5%92%8cgithub%e5%a6%82%e4%bd%95%e6%8b%89%e5%8f%96%e4%bb%a3%e7%a0%81/)  
