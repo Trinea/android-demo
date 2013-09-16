@@ -12,6 +12,8 @@ import cn.trinea.android.demo.BorderScrollViewDemo;
 import cn.trinea.android.demo.BroadcastReceiverDemo;
 import cn.trinea.android.demo.DownloadManagerDemo;
 import cn.trinea.android.demo.DropDownListViewDemo;
+import cn.trinea.android.demo.ImageCacheDemo;
+import cn.trinea.android.demo.ImageSDCardCacheDemo;
 import cn.trinea.android.demo.R;
 import cn.trinea.android.demo.SearchViewDemo;
 import cn.trinea.android.demo.ServiceDemo;
@@ -26,12 +28,13 @@ import cn.trinea.android.demo.ViewPagerMulTiFragmentDemo;
  */
 public class AppUtils {
 
-    public static String PROFILE = "个人主页: ";
-    public static String ABOUT   = "相关介绍见: ";
-
     public static void initTrineaInfo(final Activity activity, Button trineaInfoTv, Class sourClass) {
         trineaInfoTv = (Button)activity.findViewById(R.id.trineaInfo);
-        final String[] result = getText(sourClass);
+        if (trineaInfoTv == null) {
+            return;
+        }
+
+        final String[] result = getText(activity, sourClass);
         Spanned text = Html.fromHtml(result[1]);
         trineaInfoTv.setText(text);
         trineaInfoTv.setOnClickListener(new OnClickListener() {
@@ -46,46 +49,54 @@ public class AppUtils {
         });
     }
 
-    public static String[] getText(Class sourClass) {
-        String prefix = null, url = null, name = null;
+    public static String[] getText(Activity activity, Class sourClass) {
+        int prefixSrcId = R.string.description, contentSrcId;
+        String url = null;
         if (sourClass == SearchViewDemo.class) {
             url = "http://www.trinea.cn/android/android-searchview%E4%BB%8B%E7%BB%8D%E5%8F%8A%E6%90%9C%E7%B4%A2%E6%8F%90%E7%A4%BA%E5%AE%9E%E7%8E%B0/";
-            name = "SearchView介绍及搜索提示实现";
+            contentSrcId = R.string.desc_search_view;
         } else if (sourClass == ViewPagerMulTiFragmentDemo.class) {
             url = "http://www.trinea.cn/android/viewpager%E5%AE%9E%E7%8E%B0%E7%94%BB%E5%BB%8A%E4%B8%80%E5%B1%8F%E5%A4%9A%E4%B8%AAfragment%E6%95%88%E6%9E%9C/";
-            name = "viewpager实现画廊效果";
+            contentSrcId = R.string.desc_view_pager_multi_page;
         } else if (sourClass == DownloadManagerDemo.class) {
             url = "http://www.trinea.cn/android/android系统下载管理downloadmanager功能介绍及使用示例";
-            name = "系统下载管理使用";
+            contentSrcId = R.string.desc_download_manager;
         } else if (sourClass == SlideOnePageGalleryDemo.class) {
             url = "http://www.trinea.cn/android/gallery滑动一页一个item效果/";
-            name = "Gallery滑动一页(一个Item)效果";
+            contentSrcId = R.string.desc_slide_gallery;
         } else if (sourClass == ViewPagerDemo.class) {
             url = "http://www.cnblogs.com/trinea/archive/2012/11/23/2771273.html";
-            name = "ViewPager、Fragment使用";
+            contentSrcId = R.string.desc_view_pager;
         } else if (sourClass == ServiceDemo.class) {
             url = "http://www.cnblogs.com/trinea/archive/2012/11/08/2699856.html";
-            name = "Service介绍";
+            contentSrcId = R.string.desc_service;
         } else if (sourClass == BroadcastReceiverDemo.class) {
             url = "http://www.cnblogs.com/trinea/archive/2012/11/09/2763182.html";
-            name = "BroadcastReceiver介绍";
+            contentSrcId = R.string.desc_broadcast_receiver;
         } else if (sourClass == BorderScrollViewDemo.class) {
             url = "http://www.trinea.cn/?p=445";
-            name = "BorderScrollViewDemo介绍";
+            contentSrcId = R.string.desc_border_scroll_view;
         } else if (sourClass == DropDownListViewDemo.class) {
             url = "http://www.trinea.cn/?p=523";
-            name = "下拉刷新及底部加载更多Listview";
+            contentSrcId = R.string.desc_drop_down_listview;
+        } else if (sourClass == ImageCacheDemo.class) {
+            url = "http://www.trinea.cn/?p=704";
+            contentSrcId = R.string.desc_image_cache;
+        } else if (sourClass == ImageSDCardCacheDemo.class) {
+            url = "http://www.trinea.cn/?p=757";
+            contentSrcId = R.string.desc_image_sdcard_cache;
         } else {
-            prefix = "个人主页:";
+            prefixSrcId = R.string.profile;
             url = "http://www.trinea.cn";
-            name = " Trinea";
+            contentSrcId = R.string.desc_default;
         }
-        String[] result = new String[] { url, getUrlInfo(prefix, url, name) };
+        String[] result = new String[] { url,
+                getUrlInfo(activity.getString(prefixSrcId), url, activity.getString(contentSrcId)) };
         return result;
     }
 
-    private static String getUrlInfo(String prefix, String url, String name) {
-        return new StringBuilder().append(prefix == null ? ABOUT : prefix).append("<a href=\"").append(url)
-                                  .append("\">").append(name).append("</a>").toString();
+    private static String getUrlInfo(String prefix, String url, String content) {
+        return new StringBuilder().append(prefix).append("<a href=\"").append(url).append("\">").append(content)
+                                  .append("</a>").toString();
     }
 }

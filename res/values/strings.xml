@@ -3,6 +3,8 @@
 
     <string name="app_name">Trinea Android Demo</string>
     
+    <string name="imagesdcardcache_demo_activity_title">ImageSDCardCache Demo</string>
+    <string name="imagecache_demo_activity_title">ImageCache Demo</string>
     <string name="dropdownlistview_demo_activity_title">Drop Down And Load More ListView Demo</string>
     <string name="borderscrollview_demo_activity_title">onBottom onTop ScrollView Demo</string>
     <string name="search_view_demo_activity_title">SearchView Demo</string>
@@ -42,4 +44,20 @@
     <string name="tip_download_file">file will be saved to sdcard, the path is: </string>
 
     <string name="update_at">updated at:&#160;</string>
+    
+    <string name="profile">Profile:&#160;</string>
+    <string name="description">Description:&#160;</string>
+        
+    <string name="desc_search_view">SearchView Desc And Implement Search Tip</string>
+    <string name="desc_view_pager_multi_page">Viewpager With Multi Page</string>
+    <string name="desc_download_manager">Download Manager Usage</string>
+    <string name="desc_slide_gallery">Slide One Page Gallery Usage</string>
+    <string name="desc_view_pager">ViewPager And Fragment Usage</string>
+    <string name="desc_service">Android Service Usage</string>
+    <string name="desc_broadcast_receiver">Android BroadcastReceiver Usage</string>
+    <string name="desc_border_scroll_view">BorderScrollView Usage</string>
+    <string name="desc_drop_down_listview">Drop Down And On Bottom Listview</string>
+    <string name="desc_image_cache">ImageCache Usage</string>
+    <string name="desc_image_sdcard_cache">ImageSDCardCache Usage</string>
+    <string name="desc_default">Trinea</string>
 </resources>

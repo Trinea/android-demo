@@ -34,12 +34,11 @@ public class ViewPagerDemo extends FragmentActivity {
         AppUtils.initTrineaInfo(this, trineaInfoTv, getClass());
 
         ViewPager vp = (ViewPager)findViewById(R.id.view_pager);
-
         for (int i = 0; i < 3; i++) {
             ViewPagerFragment viewPagerFragment1 = new ViewPagerFragment();
             Bundle bundle = new Bundle();
             bundle.putInt("upImageId", 0);
-            bundle.putString("text", "页面" + i);
+            bundle.putString("text", "Page " + i);
             viewPagerFragment1.setArguments(bundle);
             titleList.add("title " + i);
             fragmentList.add(viewPagerFragment1);

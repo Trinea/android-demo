@@ -3,6 +3,7 @@
 
     <dimen name="pager_margin">45dp</dimen>
     <dimen name="page_margin">15dp</dimen>
+    <dimen name="dp_4">4dp</dimen>
     <dimen name="dp_8">8dp</dimen>
     <dimen name="dp_60">60dp</dimen>
     <dimen name="dp_40">40dp</dimen>

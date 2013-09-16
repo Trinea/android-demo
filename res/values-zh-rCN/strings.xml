@@ -29,5 +29,20 @@
     <string name="tip_download_file">文件将下载到：</string>
     
     <string name="update_at">更新于:&#160;</string>
-
+    
+    <string name="profile">个人主页:&#160;</string>
+    <string name="description">更多介绍:&#160;</string>
+    
+    <string name="desc_search_view">SearchView介绍及搜索提示实现</string>
+    <string name="desc_view_pager_multi_page">viewpager实现画廊效果</string>
+    <string name="desc_download_manager">系统下载管理使用</string>
+    <string name="desc_slide_gallery">Gallery滑动一页(一个Item)效果</string>
+    <string name="desc_view_pager">ViewPager、Fragment使用</string>
+    <string name="desc_service">Service介绍</string>
+    <string name="desc_broadcast_receiver">BroadcastReceiver介绍</string>
+    <string name="desc_border_scroll_view">BorderScrollViewDemo介绍</string>
+    <string name="desc_drop_down_listview">下拉刷新及底部加载更多Listview</string>
+    <string name="desc_image_cache">ImageCache使用</string>
+    <string name="desc_image_sdcard_cache">ImageSDCardCache使用</string>
+    <string name="desc_default">Trinea</string>
 </resources>

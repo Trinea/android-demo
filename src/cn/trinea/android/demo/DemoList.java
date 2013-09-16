@@ -3,12 +3,9 @@ package cn.trinea.android.demo;
 import java.util.Arrays;
 import java.util.LinkedList;
 
-import cn.trinea.android.common.service.impl.ImageCache;
-
 import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -24,9 +21,10 @@ public class DemoList extends BaseActivity {
 
     public static final String    TAG      = "DemoList";
 
-    private static final String[] mStrings = { "DropDownListViewDemo", "onBottom onTop ScrollView Demo",
-            "DownloadManager Demo", "SearchView Demo", "ViewPager Multi Fragment Demo\r\n(ViewPager一屏多Fragment)",
-            "Slide One Page Gallery Demo", "ViewPager Demo", "Service Demo", "BroadcastReceiver Demo" };
+    private static final String[] mStrings = { "ImageSDCardCache Demo", "ImageCache Demo", "DropDownListView Demo",
+            "onBottom onTop ScrollView Demo", "DownloadManager Demo", "SearchView Demo",
+            "ViewPager Multi Fragment Demo", "Slide One Page Gallery Demo", "ViewPager Demo", "Service Demo",
+            "BroadcastReceiver Demo"      };
 
     private static final int      total    = mStrings.length - 1;
 
@@ -47,7 +45,13 @@ public class DemoList extends BaseActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (position == total - 8) {
+                if (position == total - 10) {
+                    Intent intent = new Intent(DemoList.this, ImageSDCardCacheDemo.class);
+                    startActivity(intent);
+                } else if (position == total - 9) {
+                    Intent intent = new Intent(DemoList.this, ImageCacheDemo.class);
+                    startActivity(intent);
+                } else if (position == total - 8) {
                     Intent intent = new Intent(DemoList.this, DropDownListViewDemo.class);
                     startActivity(intent);
                 } else if (position == total - 7) {
@@ -77,5 +81,24 @@ public class DemoList extends BaseActivity {
                 }
             }
         });
+        // startActivity(new Intent(getApplicationContext(), ImageCacheDemo.class));
+        // startActivity(new Intent("android.intent.action.VIEW_DOWNLOADS"));
+        // Intent i = new Intent(Intent.ACTION_VIEW);
+        // i.setData(Uri.parse("http://122.193.23.191/down.myapp.com/android/48157/1176342/com.tencent.mm_261.apk?mkey=51cc3a56ba89d0cf&f=a821&p=.apk"));
+        // startActivity(i);
+        // final Context context = getApplicationContext();
+        // new Thread() {
+        //
+        // public void run() {
+        // DownloadManager.Request request = new Request(
+        // Uri.parse("http://122.193.23.191/down.myapp.com/android/48157/1176342/com.tencent.mm_261.apk?mkey=51cc3a56ba89d0cf&f=a821&p=.apk"));
+        // DownloadManager manager = (DownloadManager)context.getSystemService(Context.DOWNLOAD_SERVICE);
+        // manager.enqueue(request);
+        //
+        // Intent i = new Intent(DownloadManager.ACTION_VIEW_DOWNLOADS);
+        // i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        // startActivity(i);
+        // }
+        // }.start();
     }
 }
