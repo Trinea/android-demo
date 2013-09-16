@@ -1,8 +1,7 @@
 ![Trinea](http://farm8.staticflickr.com/7426/9456847893_053161c7a4_o.png)个人博客  [http://www.trinea.cn/](http://www.trinea.cn/)
 -------------
-<br/>
-**注意：**拉下代码后,需要将[TrineaAndroidCommon](https://github.com/Trinea/AndroidCommon)也拉下来做为公共库引入，可参考[添加Android Common Lib](http://www.trinea.cn/android/%e6%b7%bb%e5%8a%a0android-common-lib%e6%b7%bb%e5%8a%a0%e5%8f%8agoogle-code%e5%92%8cgithub%e5%a6%82%e4%bd%95%e6%8b%89%e5%8f%96%e4%bb%a3%e7%a0%81/)  
 **android示例代码，目前包含：**  
+<注意：拉下代码后,需要将[TrineaAndroidCommon](https://github.com/Trinea/AndroidCommon)也拉下来做为公共库引入，可参考[添加Android Common Lib](http://www.trinea.cn/android/%e6%b7%bb%e5%8a%a0android-common-lib%e6%b7%bb%e5%8a%a0%e5%8f%8agoogle-code%e5%92%8cgithub%e5%a6%82%e4%bd%95%e6%8b%89%e5%8f%96%e4%bb%a3%e7%a0%81/)>  
 #####1. 图片内存缓存Demo
 使用见：[图片内存缓存Demo](http://www.trinea.cn/?p=704)  
 适用：应用中获取图片较多且图片不大的应用，如新浪微博、twitter、微信头像、美丽说、蘑菇街、花瓣、淘宝等等。效果图如下：  
