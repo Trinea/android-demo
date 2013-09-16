@@ -1,7 +1,7 @@
 ![Trinea](http://farm8.staticflickr.com/7426/9456847893_053161c7a4_o.png)个人博客  [http://www.trinea.cn/](http://www.trinea.cn/)
 -------------
 **注意：**拉下代码后需要，将[TrineaAndroidCommon](https://github.com/Trinea/AndroidCommon)也拉下来做为公共库引入，可参考：[添加Android Common Lib](http://www.trinea.cn/android/%e6%b7%bb%e5%8a%a0android-common-lib%e6%b7%bb%e5%8a%a0%e5%8f%8agoogle-code%e5%92%8cgithub%e5%a6%82%e4%bd%95%e6%8b%89%e5%8f%96%e4%bb%a3%e7%a0%81/)  
-<br/>  
+<br/>
 **android示例代码，目前包含：**  
 [Android ImageCache图片缓存使用ImageCache Demo](http://www.trinea.cn/android/android-imagecache%e5%9b%be%e7%89%87%e7%bc%93%e5%ad%98%ef%bc%8c%e4%bd%bf%e7%94%a8%e7%ae%80%e5%8d%95%ef%bc%8c%e6%94%af%e6%8c%81%e9%a2%84%e5%8f%96%ef%bc%8c%e6%94%af%e6%8c%81%e5%a4%9a%e7%a7%8d%e7%bc%93/)  
 [Android ImageCache图片SD卡缓存使用ImageCache Demo](http://www.trinea.cn/android/android-%e5%9b%be%e7%89%87sd%e5%8d%a1%e7%bc%93%e5%ad%98-%e4%bd%bf%e7%94%a8%e7%ae%80%e5%8d%95-%e6%94%af%e6%8c%81%e9%a2%84%e5%8f%96-%e6%94%af%e6%8c%81%e5%a4%9a%e7%a7%8d%e7%bc%93%e5%ad%98%e7%ae%97/)  
