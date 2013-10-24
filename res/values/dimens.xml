@@ -8,6 +8,6 @@
     <dimen name="dp_60">60dp</dimen>
     <dimen name="dp_40">40dp</dimen>
     <dimen name="sp_16">16sp</dimen>
-    <dimen name="search_view_margin_left">35dp</dimen>
+    <dimen name="search_view_margin_left">55dp</dimen>
 
 </resources>

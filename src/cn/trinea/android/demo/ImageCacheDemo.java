@@ -20,7 +20,7 @@ import cn.trinea.android.common.service.impl.RemoveTypeLastUsedTimeFirst;
 /**
  * ImageCacheDemo
  * 
- * @author gxwu@lewatek.com 2013-6-25
+ * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2013-6-25
  */
 public class ImageCacheDemo extends BaseActivity {
 
