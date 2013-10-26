@@ -11,7 +11,7 @@ import android.widget.TextView;
 /**
  * 定义自己的Fragment，内容为TextView
  * 
- * @author Trinea 2012-11-15
+ * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2012-11-15
  */
 public class ViewPagerFragment extends Fragment {
 

@@ -8,13 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-
 import cn.trinea.android.demo.R;
 
 /**
  * image list adapter
  * 
- * @author Trinea 2012-11-22
+ * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2012-11-22
  */
 public class ImageListAdapter extends BaseAdapter {
 

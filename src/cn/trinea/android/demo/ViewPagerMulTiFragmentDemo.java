@@ -16,7 +16,7 @@ import android.widget.TextView;
 /**
  * ViewPager实现画廊效果
  * 
- * @author Trinea 2013-04-03
+ * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2013-04-03
  */
 public class ViewPagerMulTiFragmentDemo extends BaseActivity {
 

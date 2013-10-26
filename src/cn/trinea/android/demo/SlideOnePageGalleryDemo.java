@@ -7,7 +7,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import cn.trinea.android.common.view.SlideOnePageGallery;
@@ -16,7 +15,7 @@ import cn.trinea.android.demo.adapter.ImageListAdapter;
 /**
  * SlideOnePageGalleryDemo
  * 
- * @author Trinea 2013-5-9
+ * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2013-5-9
  */
 public class SlideOnePageGalleryDemo extends BaseActivity {
 

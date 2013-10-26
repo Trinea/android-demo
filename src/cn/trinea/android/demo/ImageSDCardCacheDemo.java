@@ -1,6 +1,5 @@
 package cn.trinea.android.demo;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,7 +7,6 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,12 +29,15 @@ import cn.trinea.android.common.view.SlideOnePageGallery;
  */
 public class ImageSDCardCacheDemo extends BaseActivity {
 
+    public static final String TAG_CACHE = "image_sdcard_cache";
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState, R.layout.slide_one_page_gallery_demo);
 
         Context context = getApplicationContext();
         initImageUrlList();
+        IMAGE_SD_CACHE.initData(context, TAG_CACHE);
         IMAGE_SD_CACHE.setContext(context);
 
         SlideOnePageGallery imageGallery = (SlideOnePageGallery)findViewById(R.id.app_app_image_gallery);
@@ -44,6 +45,12 @@ public class ImageSDCardCacheDemo extends BaseActivity {
         adapter.setImageUrlList(imageUrlList);
         imageGallery.setAdapter(adapter);
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        IMAGE_SD_CACHE.saveDataToDb(this, TAG_CACHE);
+        super.onDestroy();
     }
 
     /** icon cache **/
@@ -79,8 +86,6 @@ public class ImageSDCardCacheDemo extends BaseActivity {
         };
         IMAGE_SD_CACHE.setOnImageSDCallbackListener(imageCallBack);
         IMAGE_SD_CACHE.setCacheFullRemoveType(new RemoveTypeLastUsedTimeFirst<String>());
-        IMAGE_SD_CACHE.setCacheFolder(Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator
-                                      + "TrineaAndroidCommon");
         IMAGE_SD_CACHE.setFileNameRule(new FileNameRuleImageUrl());
 
         IMAGE_SD_CACHE.setHttpReadTimeOut(10000);
@@ -144,7 +149,7 @@ public class ImageSDCardCacheDemo extends BaseActivity {
         private LayoutInflater inflater;
         public List<String>    imageUrlList;
 
-        public ImageAdapter(Context context){
+        public ImageAdapter(Context context) {
             super();
             inflater = LayoutInflater.from(context);
         }

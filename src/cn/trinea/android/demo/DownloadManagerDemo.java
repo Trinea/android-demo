@@ -20,12 +20,13 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-import cn.trinea.android.demo.utils.DownloadManagerPro;
+import cn.trinea.android.common.util.DownloadManagerPro;
+import cn.trinea.android.common.util.PreferencesUtils;
 
 /**
  * DownloadManagerDemo
  * 
- * @author Trinea 2013-5-9
+ * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2013-5-9
  */
 public class DownloadManagerDemo extends BaseActivity {
 
@@ -33,6 +34,7 @@ public class DownloadManagerDemo extends BaseActivity {
     public static final String     DOWNLOAD_FILE_NAME   = "MeiLiShuo.apk";
 
     public static final String     APK_URL              = "http://img.meilishuo.net/css/images/AndroidShare/Meilishuo_3.6.1_10006.apk";
+    public static final String     KEY_NAME_DOWNLOAD_ID = "downloadId";
 
     private Button                 downloadButton;
     private ProgressBar            downloadProgress;
@@ -118,7 +120,7 @@ public class DownloadManagerDemo extends BaseActivity {
          * get download id from preferences.<br/>
          * if download id bigger than 0, means it has been downloaded, then query status and show right text;
          */
-        downloadId = PreferencesUtils.getLongPreferences(context, PreferencesUtils.KEY_NAME_DOWNLOAD_ID);
+        downloadId = PreferencesUtils.getLong(context, KEY_NAME_DOWNLOAD_ID);
         updateView();
         downloadButton.setOnClickListener(new OnClickListener() {
 
@@ -142,7 +144,7 @@ public class DownloadManagerDemo extends BaseActivity {
                 request.setMimeType("application/cn.trinea.download.file");
                 downloadId = downloadManager.enqueue(request);
                 /** save download id to preferences **/
-                PreferencesUtils.putLongPreferences(context, PreferencesUtils.KEY_NAME_DOWNLOAD_ID, downloadId);
+                PreferencesUtils.putLong(context, KEY_NAME_DOWNLOAD_ID, downloadId);
                 updateView();
             }
         });

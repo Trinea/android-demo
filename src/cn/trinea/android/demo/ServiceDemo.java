@@ -1,10 +1,3 @@
-/*
- * Copyright 2012 Trinea.cn All right reserved. This software is the
- * confidential and proprietary information of Trinea.cn ("Confidential
- * Information"). You shall not disclose such Confidential Information and shall
- * use it only in accordance with the terms of the license agreement you entered
- * into with Trinea.cn.
- */
 package cn.trinea.android.demo;
 
 import android.app.ActionBar;
@@ -23,7 +16,7 @@ import cn.trinea.android.demo.MyService.MyBinder;
 /**
  * ServiceDemo，包括start普通服务、绑定普通服务、Intent Service
  * 
- * @author Trinea 2013-5-9
+ * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2013-5-9
  */
 public class ServiceDemo extends BaseActivity {
 

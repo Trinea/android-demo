@@ -10,7 +10,7 @@ import cn.trinea.android.demo.utils.AppUtils;
 /**
  * BaseActivity
  * 
- * @author Trinea 2013-6-1
+ * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2013-6-1
  */
 public class BaseActivity extends Activity {
 

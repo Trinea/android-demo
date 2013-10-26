@@ -15,7 +15,7 @@ import android.widget.ListView;
 /**
  * demo list list
  * 
- * @author Trinea 2012-6-17
+ * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2012-6-17
  */
 public class DemoList extends BaseActivity {
 

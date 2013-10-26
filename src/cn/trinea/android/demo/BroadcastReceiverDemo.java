@@ -1,10 +1,3 @@
-/*
- * Copyright 2012 Trinea.cn All right reserved. This software is the
- * confidential and proprietary information of Trinea.cn ("Confidential
- * Information"). You shall not disclose such Confidential Information and shall
- * use it only in accordance with the terms of the license agreement you entered
- * into with Trinea.cn.
- */
 package cn.trinea.android.demo;
 
 import android.app.Activity;
@@ -22,7 +15,7 @@ import android.widget.Toast;
 /**
  * BroadcastReceiver Demo，包括普通广播、本地广播、有序广播、粘性广播
  * 
- * @author Trinea 2012-9-20
+ * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2012-9-20
  */
 public class BroadcastReceiverDemo extends BaseActivity {
 

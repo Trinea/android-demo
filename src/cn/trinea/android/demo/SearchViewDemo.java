@@ -25,7 +25,7 @@ import android.widget.TextView;
 /**
  * SearchViewDemo
  * 
- * @author Trinea 2013-5-9
+ * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2013-5-9
  */
 public class SearchViewDemo extends BaseActivity {
 

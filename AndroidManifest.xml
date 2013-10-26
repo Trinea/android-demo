@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cn.trinea.android.demo"
-    android:versionCode="33"
-    android:versionName="2.9.9" >
+    android:versionCode="35"
+    android:versionName="2.9.11" >
 
     <uses-sdk android:minSdkVersion="14" />
 
@@ -52,6 +52,12 @@
             android:name=".ImageSDCardCacheDemo"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/imagesdcardcache_demo_activity_title"
+            android:theme="@android:style/Theme.Holo.Light" >
+        </activity>
+        <activity
+            android:name=".CanvasDrawDemo"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/imagecache_demo_activity_title"
             android:theme="@android:style/Theme.Holo.Light" >
         </activity>
         <activity

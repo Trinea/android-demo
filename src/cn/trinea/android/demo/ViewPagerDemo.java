@@ -17,7 +17,7 @@ import cn.trinea.android.demo.utils.AppUtils;
 /**
  * ViewPager和Fragment混合使用的Demo
  * 
- * @author Trinea 2012-11-14
+ * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2012-11-14
  */
 public class ViewPagerDemo extends FragmentActivity {
 
@@ -53,7 +53,7 @@ public class ViewPagerDemo extends FragmentActivity {
     /**
      * 定义适配器
      * 
-     * @author Trinea 2012-11-15
+     * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2012-11-15
      */
     class myPagerAdapter extends FragmentPagerAdapter {
 

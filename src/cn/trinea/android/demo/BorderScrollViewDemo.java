@@ -5,14 +5,13 @@ import android.os.Bundle;
 import android.view.Display;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import cn.trinea.android.common.view.BorderScrollView;
 import cn.trinea.android.common.view.BorderScrollView.OnBorderListener;
 
 /**
  * BorderScrollViewDemo
  * 
- * @author Trinea 2013-5-27
+ * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2013-5-27
  */
 public class BorderScrollViewDemo extends BaseActivity {
 

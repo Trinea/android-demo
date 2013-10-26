@@ -10,14 +10,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
-
 import cn.trinea.android.common.view.DropDownListView;
 import cn.trinea.android.common.view.DropDownListView.OnDropDownListener;
 
 /**
  * DropDownListViewDemo
  * 
- * @author Trinea 2013-6-1
+ * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2013-6-1
  */
 public class DropDownListViewDemo extends BaseActivity {
 

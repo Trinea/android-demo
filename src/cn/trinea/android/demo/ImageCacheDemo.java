@@ -14,7 +14,7 @@ import android.widget.ImageView.ScaleType;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 import cn.trinea.android.common.service.impl.ImageCache;
-import cn.trinea.android.common.service.impl.ImageCache.OnImageCallbackListener;
+import cn.trinea.android.common.service.impl.ImageMemoryCache.OnImageCallbackListener;
 import cn.trinea.android.common.service.impl.RemoveTypeLastUsedTimeFirst;
 
 /**
@@ -25,11 +25,12 @@ import cn.trinea.android.common.service.impl.RemoveTypeLastUsedTimeFirst;
 public class ImageCacheDemo extends BaseActivity {
 
     /** column number **/
-    public static final int COLUMNS                  = 2;
+    public static final int    COLUMNS                  = 2;
     /** imageView default height **/
-    public static final int IMAGEVIEW_DEFAULT_HEIGHT = 400;
+    public static final int    IMAGEVIEW_DEFAULT_HEIGHT = 400;
+    public static final String TAG_CACHE                = "image_cache";
 
-    private RelativeLayout  parentLayout;
+    private RelativeLayout     parentLayout;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,7 @@ public class ImageCacheDemo extends BaseActivity {
         Context context = getApplicationContext();
         parentLayout = (RelativeLayout)findViewById(R.id.image_cache_parent_layout);
         initImageUrlList();
+        IMAGE_CACHE.initData(this, TAG_CACHE);
         IMAGE_CACHE.setContext(context);
 
         int count = 0, viewId = 0x7F24FFF0;
@@ -75,8 +77,14 @@ public class ImageCacheDemo extends BaseActivity {
         }
     }
 
+    @Override
+    protected void onDestroy() {
+        IMAGE_CACHE.saveDataToDb(this, TAG_CACHE);
+        super.onDestroy();
+    }
+
     /** icon cache **/
-    public static final ImageCache IMAGE_CACHE = new ImageCache(128);
+    public static final ImageCache IMAGE_CACHE = new ImageCache(128, 512);
 
     static {
         /** init icon cache **/
@@ -94,7 +102,7 @@ public class ImageCacheDemo extends BaseActivity {
                         imageView.startAnimation(getInAlphaAnimation(2000));
                     }
 
-                    // auto set height accroding to rate between height and widght
+                    // auto set height accroding to rate between height and weight
                     LayoutParams imageParams = (LayoutParams)imageView.getLayoutParams();
                     imageParams.height = imageParams.width * imageDrawable.getIntrinsicHeight()
                                          / imageDrawable.getIntrinsicWidth();
