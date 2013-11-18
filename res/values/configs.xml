@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="http_cache_url_default">http://www.trinea.cn/test-for-http-cache.html</string>
+
+</resources>

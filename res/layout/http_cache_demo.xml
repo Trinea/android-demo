@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <EditText
+        android:id="@+id/http_cache_url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/http_cache_url_default"
+        android:inputType="textUri" />
+
+    <Button
+        android:id="@+id/http_cache_get"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/http_cache_url"
+        android:layout_marginTop="@dimen/dp_8"
+        android:text="@string/http_cache_get" />
+
+    <TextView
+        android:id="@+id/http_cache_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/http_cache_get"
+        android:paddingLeft="@dimen/dp_4"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/http_cache_info"
+        android:layout_marginTop="@dimen/dp_4"
+        android:paddingBottom="@dimen/dp_40" >
+
+        <TextView
+            android:id="@+id/http_cache_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/dp_4" />
+    </ScrollView>
+
+    <include layout="@layout/trinea_info" />
+
+</RelativeLayout>

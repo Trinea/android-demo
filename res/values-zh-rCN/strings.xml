@@ -32,6 +32,7 @@
     
     <string name="profile">个人主页:&#160;</string>
     <string name="description">更多介绍:&#160;</string>
+    <string name="http_cache_get">获取内容</string>
     
     <string name="desc_search_view">SearchView介绍及搜索提示实现</string>
     <string name="desc_view_pager_multi_page">viewpager实现画廊效果</string>

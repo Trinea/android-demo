@@ -47,6 +47,7 @@
     
     <string name="profile">Profile:&#160;</string>
     <string name="description">Description:&#160;</string>
+    <string name="http_cache_get">Get content</string>
         
     <string name="desc_search_view">SearchView Desc And Implement Search Tip</string>
     <string name="desc_view_pager_multi_page">Viewpager With Multi Page</string>
