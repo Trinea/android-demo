@@ -73,7 +73,7 @@
         <activity
             android:name=".HttpCacheDemo"
             android:configChanges="orientation|keyboardHidden"
-            android:label="@string/imagecache_demo_activity_title"
+            android:label="@string/httpcache_demo_activity_title"
             android:theme="@android:style/Theme.Holo.Light" >
         </activity>
         <activity

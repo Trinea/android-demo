@@ -4,6 +4,7 @@
     <string name="app_name">Trinea Android Demo</string>
     
     <string name="imagesdcardcache_demo_activity_title">ImageSDCardCache Demo</string>
+    <string name="httpcache_demo_activity_title">HttpCache Demo</string>
     <string name="imagecache_demo_activity_title">ImageCache Demo</string>
     <string name="dropdownlistview_demo_activity_title">Drop Down And Load More ListView Demo</string>
     <string name="borderscrollview_demo_activity_title">onBottom onTop ScrollView Demo</string>
