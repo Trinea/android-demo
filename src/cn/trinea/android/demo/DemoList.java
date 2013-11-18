@@ -21,8 +21,8 @@ public class DemoList extends BaseActivity {
 
     public static final String    TAG      = "DemoList";
 
-    private static final String[] mStrings = { "ImageSDCardCache Demo", "ImageCache Demo", "DropDownListView Demo",
-            "onBottom onTop ScrollView Demo", "DownloadManager Demo", "SearchView Demo",
+    private static final String[] mStrings = { "HttpCache Demo", "ImageSDCardCache Demo", "ImageCache Demo",
+            "DropDownListView Demo", "onBottom onTop ScrollView Demo", "DownloadManager Demo", "SearchView Demo",
             "ViewPager Multi Fragment Demo", "Slide One Page Gallery Demo", "ViewPager Demo", "Service Demo",
             "BroadcastReceiver Demo"      };
 
@@ -45,7 +45,10 @@ public class DemoList extends BaseActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (position == total - 10) {
+                if (position == total - 11) {
+                    Intent intent = new Intent(DemoList.this, HttpCacheDemo.class);
+                    startActivity(intent);
+                } else if (position == total - 10) {
                     Intent intent = new Intent(DemoList.this, ImageSDCardCacheDemo.class);
                     startActivity(intent);
                 } else if (position == total - 9) {
