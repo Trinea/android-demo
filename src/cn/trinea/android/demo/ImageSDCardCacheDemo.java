@@ -7,6 +7,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.RelativeLayout.LayoutParams;
+import cn.trinea.android.common.entity.FailedReason;
 import cn.trinea.android.common.service.impl.FileNameRuleImageUrl;
 import cn.trinea.android.common.service.impl.ImageSDCardCache;
 import cn.trinea.android.common.service.impl.ImageSDCardCache.OnImageSDCallbackListener;
@@ -62,8 +64,16 @@ public class ImageSDCardCacheDemo extends BaseActivity {
 
             private static final long serialVersionUID = 1L;
 
+            /**
+             * callback function after get image successfully, run on ui thread
+             * 
+             * @param imageUrl imageUrl
+             * @param imagePath image path
+             * @param view view need the image
+             * @param isInCache whether already in cache or got realtime
+             */
             @Override
-            public void onImageLoaded(String imageUrl, String imagePath, View view, boolean isInCache) {
+            public void onGetSuccess(String imageUrl, String imagePath, View view, boolean isInCache) {
                 ImageView imageView = (ImageView)view;
 
                 // avoid oom caused by bitmap size exceeds VM budget
@@ -82,6 +92,33 @@ public class ImageSDCardCacheDemo extends BaseActivity {
                         imageView.startAnimation(getInAlphaAnimation(2000));
                     }
                 }
+            }
+
+            /**
+             * callback function before get image, run on ui thread
+             * 
+             * @param imageUrl imageUrl
+             * @param view view need the image
+             */
+            @Override
+            public void onPreGet(String imageUrl, View view) {
+                // Log.e(TAG_CACHE, "pre get image");
+            }
+
+            /**
+             * callback function after get image failed, run on ui thread
+             * 
+             * @param imageUrl imageUrl
+             * @param imagePath image path
+             * @param view view need the image
+             * @param failedReason failed reason for get image
+             */
+            @Override
+            public void onGetFailed(String imageUrl, String imagePath, View view, FailedReason failedReason) {
+                Log.e(TAG_CACHE,
+                      new StringBuilder(128).append("get image ").append(imageUrl).append(" error, failed type is: ")
+                                            .append(failedReason.getFailedType()).append(", failed reason is: ")
+                                            .append(failedReason.getCause().getMessage()).toString());
             }
         };
         IMAGE_SD_CACHE.setOnImageSDCallbackListener(imageCallBack);
@@ -149,7 +186,7 @@ public class ImageSDCardCacheDemo extends BaseActivity {
         private LayoutInflater inflater;
         public List<String>    imageUrlList;
 
-        public ImageAdapter(Context context) {
+        public ImageAdapter(Context context){
             super();
             inflater = LayoutInflater.from(context);
         }

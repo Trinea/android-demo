@@ -6,6 +6,7 @@ import java.util.List;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
@@ -14,6 +15,7 @@ import android.widget.ImageView.ScaleType;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 import cn.trinea.android.common.service.impl.ImageCache;
+import cn.trinea.android.common.entity.FailedReason;
 import cn.trinea.android.common.service.impl.ImageMemoryCache.OnImageCallbackListener;
 import cn.trinea.android.common.service.impl.RemoveTypeLastUsedTimeFirst;
 
@@ -90,10 +92,16 @@ public class ImageCacheDemo extends BaseActivity {
         /** init icon cache **/
         OnImageCallbackListener imageCallBack = new OnImageCallbackListener() {
 
-            private static final long serialVersionUID = 1L;
-
+            /**
+             * callback function after get image successfully, run on ui thread
+             * 
+             * @param imageUrl imageUrl
+             * @param imageDrawable drawable
+             * @param view view need the image
+             * @param isInCache whether already in cache or got realtime
+             */
             @Override
-            public void onImageLoaded(String imageUrl, Drawable imageDrawable, View view, boolean isInCache) {
+            public void onGetSuccess(String imageUrl, Drawable imageDrawable, View view, boolean isInCache) {
                 if (view != null && imageDrawable != null) {
                     ImageView imageView = (ImageView)view;
                     imageView.setImageDrawable(imageDrawable);
@@ -108,6 +116,33 @@ public class ImageCacheDemo extends BaseActivity {
                                          / imageDrawable.getIntrinsicWidth();
                     imageView.setScaleType(ScaleType.FIT_XY);
                 }
+            }
+
+            /**
+             * callback function before get image, run on ui thread
+             * 
+             * @param imageUrl imageUrl
+             * @param view view need the image
+             */
+            @Override
+            public void onPreGet(String imageUrl, View view) {
+                // Log.e(TAG_CACHE, "pre get image");
+            }
+
+            /**
+             * callback function after get image failed, run on ui thread
+             * 
+             * @param imageUrl imageUrl
+             * @param imageDrawable drawable
+             * @param view view need the image
+             * @param failedReason failed reason for get image
+             */
+            @Override
+            public void onGetFailed(String imageUrl, Drawable imageDrawable, View view, FailedReason failedReason) {
+                Log.e(TAG_CACHE,
+                      new StringBuilder(128).append("get image ").append(imageUrl).append(" error, failed type is: ")
+                                            .append(failedReason.getFailedType()).append(", failed reason is: ")
+                                            .append(failedReason.getCause().getMessage()).toString());
             }
         };
         IMAGE_CACHE.setOnImageCallbackListener(imageCallBack);
