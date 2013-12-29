@@ -59,3 +59,7 @@
 
 #####11. BroadcastReceiver Demo
 使用示例：[BroadcastReceiver Demo](http://www.cnblogs.com/trinea/archive/2012/11/09/2763182.html)   
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Trinea/androiddemo/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
