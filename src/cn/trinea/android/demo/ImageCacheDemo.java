@@ -14,10 +14,12 @@ import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
-import cn.trinea.android.common.service.impl.ImageCache;
 import cn.trinea.android.common.entity.FailedReason;
+import cn.trinea.android.common.service.impl.ImageCache;
+import cn.trinea.android.common.service.impl.ImageCache.CompressListener;
 import cn.trinea.android.common.service.impl.ImageMemoryCache.OnImageCallbackListener;
 import cn.trinea.android.common.service.impl.RemoveTypeLastUsedTimeFirst;
+import cn.trinea.android.common.util.FileUtils;
 
 /**
  * ImageCacheDemo
@@ -43,6 +45,23 @@ public class ImageCacheDemo extends BaseActivity {
         initImageUrlList();
         IMAGE_CACHE.initData(this, TAG_CACHE);
         IMAGE_CACHE.setContext(context);
+        // intelligent compress image
+        IMAGE_CACHE.setCompressListener(new CompressListener() {
+
+            @Override
+            public int getCompressSize(String imagePath) {
+                if (FileUtils.isFileExist(imagePath)) {
+                    long fileSize = FileUtils.getFileSize(imagePath) / 1000;
+                    /**
+                     * if image bigger than 100k, compress to 1/(n + 1) width and 1/(n + 1) height, n is fileSize / 100k
+                     **/
+                    if (fileSize > 100) {
+                        return (int)(fileSize / 100) + 1;
+                    }
+                }
+                return 1;
+            }
+        });
 
         int count = 0, viewId = 0x7F24FFF0;
         int verticalSpacing, horizontalSpacing;
