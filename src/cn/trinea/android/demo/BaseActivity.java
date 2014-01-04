@@ -2,6 +2,7 @@ package cn.trinea.android.demo;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Button;
@@ -16,12 +17,14 @@ import com.google.analytics.tracking.android.EasyTracker;
  */
 public class BaseActivity extends Activity {
 
-    private Button trineaInfoTv;
+    protected Context context;
+    private Button    trineaInfoTv;
 
     protected void onCreate(Bundle savedInstanceState, int layoutResID) {
         super.onCreate(savedInstanceState);
         setContentView(layoutResID);
 
+        context = getApplicationContext();
         AppUtils.initTrineaInfo(this, trineaInfoTv, getClass());
 
         ActionBar bar = getActionBar();

@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <string name="send_general_broadcast">发送广播</string>
     <string name="send_local_broadcast">发送Local广播</string>
     <string name="send_ordered_broadcast">发送有序广播</string>
     <string name="send_sticky_broadcast">发送Sticky广播</string>
+    <string name="general_broadcast_msg">普通广播告知：好声音马上开始了啦</string>
+    <string name="local_broadcast_msg">Local广播告知：好声音马上开始了啦</string>
+    <string name="ordered_broadcast_msg">有序广播告知：好声音马上开始了啦</string>
+    <string name="sticky_broadcast_msg">Sticky广播告知：好声音马上开始了啦</string>
+    <string name="sticky_broadcast_wait_tip">请等候<xliff:g>%1$s</xliff:g>毫秒</string>
+    <string name="ordered_broadcast_high_tip">优先级最高的接收者接收到广播，内容为： <xliff:g>%1$s</xliff:g></string>
+    <string name="ordered_broadcast_medium_tip">优先级中等的接收者接收到广播，内容为： <xliff:g>%1$s</xliff:g>，上一个接收者为：<xliff:g>%2$s</xliff:g></string>
+    <string name="ordered_broadcast_medium_cancel_tip">优先级中等的接收者接收到广播并已取消广播继续传递，内容为： <xliff:g>%1$s</xliff:g>，上一个接收者为：<xliff:g>%2$s</xliff:g></string>
+    <string name="ordered_broadcast_low_tip">优先级最低的接收者接收到广播，内容为： <xliff:g>%1$s</xliff:g>，上一个接收者为：<xliff:g>%2$s</xliff:g></string>
+    <string name="ordered_broadcast_tip">默认优先级接收者接收到广播，内容为： <xliff:g>%1$s</xliff:g>，上一个接收者为：<xliff:g>%2$s</xliff:g></string>
     
     <string name="start_general_service">启动普通服务</string>
     <string name="stop_general_service">停止普通服务</string>
@@ -15,6 +25,9 @@
     <string name="unbound_service">解除绑定服务</string>
     <string name="start_aidl_service">启动AIDL服务</string>
     <string name="stop_aidl_service">停止AIDL服务</string>
+    <string name="operate_value_success">增加成功，当前值为： <xliff:g>%1$s</xliff:g></string>
+    <string name="operate_value_tip">当前值为： <xliff:g>%1$s</xliff:g></string>
+    <string name="bind_service_tip">请先绑定服务</string>
     
     <string name="app_status_download">点击下载美丽说APK</string>
     <string name="app_status_downloaded">已下载过，点击重新下载</string>

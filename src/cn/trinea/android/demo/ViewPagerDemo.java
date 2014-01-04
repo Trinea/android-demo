@@ -3,6 +3,8 @@ package cn.trinea.android.demo;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.analytics.tracking.android.EasyTracker;
+
 import android.app.ActionBar;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -15,7 +17,7 @@ import android.widget.Button;
 import cn.trinea.android.demo.utils.AppUtils;
 
 /**
- * ViewPager和Fragment混合使用的Demo
+ * ViewPager with Fragment
  * 
  * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2012-11-14
  */
@@ -51,7 +53,7 @@ public class ViewPagerDemo extends FragmentActivity {
     }
 
     /**
-     * 定义适配器
+     * adapter
      * 
      * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2012-11-15
      */
@@ -66,25 +68,16 @@ public class ViewPagerDemo extends FragmentActivity {
             this.titleList = titleList;
         }
 
-        /**
-         * 得到每个页面
-         */
         @Override
         public Fragment getItem(int arg0) {
             return (fragmentList == null || fragmentList.size() == 0) ? null : fragmentList.get(arg0);
         }
 
-        /**
-         * 每个页面的title
-         */
         @Override
         public CharSequence getPageTitle(int position) {
             return (titleList.size() > position) ? titleList.get(position) : "";
         }
 
-        /**
-         * 页面的总个数
-         */
         @Override
         public int getCount() {
             return fragmentList == null ? 0 : fragmentList.size();
@@ -100,5 +93,17 @@ public class ViewPagerDemo extends FragmentActivity {
             }
         }
         return false;
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        EasyTracker.getInstance(this).activityStart(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        EasyTracker.getInstance(this).activityStop(this);
     }
 }

@@ -13,31 +13,76 @@
             android:layout_height="wrap_content" >
 
             <Button
-                android:id="@+id/sendGeneralBroadcast"
+                android:id="@+id/send_general_broadcast"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/send_general_broadcast" />
 
-            <Button
-                android:id="@+id/sendLocalBroadcast"
+            <TextView
+                android:id="@+id/general_broadcast_msg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/sendGeneralBroadcast"
+                android:layout_below="@+id/send_general_broadcast" />
+
+            <include
+                android:id="@+id/divider_1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider_height"
+                android:layout_below="@+id/general_broadcast_msg"
+                layout="@layout/divider" />
+
+            <Button
+                android:id="@+id/send_local_broadcast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider_1"
                 android:text="@string/send_local_broadcast" />
 
-            <Button
-                android:id="@+id/sendOrderedBroadcast"
+            <TextView
+                android:id="@+id/local_broadcast_msg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/sendLocalBroadcast"
-                android:text="@string/send_ordered_broadcast" />
+                android:layout_below="@+id/send_local_broadcast" />
+
+            <include
+                android:id="@+id/divider_2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider_height"
+                android:layout_below="@+id/local_broadcast_msg"
+                layout="@layout/divider" />
 
             <Button
-                android:id="@+id/sendStickyBroadcast"
+                android:id="@+id/send_ordered_broadcast"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/sendOrderedBroadcast"
+                android:layout_below="@+id/divider_2"
+                android:text="@string/send_ordered_broadcast" />
+
+            <TextView
+                android:id="@+id/ordered_broadcast_msg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/send_ordered_broadcast" />
+
+            <include
+                android:id="@+id/divider_3"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider_height"
+                android:layout_below="@+id/ordered_broadcast_msg"
+                layout="@layout/divider" />
+
+            <Button
+                android:id="@+id/send_sticky_broadcast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider_3"
                 android:text="@string/send_sticky_broadcast" />
+
+            <TextView
+                android:id="@+id/sticky_broadcast_msg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/send_sticky_broadcast" />
         </RelativeLayout>
     </ScrollView>
 

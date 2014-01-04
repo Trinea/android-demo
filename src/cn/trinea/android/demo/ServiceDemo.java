@@ -11,10 +11,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
+import cn.trinea.android.common.util.ToastUtils;
 import cn.trinea.android.demo.MyService.MyBinder;
 
 /**
- * ServiceDemo，包括start普通服务、绑定普通服务、Intent Service
+ * ServiceDemo, incluse start service, bind service and intent service
  * 
  * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2013-5-9
  */
@@ -41,7 +42,7 @@ public class ServiceDemo extends BaseActivity {
     private ServiceConnection con = new ServiceConnection() {
 
                                       /**
-                                       * 服务所在进程被kill或是crash时系统调用，而不是unbindService时调用
+                                       * Called when a connection to the Service has been lost
                                        */
                                       @Override
                                       public void onServiceDisconnected(ComponentName name) {
@@ -50,13 +51,12 @@ public class ServiceDemo extends BaseActivity {
                                       }
 
                                       /**
-                                       * 服务连接时调用，若已经连接不进行调用
+                                       * Called when a connection to the Service has been established,
                                        */
                                       @Override
                                       public void onServiceConnected(ComponentName name, IBinder service) {
                                           myService = ((MyBinder)service).getService();
-                                          Toast.makeText(getApplicationContext(), "Service Connect", Toast.LENGTH_SHORT)
-                                               .show();
+                                          Toast.makeText(getApplicationContext(), "Service Connect", Toast.LENGTH_SHORT).show();
                                       }
                                   };
 
@@ -115,10 +115,10 @@ public class ServiceDemo extends BaseActivity {
             @Override
             public void onClick(View v) {
                 if (myService != null) {
-                    Toast.makeText(getApplicationContext(), "增加成功，当前值为：" + myService.increaseCount(),
-                                   Toast.LENGTH_SHORT).show();
+                    ToastUtils.show(context, R.string.operate_value_success,
+                                    Integer.toString(myService.increaseCount()));
                 } else {
-                    Toast.makeText(getApplicationContext(), "请先绑定服务。", Toast.LENGTH_SHORT).show();
+                    ToastUtils.show(context, R.string.bind_service_tip, Toast.LENGTH_SHORT);
                 }
             }
         });
@@ -129,10 +129,9 @@ public class ServiceDemo extends BaseActivity {
             @Override
             public void onClick(View v) {
                 if (myService != null) {
-                    Toast.makeText(getApplicationContext(), "Service count:" + myService.getCount(), Toast.LENGTH_SHORT)
-                         .show();
+                    ToastUtils.show(context, R.string.operate_value_tip, Integer.toString(myService.increaseCount()));
                 } else {
-                    Toast.makeText(getApplicationContext(), "请先绑定服务。", Toast.LENGTH_SHORT).show();
+                    ToastUtils.show(context, R.string.bind_service_tip, Toast.LENGTH_SHORT);
                 }
             }
         });

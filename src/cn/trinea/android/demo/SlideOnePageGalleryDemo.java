@@ -3,7 +3,6 @@ package cn.trinea.android.demo;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -19,13 +18,10 @@ import cn.trinea.android.demo.adapter.ImageListAdapter;
  */
 public class SlideOnePageGalleryDemo extends BaseActivity {
 
-    private Context context;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState, R.layout.slide_one_page_gallery_demo);
 
-        context = getApplicationContext();
         SlideOnePageGallery imageGallery = (SlideOnePageGallery)findViewById(R.id.app_app_image_gallery);
         imageGallery.setOnItemClickListener(new OnItemClickListener() {
 
@@ -38,7 +34,6 @@ public class SlideOnePageGalleryDemo extends BaseActivity {
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                // Toast.makeText(context, Integer.toString(position), Toast.LENGTH_SHORT).show();
             }
 
             @Override

@@ -7,13 +7,14 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.content.LocalBroadcastManager;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.Toast;
+import android.widget.TextView;
 
 /**
- * BroadcastReceiver Demo，包括普通广播、本地广播、有序广播、粘性广播
+ * BroadcastReceiver Demo, include general broadcast, local broadcast, ordered broadcast,sticky broadcast
  * 
  * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2012-9-20
  */
@@ -32,66 +33,77 @@ public class BroadcastReceiverDemo extends BaseActivity {
     private OrderedBroadcastReceiverPriorityHigh   orderedReceiverHigh;
     private OrderedBroadcastReceiverPriorityMedium orderedReceiverMed;
     private OrderedBroadcastReceiverPriorityLow    orderedReceiverLow;
-    private MyBroadcastReceiver                    stickyReceiver;
+    private LocalBroadcastReceiver                 localReceiver;
+    private StickyBroadcastReceiver                stickyReceiver;
 
     private Button                                 sendGeneralBtn;
     private Button                                 sendLocalBtn;
     private Button                                 sendOrderedBtn;
     private Button                                 sendStickyBtn;
 
+    private TextView                               generalMsg;
+    private TextView                               localMsg;
+    private TextView                               orderedMsg;
+    private TextView                               stickyMsg;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState, R.layout.broadcast_receiver_demo);
 
-        generalReceiver = new MyBroadcastReceiver();
-        orderedReceiverHigh = new OrderedBroadcastReceiverPriorityHigh();
-        orderedReceiverMed = new OrderedBroadcastReceiverPriorityMedium();
-        orderedReceiverLow = new OrderedBroadcastReceiverPriorityLow();
-        stickyReceiver = new MyBroadcastReceiver();
+        initView();
+    }
 
-        sendGeneralBtn = (Button)findViewById(R.id.sendGeneralBroadcast);
+    private void initView() {
+        generalMsg = (TextView)findViewById(R.id.general_broadcast_msg);
+        localMsg = (TextView)findViewById(R.id.local_broadcast_msg);
+        orderedMsg = (TextView)findViewById(R.id.ordered_broadcast_msg);
+        stickyMsg = (TextView)findViewById(R.id.sticky_broadcast_msg);
+
+        sendGeneralBtn = (Button)findViewById(R.id.send_general_broadcast);
         sendGeneralBtn.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(ACTION_GENERAL_SEND);
-                i.putExtra(MSG_KEY, "普通广播告知好声音马上开始了啦");
+                i.putExtra(MSG_KEY, getString(R.string.general_broadcast_msg));
                 sendBroadcast(i);
             }
         });
 
-        sendLocalBtn = (Button)findViewById(R.id.sendLocalBroadcast);
+        sendLocalBtn = (Button)findViewById(R.id.send_local_broadcast);
         sendLocalBtn.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(ACTION_LOCAL_SEND);
-                i.putExtra(MSG_KEY, "Local广播告知好声音马上开始了啦");
+                i.putExtra(MSG_KEY, getString(R.string.local_broadcast_msg));
+                LocalBroadcastManager.getInstance(context).sendBroadcast(i);
             }
         });
 
-        sendOrderedBtn = (Button)findViewById(R.id.sendOrderedBroadcast);
+        sendOrderedBtn = (Button)findViewById(R.id.send_ordered_broadcast);
         sendOrderedBtn.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(ACTION_ORDERED_SEND);
-                i.putExtra(MSG_KEY, "有序广播告知好声音马上开始了啦");
-                // 发送本地广播，设置最终接受广播的Receiver
+                i.putExtra(MSG_KEY, getString(R.string.ordered_broadcast_msg));
                 sendOrderedBroadcast(i, null, new OrderedBroadcastReceiverResultReceiver(), null, Activity.RESULT_OK,
                                      null, null);
             }
         });
 
-        sendStickyBtn = (Button)findViewById(R.id.sendStickyBroadcast);
+        sendStickyBtn = (Button)findViewById(R.id.send_sticky_broadcast);
         sendStickyBtn.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(ACTION_STICKY_SEND);
-                i.putExtra(MSG_KEY, "Sticky广播告知好声音马上开始了啦");
+                i.putExtra(MSG_KEY, getString(R.string.sticky_broadcast_msg));
                 sendStickyBroadcast(i);
-                // 广播发送两秒后才注册Receiver
+                int waitTime = 2000;
+                stickyMsg.setText(String.format(getString(R.string.sticky_broadcast_wait_tip), waitTime));
+                // receiver broadcast after broadcast send 2 seconds
                 new Handler().postDelayed(new Runnable() {
 
                     @Override
@@ -99,27 +111,23 @@ public class BroadcastReceiverDemo extends BaseActivity {
                         isStickyRegister = true;
                         registerReceiver(stickyReceiver, new IntentFilter(ACTION_STICKY_SEND));
                     }
-                }, 2000);
+                }, waitTime);
             }
         });
     }
 
     @Override
-    public void onPause() {
-        super.onPause();
-        unregisterReceiver(generalReceiver);
-        unregisterReceiver(orderedReceiverHigh);
-        unregisterReceiver(orderedReceiverMed);
-        unregisterReceiver(orderedReceiverLow);
-        if (isStickyRegister) {
-            unregisterReceiver(stickyReceiver);
-        }
-    }
+    public void onStart() {
+        super.onStart();
+        generalReceiver = new MyBroadcastReceiver();
+        localReceiver = new LocalBroadcastReceiver();
+        orderedReceiverHigh = new OrderedBroadcastReceiverPriorityHigh();
+        orderedReceiverMed = new OrderedBroadcastReceiverPriorityMedium();
+        orderedReceiverLow = new OrderedBroadcastReceiverPriorityLow();
+        stickyReceiver = new StickyBroadcastReceiver();
 
-    @Override
-    public void onResume() {
-        super.onResume();
         registerReceiver(generalReceiver, new IntentFilter(ACTION_GENERAL_SEND));
+        LocalBroadcastManager.getInstance(context).registerReceiver(localReceiver, new IntentFilter(ACTION_LOCAL_SEND));
 
         IntentFilter high = new IntentFilter(ACTION_ORDERED_SEND);
         high.setPriority(100);
@@ -132,11 +140,42 @@ public class BroadcastReceiverDemo extends BaseActivity {
         registerReceiver(orderedReceiverLow, low);
     }
 
+    @Override
+    public void onStop() {
+        unregisterReceiver(generalReceiver);
+        LocalBroadcastManager.getInstance(context).unregisterReceiver(localReceiver);
+
+        unregisterReceiver(orderedReceiverHigh);
+        unregisterReceiver(orderedReceiverMed);
+        unregisterReceiver(orderedReceiverLow);
+        if (isStickyRegister) {
+            unregisterReceiver(stickyReceiver);
+        }
+
+        super.onStop();
+    }
+
     public class MyBroadcastReceiver extends BroadcastReceiver {
 
         @Override
         public void onReceive(Context context, Intent intent) {
-            Toast.makeText(context, intent.getStringExtra(MSG_KEY), Toast.LENGTH_SHORT).show();
+            generalMsg.setText(intent.getStringExtra(MSG_KEY));
+        }
+    }
+
+    public class StickyBroadcastReceiver extends BroadcastReceiver {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            stickyMsg.setText(intent.getStringExtra(MSG_KEY));
+        }
+    }
+
+    public class LocalBroadcastReceiver extends BroadcastReceiver {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            localMsg.setText(intent.getStringExtra(MSG_KEY));
         }
     }
 
@@ -144,8 +183,9 @@ public class BroadcastReceiverDemo extends BaseActivity {
 
         @Override
         public void onReceive(Context context, Intent intent) {
-            Toast.makeText(context, "优先级最高的接收者接收到广播，内容为：" + intent.getStringExtra(MSG_KEY), Toast.LENGTH_SHORT).show();
-            // 修改广播结果
+            orderedMsg.setText(String.format(getString(R.string.ordered_broadcast_high_tip),
+                                             intent.getStringExtra(MSG_KEY)));
+            // modify broadcast content
             getResultExtras(true).putString(RUSULT_MSG_KEY, "High");
         }
     }
@@ -154,12 +194,23 @@ public class BroadcastReceiverDemo extends BaseActivity {
 
         @Override
         public void onReceive(Context context, Intent intent) {
-            Toast.makeText(context,
-                           "优先级中等的接收者接收到广播，内容为：" + intent.getStringExtra(MSG_KEY) + "，上一个接收者为："
-                                   + getResultExtras(true).getString(RUSULT_MSG_KEY), Toast.LENGTH_SHORT).show();
-            getResultExtras(true).putString(RUSULT_MSG_KEY, "Medium");
-            // 取消广播
-            abortBroadcast();
+            boolean isCancel = false;
+            if (isCancel) {
+                orderedMsg.setText(orderedMsg.getText()
+                                   + "\r\n"
+                                   + String.format(getString(R.string.ordered_broadcast_medium_cancel_tip),
+                                                   intent.getStringExtra(MSG_KEY),
+                                                   getResultExtras(true).getString(RUSULT_MSG_KEY)));
+                // calcel broadcast
+                abortBroadcast();
+            } else {
+                orderedMsg.setText(orderedMsg.getText()
+                                   + "\r\n"
+                                   + String.format(getString(R.string.ordered_broadcast_medium_tip),
+                                                   intent.getStringExtra(MSG_KEY),
+                                                   getResultExtras(true).getString(RUSULT_MSG_KEY)));
+                getResultExtras(true).putString(RUSULT_MSG_KEY, "Medium");
+            }
         }
     }
 
@@ -167,9 +218,11 @@ public class BroadcastReceiverDemo extends BaseActivity {
 
         @Override
         public void onReceive(Context context, Intent intent) {
-            Toast.makeText(context,
-                           "优先级最低的接收者接收到广播，内容为：" + intent.getStringExtra(MSG_KEY) + "，上一个接收者为："
-                                   + getResultExtras(true).getString(RUSULT_MSG_KEY), Toast.LENGTH_SHORT).show();
+            orderedMsg.setText(orderedMsg.getText()
+                               + "\r\n"
+                               + String.format(getString(R.string.ordered_broadcast_low_tip),
+                                               intent.getStringExtra(MSG_KEY),
+                                               getResultExtras(true).getString(RUSULT_MSG_KEY)));
             getResultExtras(true).putString(RUSULT_MSG_KEY, "Low");
         }
     }
@@ -178,9 +231,11 @@ public class BroadcastReceiverDemo extends BaseActivity {
 
         @Override
         public void onReceive(Context context, Intent intent) {
-            Toast.makeText(context,
-                           "结果接收者接收到广播，内容为：" + intent.getStringExtra(MSG_KEY) + "，上一个接收者为："
-                                   + getResultExtras(true).getString(RUSULT_MSG_KEY), Toast.LENGTH_SHORT).show();
+            orderedMsg.setText(orderedMsg.getText()
+                               + "\r\n"
+                               + String.format(getString(R.string.ordered_broadcast_tip),
+                                               intent.getStringExtra(MSG_KEY),
+                                               getResultExtras(true).getString(RUSULT_MSG_KEY)));
         }
     }
 }

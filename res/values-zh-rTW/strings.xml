@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="send_general_broadcast">發送廣播</string>
+    <string name="send_local_broadcast">發送Local廣播</string>
+    <string name="send_ordered_broadcast">發送有序廣播</string>
+    <string name="send_sticky_broadcast">發送Sticky廣播</string>
+    <string name="general_broadcast_msg">普通廣播告知：好聲音馬上開始了啦</string>
+    <string name="local_broadcast_msg">Local廣播告知：好聲音馬上開始了啦</string>
+    <string name="ordered_broadcast_msg">有序廣播告知：好聲音馬上開始了啦</string>
+    <string name="sticky_broadcast_msg">Sticky廣播告知：好聲音馬上開始了啦</string>
+    <string name="sticky_broadcast_wait_tip">請等候<xliff:g>%1$s</xliff:g>毫秒</string>
+    <string name="ordered_broadcast_high_tip">優先級最高的接收者接收到廣播，內容爲： <xliff:g>%1$s</xliff:g></string>
+    <string name="ordered_broadcast_medium_tip">優先級中等的接收者接收到廣播，內容爲： <xliff:g>%1$s</xliff:g>，上一個接收者爲：<xliff:g>%2$s</xliff:g></string>
+    <string name="ordered_broadcast_medium_cancel_tip">優先級中等的接收者接收到廣播並已取消廣播繼續傳遞，內容爲： <xliff:g>%1$s</xliff:g>，上一個接收者爲：<xliff:g>%2$s</xliff:g></string>
+    <string name="ordered_broadcast_low_tip">優先級最低的接收者接收到廣播，內容爲： <xliff:g>%1$s</xliff:g>，上一個接收者爲：<xliff:g>%2$s</xliff:g></string>
+    <string name="ordered_broadcast_tip">默認優先級接收者接收到廣播，內容爲： <xliff:g>%1$s</xliff:g>，上一個接收者爲：<xliff:g>%2$s</xliff:g></string>
+    
+    <string name="start_general_service">啓動普通服務</string>
+    <string name="stop_general_service">停止普通服務</string>
+    <string name="start_intent_service">啓動Intent Service</string>
+    <string name="bound_service">綁定服務</string>
+    <string name="operate_bound_service">增加綁定服務的count屬性</string>
+    <string name="get_bound_service_pro">獲取綁定服務的count屬性</string>
+    <string name="unbound_service">解除綁定服務</string>
+    <string name="start_aidl_service">啓動AIDL服務</string>
+    <string name="stop_aidl_service">停止AIDL服務</string>
+    <string name="operate_value_success">增加成功，當前值爲： <xliff:g>%1$s</xliff:g></string>
+    <string name="operate_value_tip">當前值爲： <xliff:g>%1$s</xliff:g></string>
+    <string name="bind_service_tip">請先綁定服務</string>
+    
+    <string name="app_status_download">點擊下載美麗說APK</string>
+    <string name="app_status_downloaded">已下載過，點擊重新下載</string>
+    <string name="app_status_download_fail">下載失敗，點擊重新下載</string>
+    <string name="progress_tip">下載進度:</string>
+    <string name="download_notification_title">美麗說</string>
+    <string name="download_begin">開始下載</string>
+    <string name="download_fail">下載失敗</string>
+    <string name="app_status_pending">等待下載</string>
+    <string name="app_status_pause">暫停</string>
+    <string name="app_status_downloading">下載中</string>
+    <string name="tip_download_file">文件將下載到：</string>
+    
+    <string name="update_at">更新于:&#160;</string>
+    
+    <string name="profile">個人主頁:&#160;</string>
+    <string name="description">更多介紹:&#160;</string>
+    <string name="http_cache_get">獲取內容</string>
+    
+    <string name="desc_search_view">SearchView介紹及搜索提示實現</string>
+    <string name="desc_view_pager_multi_page">viewpager實現畫廊效果</string>
+    <string name="desc_download_manager">系統下載管理使用</string>
+    <string name="desc_slide_gallery">Gallery滑動一頁(一個Item)效果</string>
+    <string name="desc_view_pager">ViewPager、Fragment使用</string>
+    <string name="desc_service">Service介紹</string>
+    <string name="desc_broadcast_receiver">BroadcastReceiver介紹</string>
+    <string name="desc_border_scroll_view">BorderScrollViewDemo介紹</string>
+    <string name="desc_drop_down_listview">下拉刷新及底部加載更多Listview</string>
+    <string name="desc_image_cache">ImageCache使用</string>
+    <string name="desc_image_sdcard_cache">ImageSDCardCache使用</string>
+    <string name="desc_default">Trinea</string>
+</resources>

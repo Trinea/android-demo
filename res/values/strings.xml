@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <string name="app_name">Trinea Android Demo</string>
     
@@ -21,7 +21,17 @@
     <string name="send_local_broadcast">send local broadcast</string>
     <string name="send_ordered_broadcast">send ordered broadcast</string>
     <string name="send_sticky_broadcast">send sticky broadcast</string>
-        
+    <string name="general_broadcast_msg">general broadcast say: Voice of America begin</string>
+    <string name="local_broadcast_msg">local broadcast say: Voice of America begin</string>
+    <string name="ordered_broadcast_msg">ordered broadcast say: Voice of America begin</string>
+    <string name="sticky_broadcast_msg">sticky broadcast say: Voice of America begin</string>
+    <string name="sticky_broadcast_wait_tip">Please wait <xliff:g>%1$s</xliff:g> millseconds</string>
+    <string name="ordered_broadcast_high_tip">High priority receiver receive, content is: <xliff:g>%1$s</xliff:g></string>
+    <string name="ordered_broadcast_medium_tip">Medium priority receiver receive, content is: <xliff:g>%1$s</xliff:g>, last receiver is <xliff:g>%2$s</xliff:g></string>
+    <string name="ordered_broadcast_medium_cancel_tip">Medium priority receiver receive and calcel broadcast deliver, content is： <xliff:g>%1$s</xliff:g>, last receiver is <xliff:g>%2$s</xliff:g></string>
+    <string name="ordered_broadcast_low_tip">Low priority receiver receive, content is: <xliff:g>%1$s</xliff:g>, last receiver is <xliff:g>%2$s</xliff:g></string>
+    <string name="ordered_broadcast_tip">Default priority receiver receive, content is:  <xliff:g>%1$s</xliff:g>, last receiver is <xliff:g>%2$s</xliff:g></string>
+ 
     <string name="start_general_service">start general service</string>
     <string name="stop_general_service">stop_general service</string>
     <string name="start_intent_service">start intent service</string>
@@ -31,7 +41,10 @@
     <string name="unbound_service">unbound service</string>
     <string name="start_aidl_service">start aidl service</string>
     <string name="stop_aidl_service">stop aidl service</string>
-    
+    <string name="operate_value_success">Add value success, current value is:<xliff:g>%1$s</xliff:g></string>
+    <string name="operate_value_tip">Current value is: <xliff:g>%1$s</xliff:g></string>
+    <string name="bind_service_tip">Please bind service first</string>
+       
     <string name="app_status_download">click to download</string>
     <string name="app_status_downloaded">downloaded, click to download again</string>
     <string name="app_status_download_fail">download fail, click to download again</string>
