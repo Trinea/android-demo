@@ -163,6 +163,11 @@ public class ImageCacheDemo extends BaseActivity {
                                             .append(failedReason.getFailedType()).append(", failed reason is: ")
                                             .append(failedReason.getCause().getMessage()).toString());
             }
+
+            @Override
+            public void onGetNotInCache(String imageUrl, View view) {
+                // you can do something when image not in cache, for example set default image
+            }
         };
         IMAGE_CACHE.setOnImageCallbackListener(imageCallBack);
         IMAGE_CACHE.setCacheFullRemoveType(new RemoveTypeLastUsedTimeFirst<Drawable>());
