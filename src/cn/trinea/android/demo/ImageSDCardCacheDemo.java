@@ -105,6 +105,11 @@ public class ImageSDCardCacheDemo extends BaseActivity {
                 // Log.e(TAG_CACHE, "pre get image");
             }
 
+            @Override
+            public void onGetNotInCache(String imageUrl, View view) {
+                // you can do something when image not in cache, for example set default image
+            }
+
             /**
              * callback function after get image failed, run on ui thread
              * 
@@ -116,9 +121,7 @@ public class ImageSDCardCacheDemo extends BaseActivity {
             @Override
             public void onGetFailed(String imageUrl, String imagePath, View view, FailedReason failedReason) {
                 Log.e(TAG_CACHE,
-                      new StringBuilder(128).append("get image ").append(imageUrl).append(" error, failed type is: ")
-                                            .append(failedReason.getFailedType()).append(", failed reason is: ")
-                                            .append(failedReason.getCause().getMessage()).toString());
+                      new StringBuilder(128).append("get image ").append(imageUrl).append(" error, failed type is: ").append(failedReason.getFailedType()).append(", failed reason is: ").append(failedReason.getCause().getMessage()).toString());
             }
         };
         IMAGE_SD_CACHE.setOnImageSDCallbackListener(imageCallBack);
