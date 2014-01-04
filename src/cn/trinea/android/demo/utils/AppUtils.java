@@ -53,16 +53,16 @@ public class AppUtils {
         int prefixSrcId = R.string.description, contentSrcId;
         String url = null;
         if (sourClass == SearchViewDemo.class) {
-            url = "http://www.trinea.cn/android/android-searchview%E4%BB%8B%E7%BB%8D%E5%8F%8A%E6%90%9C%E7%B4%A2%E6%8F%90%E7%A4%BA%E5%AE%9E%E7%8E%B0/";
+            url = "http://www.trinea.cn/android/android-searchview-and-search-tips-impl/";
             contentSrcId = R.string.desc_search_view;
         } else if (sourClass == ViewPagerMulTiFragmentDemo.class) {
-            url = "http://www.trinea.cn/android/viewpager%E5%AE%9E%E7%8E%B0%E7%94%BB%E5%BB%8A%E4%B8%80%E5%B1%8F%E5%A4%9A%E4%B8%AAfragment%E6%95%88%E6%9E%9C/";
+            url = "http://www.trinea.cn/android/viewpager-multi-fragment-effect/";
             contentSrcId = R.string.desc_view_pager_multi_page;
         } else if (sourClass == DownloadManagerDemo.class) {
-            url = "http://www.trinea.cn/android/android系统下载管理downloadmanager功能介绍及使用示例";
+            url = "http://www.trinea.cn/android/android-downloadmanager/";
             contentSrcId = R.string.desc_download_manager;
         } else if (sourClass == SlideOnePageGalleryDemo.class) {
-            url = "http://www.trinea.cn/android/gallery滑动一页一个item效果/";
+            url = "http://www.trinea.cn/android/gallery-scroll-one-page/";
             contentSrcId = R.string.desc_slide_gallery;
         } else if (sourClass == ViewPagerDemo.class) {
             url = "http://www.cnblogs.com/trinea/archive/2012/11/23/2771273.html";
@@ -74,16 +74,16 @@ public class AppUtils {
             url = "http://www.cnblogs.com/trinea/archive/2012/11/09/2763182.html";
             contentSrcId = R.string.desc_broadcast_receiver;
         } else if (sourClass == BorderScrollViewDemo.class) {
-            url = "http://www.trinea.cn/?p=445";
+            url = "http://www.trinea.cn/android/on-bottom-load-more-scrollview/";
             contentSrcId = R.string.desc_border_scroll_view;
         } else if (sourClass == DropDownListViewDemo.class) {
-            url = "http://www.trinea.cn/?p=523";
+            url = "http://www.trinea.cn/android/dropdown-to-refresh-and-bottom-load-more-listview/";
             contentSrcId = R.string.desc_drop_down_listview;
         } else if (sourClass == ImageCacheDemo.class) {
-            url = "http://www.trinea.cn/?p=704";
+            url = "http://www.trinea.cn/android/android-imagecache/";
             contentSrcId = R.string.desc_image_cache;
         } else if (sourClass == ImageSDCardCacheDemo.class) {
-            url = "http://www.trinea.cn/?p=757";
+            url = "http://www.trinea.cn/android/android-imagesdcardcache/";
             contentSrcId = R.string.desc_image_sdcard_cache;
         } else {
             prefixSrcId = R.string.profile;

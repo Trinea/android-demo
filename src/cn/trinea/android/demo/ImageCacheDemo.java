@@ -24,7 +24,7 @@ import cn.trinea.android.common.util.FileUtils;
 /**
  * ImageCacheDemo
  * 
- * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2013-6-25
+ * @author <a href="http://www.trinea.cn/android/android-imagecache/" target="_blank">Trinea</a> 2013-6-25
  */
 public class ImageCacheDemo extends BaseActivity {
 

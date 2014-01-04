@@ -16,7 +16,7 @@ import cn.trinea.android.common.view.DropDownListView.OnDropDownListener;
 /**
  * DropDownListViewDemo
  * 
- * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2013-6-1
+ * @author <a href="http://www.trinea.cn/android/dropdown-to-refresh-and-bottom-load-more-listview/" target="_blank">Trinea</a> 2013-6-1
  */
 public class DropDownListViewDemo extends BaseActivity {
 

@@ -26,7 +26,7 @@ import cn.trinea.android.common.util.PreferencesUtils;
 /**
  * DownloadManagerDemo
  * 
- * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2013-5-9
+ * @author <a href="http://www.trinea.cn/android/android-downloadmanager/" target="_blank">Trinea</a> 2013-5-9
  */
 public class DownloadManagerDemo extends BaseActivity {
 

@@ -25,7 +25,7 @@ import cn.trinea.android.common.view.SlideOnePageGallery;
 /**
  * ImageSDCardCacheDemo
  * 
- * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2013-6-25
+ * @author <a href="http://www.trinea.cn/android/android-imagesdcardcache/" target="_blank">Trinea</a> 2013-6-25
  */
 public class ImageSDCardCacheDemo extends BaseActivity {
 

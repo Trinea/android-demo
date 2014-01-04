@@ -11,7 +11,7 @@ import cn.trinea.android.common.view.BorderScrollView.OnBorderListener;
 /**
  * BorderScrollViewDemo
  * 
- * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2013-5-27
+ * @author <a href="http://www.trinea.cn/android/on-bottom-load-more-scrollview/" target="_blank">Trinea</a> 2013-5-27
  */
 public class BorderScrollViewDemo extends BaseActivity {
 

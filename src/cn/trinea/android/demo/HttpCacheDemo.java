@@ -17,7 +17,7 @@ import cn.trinea.android.common.util.StringUtils;
 /**
  * HttpCacheDemo
  * 
- * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2013-11-18
+ * @author <a href="http://www.trinea.cn/android/android-http-cache/" target="_blank">Trinea</a> 2013-11-18
  */
 public class HttpCacheDemo extends BaseActivity {
 
