@@ -58,5 +58,6 @@
     <string name="desc_drop_down_listview">下拉刷新及底部加載更多Listview</string>
     <string name="desc_image_cache">ImageCache使用</string>
     <string name="desc_image_sdcard_cache">ImageSDCardCache使用</string>
+    <string name="desc_http_cache">HttpCache使用</string>
     <string name="desc_default">Trinea</string>
 </resources>

@@ -74,5 +74,6 @@
     <string name="desc_drop_down_listview">Drop Down And On Bottom Listview</string>
     <string name="desc_image_cache">ImageCache Usage</string>
     <string name="desc_image_sdcard_cache">ImageSDCardCache Usage</string>
+    <string name="desc_http_cache">HttpCache Usage</string>
     <string name="desc_default">Trinea</string>
 </resources>

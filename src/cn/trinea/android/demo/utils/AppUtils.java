@@ -12,6 +12,7 @@ import cn.trinea.android.demo.BorderScrollViewDemo;
 import cn.trinea.android.demo.BroadcastReceiverDemo;
 import cn.trinea.android.demo.DownloadManagerDemo;
 import cn.trinea.android.demo.DropDownListViewDemo;
+import cn.trinea.android.demo.HttpCacheDemo;
 import cn.trinea.android.demo.ImageCacheDemo;
 import cn.trinea.android.demo.ImageSDCardCacheDemo;
 import cn.trinea.android.demo.R;
@@ -85,6 +86,9 @@ public class AppUtils {
         } else if (sourClass == ImageSDCardCacheDemo.class) {
             url = "http://www.trinea.cn/android/android-imagesdcardcache/";
             contentSrcId = R.string.desc_image_sdcard_cache;
+        } else if (sourClass == HttpCacheDemo.class) {
+            url = "http://www.trinea.cn/android/android-http-cache/";
+            contentSrcId = R.string.desc_http_cache;
         } else {
             prefixSrcId = R.string.profile;
             url = "http://www.trinea.cn";
