@@ -34,10 +34,6 @@ public class MyService extends Service {
         return super.onStartCommand(intent, flags, startId);
     }
 
-    /**
-     * 服务被绑定时调用 返回值用于让调用者和服务通信，传入ServiceConnection的public void onServiceConnected(ComponentName name, IBinder
-     * service)函数第二个参数
-     */
     @Override
     public IBinder onBind(Intent intent) {
         Toast.makeText(this, "Service onBind", Toast.LENGTH_SHORT).show();

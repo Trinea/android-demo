@@ -25,7 +25,8 @@ import android.widget.TextView;
 /**
  * SearchViewDemo
  * 
- * @author <a href="http://www.trinea.cn/android/android-searchview-and-search-tips-impl/" target="_blank">Trinea</a> 2013-5-9
+ * @author <a href="http://www.trinea.cn/android/android-searchview-and-search-tips-impl/" target="_blank">Trinea</a>
+ * 2013-5-9
  */
 public class SearchViewDemo extends BaseActivity {
 
@@ -89,8 +90,7 @@ public class SearchViewDemo extends BaseActivity {
             }
         });
         Display display = getWindowManager().getDefaultDisplay();
-        LayoutParams params = new LayoutParams(display.getWidth()
-                                               - getResources().getDimensionPixelSize(R.dimen.search_view_margin_left),
+        LayoutParams params = new LayoutParams(LayoutParams.WRAP_CONTENT,
                                                LayoutParams.WRAP_CONTENT, Gravity.CENTER_VERTICAL | Gravity.RIGHT);
         bar.setCustomView(customActionBarView, params);
 

@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.ImageView.ScaleType;
 import cn.trinea.android.common.entity.FailedReason;
 import cn.trinea.android.common.service.impl.FileNameRuleImageUrl;
 import cn.trinea.android.common.service.impl.ImageSDCardCache;
@@ -94,6 +95,7 @@ public class ImageSDCardCacheDemo extends BaseActivity {
                     if (!isInCache) {
                         imageView.startAnimation(getInAlphaAnimation(2000));
                     }
+                    imageView.setScaleType(ScaleType.FIT_CENTER);
                 }
             }
 
@@ -111,7 +113,10 @@ public class ImageSDCardCacheDemo extends BaseActivity {
             @Override
             public void onGetNotInCache(String imageUrl, View view) {
                 // you can do something when image not in cache, for example set default image
-                // holder.imageView.setImageResource(R.drawable.trinea);
+                if (view != null && view instanceof ImageView) {
+                    ((ImageView)view).setImageResource(R.drawable.trinea);
+                    ((ImageView)view).setScaleType(ScaleType.CENTER);
+                }
             }
 
             /**

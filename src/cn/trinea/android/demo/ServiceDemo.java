@@ -125,7 +125,7 @@ public class ServiceDemo extends BaseActivity {
             @Override
             public void onClick(View v) {
                 if (myService != null) {
-                    ToastUtils.show(context, R.string.operate_value_tip, Integer.toString(myService.increaseCount()));
+                    ToastUtils.show(context, R.string.operate_value_tip, Integer.toString(myService.getCount()));
                 } else {
                     ToastUtils.show(context, R.string.bind_service_tip, Toast.LENGTH_SHORT);
                 }

@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/top_text"
                 android:gravity="center"
-                android:text="text1" />
+                android:text="@string/on_border_tip" />
 
             <TextView
                 android:id="@+id/text2"

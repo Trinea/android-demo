@@ -96,12 +96,10 @@ public class ImageCacheDemo extends BaseActivity {
             if (column > 0) {
                 layoutParams.addRule(RelativeLayout.RIGHT_OF, viewId - 1);
             }
+            layoutParams.height = IMAGEVIEW_DEFAULT_HEIGHT;
 
             // get image
-            if (!IMAGE_CACHE.get(imageUrl, imageView)) {
-                imageView.setImageResource(R.drawable.trinea);
-                layoutParams.height = IMAGEVIEW_DEFAULT_HEIGHT;
-            }
+            IMAGE_CACHE.get(imageUrl, imageView);
             count++;
         }
     }
@@ -174,7 +172,9 @@ public class ImageCacheDemo extends BaseActivity {
 
             @Override
             public void onGetNotInCache(String imageUrl, View view) {
-                // you can do something when image not in cache, for example set default image
+                if (view != null && view instanceof ImageView) {
+                    ((ImageView)view).setImageResource(R.drawable.trinea);
+                }
             }
         };
         IMAGE_CACHE.setOnImageCallbackListener(imageCallBack);

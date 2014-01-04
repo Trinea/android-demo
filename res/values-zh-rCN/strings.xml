@@ -47,6 +47,9 @@
     <string name="description">更多介绍:&#160;</string>
     <string name="http_cache_get">获取内容</string>
     
+    <string name="drop_down_tip">下拉刷新或滚动到底部加载更多</string>
+    <string name="on_border_tip">滚动到顶部或底部进行体验</string>
+    
     <string name="desc_search_view">SearchView介绍及搜索提示实现</string>
     <string name="desc_view_pager_multi_page">viewpager实现画廊效果</string>
     <string name="desc_download_manager">系统下载管理使用</string>

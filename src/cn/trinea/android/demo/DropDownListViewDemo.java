@@ -9,7 +9,10 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+import cn.trinea.android.common.util.ToastUtils;
 import cn.trinea.android.common.view.DropDownListView;
 import cn.trinea.android.common.view.DropDownListView.OnDropDownListener;
 
@@ -47,6 +50,13 @@ public class DropDownListViewDemo extends BaseActivity {
             @Override
             public void onClick(View v) {
                 new GetDataTask(false).execute();
+            }
+        });
+        listView.setOnItemClickListener(new OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ToastUtils.show(context, R.string.drop_down_tip);
             }
         });
 
