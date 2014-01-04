@@ -187,21 +187,16 @@ public class ImageCacheDemo extends BaseActivity {
 
     private void initImageUrlList() {
         imageUrlList = new ArrayList<String>();
-        imageUrlList.add("http://farm8.staticflickr.com/7403/9146300103_03423db0cc.jpg");
-        imageUrlList.add("http://farm4.staticflickr.com/3755/9148527824_6c156185ea.jpg");
         imageUrlList.add("http://farm8.staticflickr.com/7409/9148527822_36fa37d7ca_z.jpg");
-        imageUrlList.add("http://farm8.staticflickr.com/7403/9146300103_03423db0cc.jpg");
+        imageUrlList.add("http://farm4.staticflickr.com/3755/9148527824_6c156185ea.jpg");
         imageUrlList.add("http://farm8.staticflickr.com/7318/9148527808_e804baef0b.jpg");
-        imageUrlList.add("http://farm3.staticflickr.com/2857/9148527928_3063544889.jpg");
         imageUrlList.add("http://farm8.staticflickr.com/7318/9146300275_5fe995d123.jpg");
+        imageUrlList.add("http://farm8.staticflickr.com/7288/9146300469_bd3420c75b_z.jpg");
         imageUrlList.add("http://farm8.staticflickr.com/7351/9148527976_8a4e75ae87.jpg");
-        imageUrlList.add("http://farm4.staticflickr.com/3679/9146300263_5c2191232a_o.jpg");
-        imageUrlList.add("http://farm3.staticflickr.com/2863/9148527892_31f9377351_o.jpg");
         imageUrlList.add("http://farm3.staticflickr.com/2888/9148527996_f05118d7de_o.jpg");
+        imageUrlList.add("http://farm3.staticflickr.com/2863/9148527892_31f9377351_o.jpg");
         imageUrlList.add("http://farm8.staticflickr.com/7310/9148528008_8e8f51997a.jpg");
         imageUrlList.add("http://farm3.staticflickr.com/2849/9148528108_dfcda19507.jpg");
         imageUrlList.add("http://farm4.staticflickr.com/3739/9148528022_e9bf03058f.jpg");
-        imageUrlList.add("http://farm4.staticflickr.com/3696/9146300409_dfa9d7c603.jpg");
-        imageUrlList.add("http://farm8.staticflickr.com/7288/9146300469_bd3420c75b_z.jpg");
     }
 }

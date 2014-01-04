@@ -14,8 +14,6 @@ import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.ImageView.ScaleType;
-import android.widget.RelativeLayout.LayoutParams;
 import cn.trinea.android.common.entity.FailedReason;
 import cn.trinea.android.common.service.impl.FileNameRuleImageUrl;
 import cn.trinea.android.common.service.impl.ImageSDCardCache;
@@ -81,10 +79,6 @@ public class ImageSDCardCacheDemo extends BaseActivity {
                 option.inSampleSize = getImageScale(imagePath);
                 Bitmap bm = BitmapFactory.decodeFile(imagePath, option);
                 if (bm != null) {
-                    // auto set height
-                    LayoutParams imageParams = (LayoutParams)imageView.getLayoutParams();
-                    imageParams.height = imageParams.width * bm.getHeight() / bm.getWidth();
-                    imageView.setScaleType(ScaleType.FIT_XY);
                     imageView.setImageBitmap(bm);
 
                     // first time show with animation
@@ -108,6 +102,7 @@ public class ImageSDCardCacheDemo extends BaseActivity {
             @Override
             public void onGetNotInCache(String imageUrl, View view) {
                 // you can do something when image not in cache, for example set default image
+                // holder.imageView.setImageResource(R.drawable.trinea);
             }
 
             /**
@@ -121,7 +116,9 @@ public class ImageSDCardCacheDemo extends BaseActivity {
             @Override
             public void onGetFailed(String imageUrl, String imagePath, View view, FailedReason failedReason) {
                 Log.e(TAG_CACHE,
-                      new StringBuilder(128).append("get image ").append(imageUrl).append(" error, failed type is: ").append(failedReason.getFailedType()).append(", failed reason is: ").append(failedReason.getCause().getMessage()).toString());
+                      new StringBuilder(128).append("get image ").append(imageUrl).append(" error, failed type is: ")
+                                            .append(failedReason.getFailedType()).append(", failed reason is: ")
+                                            .append(failedReason.getCause().getMessage()).toString());
             }
         };
         IMAGE_SD_CACHE.setOnImageSDCallbackListener(imageCallBack);
@@ -166,22 +163,17 @@ public class ImageSDCardCacheDemo extends BaseActivity {
 
     private void initImageUrlList() {
         imageUrlList = new ArrayList<String>();
-        imageUrlList.add("http://farm8.staticflickr.com/7403/9146300103_03423db0cc.jpg");
         imageUrlList.add("http://farm4.staticflickr.com/3755/9148527824_6c156185ea.jpg");
         imageUrlList.add("http://farm8.staticflickr.com/7409/9148527822_36fa37d7ca_z.jpg");
-        imageUrlList.add("http://farm8.staticflickr.com/7403/9146300103_03423db0cc.jpg");
         imageUrlList.add("http://farm8.staticflickr.com/7318/9148527808_e804baef0b.jpg");
-        imageUrlList.add("http://farm3.staticflickr.com/2857/9148527928_3063544889.jpg");
         imageUrlList.add("http://farm8.staticflickr.com/7318/9146300275_5fe995d123.jpg");
         imageUrlList.add("http://farm8.staticflickr.com/7351/9148527976_8a4e75ae87.jpg");
-        imageUrlList.add("http://farm4.staticflickr.com/3679/9146300263_5c2191232a_o.jpg");
+        imageUrlList.add("http://farm8.staticflickr.com/7288/9146300469_bd3420c75b_z.jpg");
         imageUrlList.add("http://farm3.staticflickr.com/2863/9148527892_31f9377351_o.jpg");
         imageUrlList.add("http://farm3.staticflickr.com/2888/9148527996_f05118d7de_o.jpg");
         imageUrlList.add("http://farm8.staticflickr.com/7310/9148528008_8e8f51997a.jpg");
         imageUrlList.add("http://farm3.staticflickr.com/2849/9148528108_dfcda19507.jpg");
         imageUrlList.add("http://farm4.staticflickr.com/3739/9148528022_e9bf03058f.jpg");
-        imageUrlList.add("http://farm4.staticflickr.com/3696/9146300409_dfa9d7c603.jpg");
-        imageUrlList.add("http://farm8.staticflickr.com/7288/9146300469_bd3420c75b_z.jpg");
     }
 
     private static class ImageAdapter extends BaseAdapter {
@@ -221,11 +213,7 @@ public class ImageSDCardCacheDemo extends BaseActivity {
                 holder = (ViewHolder)convertView.getTag();
             }
 
-            // if not in cache, set default icon
-            if (!IMAGE_SD_CACHE.get(imageUrlList.get(position), holder.imageView)) {
-                holder.imageView.setImageResource(R.drawable.trinea);
-                holder.imageView.setScaleType(ScaleType.CENTER);
-            }
+            IMAGE_SD_CACHE.get(imageUrlList.get(position), holder.imageView);
             return convertView;
         }
 
