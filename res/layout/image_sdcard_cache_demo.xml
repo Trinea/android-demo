@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
 
-    <ScrollView
+    <cn.trinea.android.common.view.SlideOnePageGallery
+        android:id="@+id/app_app_image_gallery"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/trinea_info_layout" >
-
-        <RelativeLayout
-            android:id="@+id/image_sdcard_cache_parent_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="left"
-            android:paddingLeft="@dimen/dp_4" >
-        </RelativeLayout>
-    </ScrollView>
+        android:layout_above="@+id/trinea_info_layout"
+        android:layout_gravity="center"
+        android:spacing="4dp" />
 
     <include
         android:layout_width="match_parent"

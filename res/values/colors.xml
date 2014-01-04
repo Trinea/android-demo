@@ -8,4 +8,5 @@
     <!-- drop down list footer font color -->
     <color name="drop_down_list_footer_font_color">#5200D5</color>
 
+    <color name="divider_color">#D8D8D8</color>
 </resources>

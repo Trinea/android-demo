@@ -33,7 +33,7 @@ public class ImageSDCardCacheDemo extends BaseActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState, R.layout.slide_one_page_gallery_demo);
+        super.onCreate(savedInstanceState, R.layout.image_sdcard_cache_demo);
 
         Context context = getApplicationContext();
         initImageUrlList();
