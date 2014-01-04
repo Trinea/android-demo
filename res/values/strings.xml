@@ -66,7 +66,7 @@
     <string name="http_cache_get">Get content</string>
     
     <string name="drop_down_tip">Pull down to refresh or scroll to bottom to load more</string>
-    <string name="on_border_tip">Scroll to top or bottom to xperience</string>
+    <string name="on_border_tip">Scroll to top or bottom to experience</string>
         
     <string name="desc_search_view">SearchView Desc And Implement Search Tip</string>
     <string name="desc_view_pager_multi_page">Viewpager With Multi Page</string>
