@@ -58,6 +58,8 @@
     <string name="tip_download_file">file will be saved to sdcard, the path is: </string>
 
     <string name="update_at">updated at:&#160;</string>
+    <string name="github">GitHub</string>
+    <string name="github_tip">TrineaAndroidCommon on GitHub</string>
     
     <string name="profile">Profile:&#160;</string>
     <string name="description">Description:&#160;</string>

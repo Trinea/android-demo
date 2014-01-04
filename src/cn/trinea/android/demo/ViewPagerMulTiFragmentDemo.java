@@ -1,8 +1,5 @@
 package cn.trinea.android.demo;
 
-import com.google.analytics.tracking.android.EasyTracker;
-
-import android.app.ActionBar;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -52,9 +49,6 @@ public class ViewPagerMulTiFragmentDemo extends BaseActivity {
             }
         });
         indexText.setText(new StringBuilder().append("1/").append(TOTAL_COUNT));
-
-        ActionBar bar = getActionBar();
-        bar.setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE | ActionBar.DISPLAY_HOME_AS_UP);
     }
 
     /**
@@ -118,17 +112,5 @@ public class ViewPagerMulTiFragmentDemo extends BaseActivity {
             }
         }
         return false;
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        EasyTracker.getInstance(this).activityStart(this);
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        EasyTracker.getInstance(this).activityStop(this);
     }
 }

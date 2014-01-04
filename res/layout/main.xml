@@ -4,14 +4,18 @@
     android:layout_height="match_parent" >
 
     <ListView
-        android:id="@+id/simpleListView"
+        android:id="@+id/simple_list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="@dimen/dp_40"
+        android:layout_above="@+id/trinea_info_layout"
         android:paddingLeft="@dimen/dp_8"
         android:paddingRight="@dimen/dp_8"
         android:scrollbarStyle="outsideOverlay" />
 
-    <include layout="@layout/trinea_info" />
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        layout="@layout/trinea_info" />
 
 </RelativeLayout>

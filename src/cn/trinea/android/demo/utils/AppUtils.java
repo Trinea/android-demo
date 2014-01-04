@@ -1,6 +1,8 @@
 package cn.trinea.android.demo.utils;
 
+import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.text.Html;
@@ -15,6 +17,7 @@ import cn.trinea.android.demo.DropDownListViewDemo;
 import cn.trinea.android.demo.HttpCacheDemo;
 import cn.trinea.android.demo.ImageCacheDemo;
 import cn.trinea.android.demo.ImageSDCardCacheDemo;
+import cn.trinea.android.demo.MainActivity;
 import cn.trinea.android.demo.R;
 import cn.trinea.android.demo.SearchViewDemo;
 import cn.trinea.android.demo.ServiceDemo;
@@ -29,30 +32,63 @@ import cn.trinea.android.demo.ViewPagerMulTiFragmentDemo;
  */
 public class AppUtils {
 
-    public static void initTrineaInfo(final Activity activity, Button trineaInfoTv, Class sourClass) {
-        trineaInfoTv = (Button)activity.findViewById(R.id.trineaInfo);
-        if (trineaInfoTv == null) {
+    public static void init(Activity activity) {
+        initTrineaInfo(activity);
+        initActionBar(activity);
+    }
+
+    public static void urlOpen(Context context, String url) {
+        Uri uriUrl = Uri.parse(url);
+        Intent i = new Intent(Intent.ACTION_VIEW, uriUrl);
+        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(i);
+    }
+
+    private static void initActionBar(final Activity activity) {
+        if (activity == null) {
             return;
         }
 
-        final String[] result = getText(activity, sourClass);
+        ActionBar bar = activity.getActionBar();
+        if (activity instanceof MainActivity) {
+            bar.setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE | ActionBar.DISPLAY_SHOW_CUSTOM
+                                  | ActionBar.DISPLAY_SHOW_HOME);
+        } else {
+            bar.setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE | ActionBar.DISPLAY_HOME_AS_UP
+                                  | ActionBar.DISPLAY_SHOW_CUSTOM);
+        }
+    }
+
+    private static void initTrineaInfo(final Activity activity) {
+        if (activity == null) {
+            return;
+        }
+
+        Button trineaInfoTv = (Button)activity.findViewById(R.id.trinea_info);
+        final String[] result = getText(activity);
+        if (result == null) {
+            return;
+        }
+
         Spanned text = Html.fromHtml(result[1]);
         trineaInfoTv.setText(text);
         trineaInfoTv.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                Uri web = Uri.parse(result[0]);
-                Intent i = new Intent(Intent.ACTION_VIEW, web);
-                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                activity.startActivity(i);
+                urlOpen(activity, result[0]);
             }
         });
     }
 
-    public static String[] getText(Activity activity, Class sourClass) {
+    private static String[] getText(Activity activity) {
+        if (activity == null) {
+            return null;
+        }
+
         int prefixSrcId = R.string.description, contentSrcId;
         String url = null;
+        Class<?> sourClass = activity.getClass();
         if (sourClass == SearchViewDemo.class) {
             url = "http://www.trinea.cn/android/android-searchview-and-search-tips-impl/";
             contentSrcId = R.string.desc_search_view;
@@ -100,7 +136,6 @@ public class AppUtils {
     }
 
     private static String getUrlInfo(String prefix, String url, String content) {
-        return new StringBuilder().append(prefix).append("<a href=\"").append(url).append("\">").append(content)
-                                  .append("</a>").toString();
+        return new StringBuilder().append(prefix).append("<a href=\"").append(url).append("\">").append(content).append("</a>").toString();
     }
 }

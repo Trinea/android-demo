@@ -4,13 +4,17 @@
     android:layout_height="match_parent" >
 
     <TextView
-        android:id="@+id/searchInfo"
+        android:id="@+id/search_info"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_40"
         android:layout_marginLeft="8dp"
         android:gravity="center_vertical"
         android:textSize="18sp" />
 
-    <include layout="@layout/trinea_info" />
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        layout="@layout/trinea_info" />
 
 </RelativeLayout>

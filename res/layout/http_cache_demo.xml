@@ -29,7 +29,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/trinea_info_layout"
         android:layout_below="@+id/http_cache_info"
         android:layout_marginTop="@dimen/dp_4"
         android:paddingBottom="@dimen/dp_40" >
@@ -41,6 +42,10 @@
             android:paddingLeft="@dimen/dp_4" />
     </ScrollView>
 
-    <include layout="@layout/trinea_info" />
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        layout="@layout/trinea_info" />
 
 </RelativeLayout>

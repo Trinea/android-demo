@@ -6,7 +6,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="@dimen/dp_40" >
+        android:layout_above="@+id/trinea_info_layout" >
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -86,6 +86,10 @@
         </RelativeLayout>
     </ScrollView>
 
-    <include layout="@layout/trinea_info" />
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        layout="@layout/trinea_info" />
 
 </RelativeLayout>

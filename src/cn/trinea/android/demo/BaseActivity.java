@@ -1,11 +1,10 @@
 package cn.trinea.android.demo;
 
-import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 import cn.trinea.android.demo.utils.AppUtils;
 
 import com.google.analytics.tracking.android.EasyTracker;
@@ -18,17 +17,13 @@ import com.google.analytics.tracking.android.EasyTracker;
 public class BaseActivity extends Activity {
 
     protected Context context;
-    private Button    trineaInfoTv;
 
     protected void onCreate(Bundle savedInstanceState, int layoutResID) {
         super.onCreate(savedInstanceState);
         setContentView(layoutResID);
 
         context = getApplicationContext();
-        AppUtils.initTrineaInfo(this, trineaInfoTv, getClass());
-
-        ActionBar bar = getActionBar();
-        bar.setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE | ActionBar.DISPLAY_HOME_AS_UP);
+        AppUtils.init(this);
     }
 
     @Override
@@ -36,6 +31,10 @@ public class BaseActivity extends Activity {
         switch (item.getItemId()) {
             case android.R.id.home: {
                 onBackPressed();
+                return true;
+            }
+            case R.id.github: {
+                AppUtils.urlOpen(context, getString(R.string.github_trinea));
                 return true;
             }
         }
@@ -52,5 +51,11 @@ public class BaseActivity extends Activity {
     protected void onStop() {
         super.onStop();
         EasyTracker.getInstance(this).activityStop(this);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
     }
 }

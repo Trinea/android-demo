@@ -7,11 +7,15 @@
     <cn.trinea.android.common.view.SlideOnePageGallery
         android:id="@+id/app_app_image_gallery"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:paddingBottom="@dimen/dp_40"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/trinea_info_layout"
+        android:layout_gravity="center"
         android:spacing="4dp" />
 
-    <include layout="@layout/trinea_info" />
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        layout="@layout/trinea_info" />
 
 </RelativeLayout>

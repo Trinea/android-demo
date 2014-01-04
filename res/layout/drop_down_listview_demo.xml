@@ -7,13 +7,17 @@
     <cn.trinea.android.common.view.DropDownListView
         android:id="@+id/list_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/trinea_info_layout"
         android:drawSelectorOnTop="false"
-        android:paddingBottom="@dimen/dp_40"
+        listViewAttr:isAutoLoadOnBottom="true"
         listViewAttr:isDropDownStyle="true"
-        listViewAttr:isOnBottomStyle="true"
-        listViewAttr:isAutoLoadOnBottom="true" />
+        listViewAttr:isOnBottomStyle="true" />
 
-    <include layout="@layout/trinea_info" />
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        layout="@layout/trinea_info" />
 
 </RelativeLayout>

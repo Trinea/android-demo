@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cn.trinea.android.demo"
-    android:versionCode="35"
-    android:versionName="2.11.11" >
+    android:versionCode="37"
+    android:versionName="2.12.12" >
 
     <uses-sdk android:minSdkVersion="14" />
 
@@ -25,10 +25,10 @@
         </service>
 
         <activity
-            android:name=".DemoList"
+            android:name=".MainActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.Holo.Light" >
+            android:theme="@style/AppTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -49,7 +49,7 @@
             android:name=".DownloadManagerDemo"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/download_manager_demo_activity_title"
-            android:theme="@android:style/Theme.Holo.Light" >
+            android:theme="@style/AppTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -62,74 +62,77 @@
             android:name=".ImageSDCardCacheDemo"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/imagesdcardcache_demo_activity_title"
-            android:theme="@android:style/Theme.Holo.Light" >
+            android:theme="@style/AppTheme" >
         </activity>
         <activity
             android:name=".CanvasDrawDemo"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/imagecache_demo_activity_title"
-            android:theme="@android:style/Theme.Holo.Light" >
+            android:theme="@style/AppTheme" >
         </activity>
         <activity
             android:name=".HttpCacheDemo"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/httpcache_demo_activity_title"
-            android:theme="@android:style/Theme.Holo.Light" >
+            android:theme="@style/AppTheme" >
         </activity>
         <activity
             android:name=".ImageCacheDemo"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/imagecache_demo_activity_title"
-            android:theme="@android:style/Theme.Holo.Light" >
+            android:theme="@style/AppTheme" >
         </activity>
         <activity
             android:name=".DropDownListViewDemo"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/dropdownlistview_demo_activity_title"
-            android:theme="@android:style/Theme.Holo.Light" >
+            android:theme="@style/AppTheme" >
         </activity>
         <activity
             android:name=".BorderScrollViewDemo"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/borderscrollview_demo_activity_title"
-            android:theme="@android:style/Theme.Holo.Light" >
+            android:theme="@style/AppTheme" >
         </activity>
         <activity
             android:name=".SearchViewDemo"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/search_view_demo_activity_title"
-            android:theme="@android:style/Theme.Holo.Light" >
+            android:theme="@style/AppTheme" >
         </activity>
         <activity
             android:name=".ViewPagerMulTiFragmentDemo"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/view_pager_multi_fragment_demo_activity_title"
-            android:theme="@android:style/Theme.Holo.Light" >
+            android:theme="@style/AppTheme" >
         </activity>
         <activity
             android:name=".SlideOnePageGalleryDemo"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/slide_one_page_gallery_demo_activity_title"
-            android:theme="@android:style/Theme.Holo.Light" >
+            android:theme="@style/AppTheme" >
         </activity>
         <activity
             android:name=".ViewPagerDemo"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/view_pager_demo_activity_title"
-            android:theme="@android:style/Theme.Holo.Light" >
+            android:theme="@style/AppTheme" >
         </activity>
         <activity
             android:name=".BroadcastReceiverDemo"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/broadcastreceiver_demo_activity_title"
-            android:theme="@android:style/Theme.Holo.Light" >
+            android:theme="@style/AppTheme" >
         </activity>
         <activity
             android:name=".ServiceDemo"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/service_demo_activity_title"
-            android:theme="@android:style/Theme.Holo.Light" >
+            android:theme="@style/AppTheme" >
         </activity>
+        <activity
+            android:name="com.google.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
     </application>
 
 </manifest>

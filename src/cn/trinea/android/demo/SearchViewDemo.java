@@ -46,7 +46,7 @@ public class SearchViewDemo extends BaseActivity {
 
         inputMethodManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
         handler = new MyHandler();
-        searchInfo = (TextView)findViewById(R.id.searchInfo);
+        searchInfo = (TextView)findViewById(R.id.search_info);
 
         // set title style
         ActionBar bar = getActionBar();

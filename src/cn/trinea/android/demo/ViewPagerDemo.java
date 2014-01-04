@@ -3,9 +3,6 @@ package cn.trinea.android.demo;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.google.analytics.tracking.android.EasyTracker;
-
-import android.app.ActionBar;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -13,8 +10,9 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.MenuItem;
-import android.widget.Button;
 import cn.trinea.android.demo.utils.AppUtils;
+
+import com.google.analytics.tracking.android.EasyTracker;
 
 /**
  * ViewPager with Fragment
@@ -26,14 +24,12 @@ public class ViewPagerDemo extends FragmentActivity {
     List<Fragment> fragmentList = new ArrayList<Fragment>();
     List<String>   titleList    = new ArrayList<String>();
 
-    private Button trineaInfoTv;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_pager_demo);
 
-        AppUtils.initTrineaInfo(this, trineaInfoTv, getClass());
+        AppUtils.init(this);
 
         ViewPager vp = (ViewPager)findViewById(R.id.view_pager);
         for (int i = 0; i < 3; i++) {
@@ -48,8 +44,6 @@ public class ViewPagerDemo extends FragmentActivity {
 
         vp.setAdapter(new myPagerAdapter(getSupportFragmentManager(), fragmentList, titleList));
 
-        ActionBar bar = getActionBar();
-        bar.setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE | ActionBar.DISPLAY_HOME_AS_UP);
     }
 
     /**

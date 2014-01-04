@@ -7,7 +7,7 @@
         android:id="@+id/pager_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="@dimen/dp_40"
+        android:layout_above="@+id/trinea_info_layout"
         android:clipChildren="false"
         android:layerType="software" >
 
@@ -15,6 +15,7 @@
             android:id="@+id/view_pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_above="@+id/view_pager_index"
             android:layout_gravity="center"
             android:layout_marginLeft="@dimen/pager_margin"
             android:layout_marginRight="@dimen/pager_margin"
@@ -29,6 +30,10 @@
             android:textSize="14sp" />
     </RelativeLayout>
 
-    <include layout="@layout/trinea_info" />
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        layout="@layout/trinea_info" />
 
 </RelativeLayout>

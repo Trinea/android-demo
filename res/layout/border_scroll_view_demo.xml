@@ -7,7 +7,7 @@
         android:id="@+id/scroll_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="@dimen/dp_40"
+        android:layout_above="@+id/trinea_info_layout"
         android:orientation="vertical" >
 
         <RelativeLayout
@@ -47,6 +47,10 @@
         </RelativeLayout>
     </cn.trinea.android.common.view.BorderScrollView>
 
-    <include layout="@layout/trinea_info" />
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        layout="@layout/trinea_info" />
 
 </RelativeLayout>

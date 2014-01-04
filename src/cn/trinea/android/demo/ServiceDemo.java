@@ -1,6 +1,5 @@
 package cn.trinea.android.demo;
 
-import android.app.ActionBar;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -64,15 +63,12 @@ public class ServiceDemo extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState, R.layout.service_demo);
 
-        ActionBar bar = getActionBar();
-        bar.setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE | ActionBar.DISPLAY_HOME_AS_UP);
-
         myServiceIntent = new Intent(this, MyService.class);
         myAIDLServiceIntent = new Intent(ServiceDemo.this, MyAIDLService.class);
         myIntentServiceIntent = new Intent(ServiceDemo.this, MyIntentService.class);
         myIntentService2Intent = new Intent(ServiceDemo.this, MyIntentService.class);
 
-        startServiceBtn = (Button)findViewById(R.id.startGeneralService);
+        startServiceBtn = (Button)findViewById(R.id.start_general_service);
         startServiceBtn.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -81,7 +77,7 @@ public class ServiceDemo extends BaseActivity {
             }
         });
 
-        stopServiceBtn = (Button)findViewById(R.id.stopGeneralService);
+        stopServiceBtn = (Button)findViewById(R.id.stop_general_service);
         stopServiceBtn.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -90,7 +86,7 @@ public class ServiceDemo extends BaseActivity {
             }
         });
 
-        startIntentServiceBtn = (Button)findViewById(R.id.startIntentService);
+        startIntentServiceBtn = (Button)findViewById(R.id.start_intent_service);
         startIntentServiceBtn.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -100,7 +96,7 @@ public class ServiceDemo extends BaseActivity {
             }
         });
 
-        boundServiceBtn = (Button)findViewById(R.id.boundService);
+        boundServiceBtn = (Button)findViewById(R.id.bound_service);
         boundServiceBtn.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -109,7 +105,7 @@ public class ServiceDemo extends BaseActivity {
             }
         });
 
-        operateBoundServiceBtn = (Button)findViewById(R.id.operateBoundService);
+        operateBoundServiceBtn = (Button)findViewById(R.id.operate_bound_service);
         operateBoundServiceBtn.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -123,7 +119,7 @@ public class ServiceDemo extends BaseActivity {
             }
         });
 
-        getBoundServiceProBtn = (Button)findViewById(R.id.getBoundServicePro);
+        getBoundServiceProBtn = (Button)findViewById(R.id.get_bound_service_pro);
         getBoundServiceProBtn.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -136,7 +132,7 @@ public class ServiceDemo extends BaseActivity {
             }
         });
 
-        unboundServiceBtn = (Button)findViewById(R.id.unboundService);
+        unboundServiceBtn = (Button)findViewById(R.id.unbound_service);
         unboundServiceBtn.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -148,7 +144,7 @@ public class ServiceDemo extends BaseActivity {
             }
         });
 
-        startAIDLServiceBtn = (Button)findViewById(R.id.startAIDLService);
+        startAIDLServiceBtn = (Button)findViewById(R.id.start_aidl_service);
         startAIDLServiceBtn.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -157,7 +153,7 @@ public class ServiceDemo extends BaseActivity {
             }
         });
 
-        stopAIDLServiceBtn = (Button)findViewById(R.id.stopAIDLService);
+        stopAIDLServiceBtn = (Button)findViewById(R.id.stop_aidl_service);
         stopAIDLServiceBtn.setOnClickListener(new OnClickListener() {
 
             @Override

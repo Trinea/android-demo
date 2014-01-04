@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import cn.trinea.android.common.util.ListUtils;
 import cn.trinea.android.demo.R;
 
 /**
@@ -27,7 +28,7 @@ public class ImageListAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return isEmpty(imageResIdList) ? 0 : imageResIdList.size();
+        return ListUtils.getSize(imageResIdList);
     }
 
     @Override
@@ -74,6 +75,6 @@ public class ImageListAdapter extends BaseAdapter {
     }
 
     private boolean isEmpty(List<Integer> imageList) {
-        return imageList == null || imageList.size() == 0;
+        return ListUtils.isEmpty(imageList);
     }
 }

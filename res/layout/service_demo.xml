@@ -6,76 +6,80 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="@dimen/dp_40" >
+        android:layout_above="@+id/trinea_info_layout" >
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
 
             <Button
-                android:id="@+id/startGeneralService"
+                android:id="@+id/start_general_service"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/start_general_service" />
 
             <Button
-                android:id="@+id/stopGeneralService"
+                android:id="@+id/stop_general_service"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/startGeneralService"
+                android:layout_below="@+id/start_general_service"
                 android:text="@string/stop_general_service" />
 
             <Button
-                android:id="@+id/startIntentService"
+                android:id="@+id/start_intent_service"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/stopGeneralService"
+                android:layout_below="@+id/stop_general_service"
                 android:text="@string/start_intent_service" />
 
             <Button
-                android:id="@+id/boundService"
+                android:id="@+id/bound_service"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/startIntentService"
+                android:layout_below="@+id/start_intent_service"
                 android:text="@string/bound_service" />
 
             <Button
-                android:id="@+id/operateBoundService"
+                android:id="@+id/operate_bound_service"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/boundService"
+                android:layout_below="@+id/bound_service"
                 android:text="@string/operate_bound_service" />
 
             <Button
-                android:id="@+id/getBoundServicePro"
+                android:id="@+id/get_bound_service_pro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/operateBoundService"
+                android:layout_below="@+id/operate_bound_service"
                 android:text="@string/get_bound_service_pro" />
 
             <Button
-                android:id="@+id/unboundService"
+                android:id="@+id/unbound_service"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/getBoundServicePro"
+                android:layout_below="@+id/get_bound_service_pro"
                 android:text="@string/unbound_service" />
 
             <Button
-                android:id="@+id/startAIDLService"
+                android:id="@+id/start_aidl_service"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/unboundService"
+                android:layout_below="@+id/unbound_service"
                 android:text="@string/start_aidl_service" />
 
             <Button
-                android:id="@+id/stopAIDLService"
+                android:id="@+id/stop_aidl_service"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/startAIDLService"
+                android:layout_below="@+id/start_aidl_service"
                 android:text="@string/stop_aidl_service" />
         </RelativeLayout>
     </ScrollView>
 
-    <include layout="@layout/trinea_info" />
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        layout="@layout/trinea_info" />
 
 </RelativeLayout>

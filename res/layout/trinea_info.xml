@@ -1,9 +1,40 @@
-<Button xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/trineaInfo"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    android:id="@+id/trinea_info_layout"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/dp_40"
-    android:layout_alignParentBottom="true"
-    android:background="@drawable/button_press_selector"
-    android:gravity="center"
-    android:textColor="@android:color/darker_gray"
-    android:textSize="@dimen/sp_16" />
+    android:layout_height="wrap_content" >
+
+    <include
+        android:id="@+id/divider_1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_height"
+        layout="@layout/divider" />
+
+    <Button
+        android:id="@+id/trinea_info"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_below="@+id/divider_1"
+        android:background="@drawable/button_press_selector"
+        android:gravity="center"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="@dimen/sp_16" />
+
+    <include
+        android:id="@+id/divider_2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_height"
+        android:layout_below="@+id/trinea_info"
+        layout="@layout/divider" />
+
+    <com.google.ads.AdView
+        android:id="@+id/ad_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/divider_2"
+        ads:adSize="BANNER"
+        ads:adUnitId="a152c7c42a5a281"
+        ads:loadAdOnCreate="true" />
+
+</RelativeLayout>

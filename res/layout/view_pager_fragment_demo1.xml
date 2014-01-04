@@ -4,13 +4,13 @@
     android:layout_height="match_parent" >
 
     <TextView
-        android:id="@+id/viewPagerText"
+        android:id="@+id/view_pager_text"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center" />
 
     <ImageView
-        android:id="@+id/viewPagerImage"
+        android:id="@+id/view_pager_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"

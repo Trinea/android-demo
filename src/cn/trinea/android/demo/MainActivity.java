@@ -13,11 +13,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 /**
- * demo list list
+ * demo list
  * 
  * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2012-6-17
  */
-public class DemoList extends BaseActivity {
+public class MainActivity extends BaseActivity {
 
     public static final String    TAG      = "DemoList";
 
@@ -30,56 +30,53 @@ public class DemoList extends BaseActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState, R.layout.demo_list);
-
-        ActionBar bar = getActionBar();
-        bar.setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE | ActionBar.DISPLAY_SHOW_HOME);
+        super.onCreate(savedInstanceState, R.layout.main);
 
         LinkedList<String> mListItems = new LinkedList<String>();
         mListItems.addAll(Arrays.asList(mStrings));
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mListItems);
 
-        ListView demoListView = (ListView)findViewById(R.id.simpleListView);
+        ListView demoListView = (ListView)findViewById(R.id.simple_list_view);
         demoListView.setAdapter(adapter);
         demoListView.setOnItemClickListener(new OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position == total - 11) {
-                    Intent intent = new Intent(DemoList.this, HttpCacheDemo.class);
+                    Intent intent = new Intent(MainActivity.this, HttpCacheDemo.class);
                     startActivity(intent);
                 } else if (position == total - 10) {
-                    Intent intent = new Intent(DemoList.this, ImageSDCardCacheDemo.class);
+                    Intent intent = new Intent(MainActivity.this, ImageSDCardCacheDemo.class);
                     startActivity(intent);
                 } else if (position == total - 9) {
-                    Intent intent = new Intent(DemoList.this, ImageCacheDemo.class);
+                    Intent intent = new Intent(MainActivity.this, ImageCacheDemo.class);
                     startActivity(intent);
                 } else if (position == total - 8) {
-                    Intent intent = new Intent(DemoList.this, DropDownListViewDemo.class);
+                    Intent intent = new Intent(MainActivity.this, DropDownListViewDemo.class);
                     startActivity(intent);
                 } else if (position == total - 7) {
-                    Intent intent = new Intent(DemoList.this, BorderScrollViewDemo.class);
+                    Intent intent = new Intent(MainActivity.this, BorderScrollViewDemo.class);
                     startActivity(intent);
                 } else if (position == total - 6) {
-                    Intent intent = new Intent(DemoList.this, DownloadManagerDemo.class);
+                    Intent intent = new Intent(MainActivity.this, DownloadManagerDemo.class);
                     startActivity(intent);
                 } else if (position == total - 5) {
-                    Intent intent = new Intent(DemoList.this, SearchViewDemo.class);
+                    Intent intent = new Intent(MainActivity.this, SearchViewDemo.class);
                     startActivity(intent);
                 } else if (position == total - 4) {
-                    Intent intent = new Intent(DemoList.this, ViewPagerMulTiFragmentDemo.class);
+                    Intent intent = new Intent(MainActivity.this, ViewPagerMulTiFragmentDemo.class);
                     startActivity(intent);
                 } else if (position == total - 3) {
-                    Intent intent = new Intent(DemoList.this, SlideOnePageGalleryDemo.class);
+                    Intent intent = new Intent(MainActivity.this, SlideOnePageGalleryDemo.class);
                     startActivity(intent);
                 } else if (position == total - 2) {
-                    Intent intent = new Intent(DemoList.this, ViewPagerDemo.class);
+                    Intent intent = new Intent(MainActivity.this, ViewPagerDemo.class);
                     startActivity(intent);
                 } else if (position == total - 1) {
-                    Intent intent = new Intent(DemoList.this, ServiceDemo.class);
+                    Intent intent = new Intent(MainActivity.this, ServiceDemo.class);
                     startActivity(intent);
                 } else if (position == total) {
-                    Intent intent = new Intent(DemoList.this, BroadcastReceiverDemo.class);
+                    Intent intent = new Intent(MainActivity.this, BroadcastReceiverDemo.class);
                     startActivity(intent);
                 }
             }
