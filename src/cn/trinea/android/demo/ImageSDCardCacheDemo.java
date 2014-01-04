@@ -1,5 +1,6 @@
 package cn.trinea.android.demo;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,6 +8,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,7 +32,13 @@ import cn.trinea.android.common.view.SlideOnePageGallery;
 public class ImageSDCardCacheDemo extends BaseActivity {
 
     public static final String TAG_CACHE = "image_sdcard_cache";
-
+    /** cache folder path which be used when saving images **/
+    public static final String DEFAULT_CACHE_FOLDER     = new StringBuilder()
+                                                .append(Environment.getExternalStorageDirectory().getAbsolutePath())
+                                                .append(File.separator).append("Trinea").append(File.separator)
+                                                .append("AndroidDemo").append(File.separator)
+                                                .append("ImageSDCardCache").toString();
+    
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState, R.layout.image_sdcard_cache_demo);
@@ -39,6 +47,7 @@ public class ImageSDCardCacheDemo extends BaseActivity {
         initImageUrlList();
         IMAGE_SD_CACHE.initData(context, TAG_CACHE);
         IMAGE_SD_CACHE.setContext(context);
+        IMAGE_SD_CACHE.setCacheFolder(DEFAULT_CACHE_FOLDER);
 
         SlideOnePageGallery imageGallery = (SlideOnePageGallery)findViewById(R.id.app_app_image_gallery);
         ImageAdapter adapter = new ImageAdapter(context);

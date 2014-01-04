@@ -3,7 +3,6 @@ package cn.trinea.android.demo;
 import java.util.Arrays;
 import java.util.LinkedList;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;

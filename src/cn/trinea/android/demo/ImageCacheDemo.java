@@ -1,11 +1,13 @@
 package cn.trinea.android.demo;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.Display;
 import android.view.View;
@@ -33,7 +35,12 @@ public class ImageCacheDemo extends BaseActivity {
     /** imageView default height **/
     public static final int    IMAGEVIEW_DEFAULT_HEIGHT = 400;
     public static final String TAG_CACHE                = "image_cache";
-
+    /** cache folder path which be used when saving images **/
+    public static final String DEFAULT_CACHE_FOLDER     = new StringBuilder()
+                                                .append(Environment.getExternalStorageDirectory().getAbsolutePath())
+                                                .append(File.separator).append("Trinea").append(File.separator)
+                                                .append("AndroidDemo").append(File.separator)
+                                                .append("ImageCache").toString();
     private RelativeLayout     parentLayout;
 
     @Override
@@ -45,6 +52,7 @@ public class ImageCacheDemo extends BaseActivity {
         initImageUrlList();
         IMAGE_CACHE.initData(this, TAG_CACHE);
         IMAGE_CACHE.setContext(context);
+        IMAGE_CACHE.setCacheFolder(DEFAULT_CACHE_FOLDER);
         // intelligent compress image
         // IMAGE_CACHE.setCompressListener(new CompressListener() {
         //
