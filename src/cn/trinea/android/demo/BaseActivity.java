@@ -7,6 +7,8 @@ import android.view.MenuItem;
 import android.widget.Button;
 import cn.trinea.android.demo.utils.AppUtils;
 
+import com.google.analytics.tracking.android.EasyTracker;
+
 /**
  * BaseActivity
  * 
@@ -35,5 +37,17 @@ public class BaseActivity extends Activity {
             }
         }
         return false;
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        EasyTracker.getInstance(this).activityStart(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        EasyTracker.getInstance(this).activityStop(this);
     }
 }

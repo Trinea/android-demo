@@ -72,9 +72,4 @@ public class HttpCacheDemo extends BaseActivity {
             }
         });
     }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
 }

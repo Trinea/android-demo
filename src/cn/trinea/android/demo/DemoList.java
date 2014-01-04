@@ -84,24 +84,5 @@ public class DemoList extends BaseActivity {
                 }
             }
         });
-        // startActivity(new Intent(getApplicationContext(), ImageCacheDemo.class));
-        // startActivity(new Intent("android.intent.action.VIEW_DOWNLOADS"));
-        // Intent i = new Intent(Intent.ACTION_VIEW);
-        // i.setData(Uri.parse("http://122.193.23.191/down.myapp.com/android/48157/1176342/com.tencent.mm_261.apk?mkey=51cc3a56ba89d0cf&f=a821&p=.apk"));
-        // startActivity(i);
-        // final Context context = getApplicationContext();
-        // new Thread() {
-        //
-        // public void run() {
-        // DownloadManager.Request request = new Request(
-        // Uri.parse("http://122.193.23.191/down.myapp.com/android/48157/1176342/com.tencent.mm_261.apk?mkey=51cc3a56ba89d0cf&f=a821&p=.apk"));
-        // DownloadManager manager = (DownloadManager)context.getSystemService(Context.DOWNLOAD_SERVICE);
-        // manager.enqueue(request);
-        //
-        // Intent i = new Intent(DownloadManager.ACTION_VIEW_DOWNLOADS);
-        // i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        // startActivity(i);
-        // }
-        // }.start();
     }
 }
