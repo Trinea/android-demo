@@ -6,6 +6,7 @@ target/*
 gen
 bin/*
 proguard/*
+res/values/analytics.xml
 
 *.pydevproject
 .project
