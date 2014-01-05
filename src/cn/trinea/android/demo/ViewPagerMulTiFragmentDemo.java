@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -12,6 +13,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import cn.trinea.android.demo.utils.AppUtils;
+
+import com.google.analytics.tracking.android.EasyTracker;
 
 /**
  * ViewPager implements gallery effect
@@ -110,7 +114,29 @@ public class ViewPagerMulTiFragmentDemo extends BaseActivity {
                 onBackPressed();
                 return true;
             }
+            case R.id.github: {
+                AppUtils.urlOpen(context, getString(R.string.github_trinea));
+                return true;
+            }
         }
         return false;
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        EasyTracker.getInstance(this).activityStart(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        EasyTracker.getInstance(this).activityStop(this);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
     }
 }

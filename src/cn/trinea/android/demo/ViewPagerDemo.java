@@ -3,12 +3,14 @@ package cn.trinea.android.demo;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.Menu;
 import android.view.MenuItem;
 import cn.trinea.android.demo.utils.AppUtils;
 
@@ -21,18 +23,22 @@ import com.google.analytics.tracking.android.EasyTracker;
  */
 public class ViewPagerDemo extends FragmentActivity {
 
-    List<Fragment> fragmentList = new ArrayList<Fragment>();
-    List<String>   titleList    = new ArrayList<String>();
+    private static int TOTAL_COUNT = 3;
+
+    private Context    context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_pager_demo);
 
+        context = getApplicationContext();
         AppUtils.init(this);
 
         ViewPager vp = (ViewPager)findViewById(R.id.view_pager);
-        for (int i = 0; i < 3; i++) {
+        List<Fragment> fragmentList = new ArrayList<Fragment>();
+        List<String> titleList = new ArrayList<String>();
+        for (int i = 0; i < TOTAL_COUNT; i++) {
             ViewPagerFragment viewPagerFragment1 = new ViewPagerFragment();
             Bundle bundle = new Bundle();
             bundle.putInt("upImageId", 0);
@@ -85,6 +91,10 @@ public class ViewPagerDemo extends FragmentActivity {
                 onBackPressed();
                 return true;
             }
+            case R.id.github: {
+                AppUtils.urlOpen(context, getString(R.string.github_trinea));
+                return true;
+            }
         }
         return false;
     }
@@ -99,5 +109,11 @@ public class ViewPagerDemo extends FragmentActivity {
     protected void onStop() {
         super.onStop();
         EasyTracker.getInstance(this).activityStop(this);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
     }
 }

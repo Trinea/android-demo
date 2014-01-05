@@ -5,6 +5,7 @@ target/*
 .svn
 gen
 bin/*
+proguard/*
 
 *.pydevproject
 .project
@@ -19,6 +20,7 @@ local.properties
 .classpath
 .settings/
 .loadpath
+*analytics.xml
 
 # External tool builders
 .externalToolBuilders/
