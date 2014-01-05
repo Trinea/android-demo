@@ -61,5 +61,5 @@
 使用示例：[BroadcastReceiver Demo](http://www.cnblogs.com/trinea/archive/2012/11/09/2763182.html)   
 
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Trinea/androiddemo/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/9aacf0f4a496e0647f415dbfa2df098a "githalytics.com")](http://githalytics.com/Trinea/android-demo)
 
