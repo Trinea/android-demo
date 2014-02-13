@@ -12,6 +12,7 @@ import android.widget.TextView;
 import cn.trinea.android.common.entity.HttpResponse;
 import cn.trinea.android.common.service.HttpCache;
 import cn.trinea.android.common.service.HttpCache.HttpCacheListener;
+import cn.trinea.android.common.util.CacheManager;
 import cn.trinea.android.common.util.StringUtils;
 
 /**
@@ -35,7 +36,10 @@ public class HttpCacheDemo extends BaseActivity {
         super.onCreate(savedInstanceState, R.layout.http_cache_demo);
 
         Context context = getApplicationContext();
-        httpCache = new HttpCache(context);
+        // get the singleton instance of HttpCache
+        httpCache = CacheManager.getHttpCache(context);
+        // or create a new HttpCache, like this:
+        // httpCache = new HttpCache(context);
         httpUrlET = (EditText)findViewById(R.id.http_cache_url);
         httpGetBT = (Button)findViewById(R.id.http_cache_get);
         httpGetContentTV = (TextView)findViewById(R.id.http_cache_content);

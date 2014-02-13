@@ -19,16 +19,19 @@ import cn.trinea.android.common.view.DropDownListView.OnDropDownListener;
 /**
  * DropDownListViewDemo
  * 
- * @author <a href="http://www.trinea.cn/android/dropdown-to-refresh-and-bottom-load-more-listview/" target="_blank">Trinea</a> 2013-6-1
+ * @author <a href="http://www.trinea.cn/android/dropdown-to-refresh-and-bottom-load-more-listview/"
+ * target="_blank">Trinea</a> 2013-6-1
  */
 public class DropDownListViewDemo extends BaseActivity {
 
-    private LinkedList<String>   listItems = null;
-    private DropDownListView     listView  = null;
+    private LinkedList<String>   listItems           = null;
+    private DropDownListView     listView            = null;
     private ArrayAdapter<String> adapter;
 
-    private String[]             mStrings  = { "Aaaaaa", "Bbbbbb", "Cccccc", "Dddddd", "Eeeeee", "Ffffff", "Gggggg",
-            "Hhhhhh", "Iiiiii", "Jjjjjj", "Kkkkkk", "Llllll", "Mmmmmm", "Nnnnnn", };
+    private String[]             mStrings            = { "Aaaaaa", "Bbbbbb", "Cccccc", "Dddddd", "Eeeeee", "Ffffff",
+            "Gggggg", "Hhhhhh", "Iiiiii", "Jjjjjj", "Kkkkkk", "Llllll", "Mmmmmm", "Nnnnnn", };
+    public static final int      MORE_DATA_MAX_COUNT = 3;
+    public int                   moreDataCount       = 0;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -59,6 +62,7 @@ public class DropDownListViewDemo extends BaseActivity {
                 ToastUtils.show(context, R.string.drop_down_tip);
             }
         });
+        // listView.setShowFooterWhenNoMore(true);
 
         listItems = new LinkedList<String>();
         listItems.addAll(Arrays.asList(mStrings));
@@ -95,8 +99,13 @@ public class DropDownListViewDemo extends BaseActivity {
                 SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd HH:mm:ss");
                 listView.onDropDownComplete(getString(R.string.update_at) + dateFormat.format(new Date()));
             } else {
+                moreDataCount++;
                 listItems.add("Added after on bottom");
                 adapter.notifyDataSetChanged();
+
+                if (moreDataCount >= MORE_DATA_MAX_COUNT) {
+                    listView.setHasMore(false);
+                }
 
                 // should call onBottomComplete function of DropDownListView at end of on bottom complete.
                 listView.onBottomComplete();
