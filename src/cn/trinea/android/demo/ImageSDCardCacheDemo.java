@@ -63,11 +63,11 @@ public class ImageSDCardCacheDemo extends BaseActivity {
         super.onDestroy();
     }
 
-    /** icon cache **/
+    /** image cache **/
     public static final ImageSDCardCache IMAGE_SD_CACHE = new ImageSDCardCache();
 
     static {
-        /** init icon cache **/
+        /** init image cache **/
         OnImageSDCallbackListener imageCallBack = new OnImageSDCallbackListener() {
 
             private static final long serialVersionUID = 1L;
