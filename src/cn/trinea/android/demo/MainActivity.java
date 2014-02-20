@@ -20,7 +20,7 @@ public class MainActivity extends BaseActivity {
 
     public static final String    TAG      = "DemoList";
 
-    private static final String[] mStrings = { "HttpCache Demo", "ImageSDCardCache Demo", "ImageCache Demo",
+    private static final String[] mStrings = { "HttpCache Demo", "ImageCache Demo", "ImageSDCardCache Demo",
             "DropDownListView Demo", "onBottom onTop ScrollView Demo", "DownloadManager Demo", "SearchView Demo",
             "ViewPager Multi Fragment Demo", "Slide One Page Gallery Demo", "ViewPager Demo", "Service Demo",
             "BroadcastReceiver Demo"      };
@@ -42,43 +42,36 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position == total - 11) {
-                    Intent intent = new Intent(MainActivity.this, HttpCacheDemo.class);
-                    startActivity(intent);
+                    startActivity(HttpCacheDemo.class);
                 } else if (position == total - 10) {
-                    Intent intent = new Intent(MainActivity.this, ImageSDCardCacheDemo.class);
-                    startActivity(intent);
+                    startActivity(ImageCacheDemo.class);
                 } else if (position == total - 9) {
-                    Intent intent = new Intent(MainActivity.this, ImageCacheDemo.class);
-                    startActivity(intent);
+                    startActivity(ImageSDCardCacheDemo.class);
                 } else if (position == total - 8) {
-                    Intent intent = new Intent(MainActivity.this, DropDownListViewDemo.class);
-                    startActivity(intent);
+                    startActivity(DropDownListViewDemo.class);
                 } else if (position == total - 7) {
-                    Intent intent = new Intent(MainActivity.this, BorderScrollViewDemo.class);
-                    startActivity(intent);
+                    startActivity(BorderScrollViewDemo.class);
                 } else if (position == total - 6) {
-                    Intent intent = new Intent(MainActivity.this, DownloadManagerDemo.class);
-                    startActivity(intent);
+                    startActivity(DownloadManagerDemo.class);
                 } else if (position == total - 5) {
-                    Intent intent = new Intent(MainActivity.this, SearchViewDemo.class);
-                    startActivity(intent);
+                    startActivity(SearchViewDemo.class);
                 } else if (position == total - 4) {
-                    Intent intent = new Intent(MainActivity.this, ViewPagerMulTiFragmentDemo.class);
-                    startActivity(intent);
+                    startActivity(ViewPagerMulTiFragmentDemo.class);
                 } else if (position == total - 3) {
-                    Intent intent = new Intent(MainActivity.this, SlideOnePageGalleryDemo.class);
-                    startActivity(intent);
+                    startActivity(SlideOnePageGalleryDemo.class);
                 } else if (position == total - 2) {
-                    Intent intent = new Intent(MainActivity.this, ViewPagerDemo.class);
-                    startActivity(intent);
+                    startActivity(ViewPagerDemo.class);
                 } else if (position == total - 1) {
-                    Intent intent = new Intent(MainActivity.this, ServiceDemo.class);
-                    startActivity(intent);
+                    startActivity(ServiceDemo.class);
                 } else if (position == total) {
-                    Intent intent = new Intent(MainActivity.this, BroadcastReceiverDemo.class);
-                    startActivity(intent);
+                    startActivity(BroadcastReceiverDemo.class);
                 }
             }
         });
+    }
+
+    private void startActivity(Class<?> cls) {
+        Intent intent = new Intent(MainActivity.this, cls);
+        startActivity(intent);
     }
 }

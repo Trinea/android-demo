@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -18,10 +18,8 @@ import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 import cn.trinea.android.common.entity.FailedReason;
 import cn.trinea.android.common.service.impl.ImageCache;
-import cn.trinea.android.common.service.impl.ImageCache.CompressListener;
 import cn.trinea.android.common.service.impl.ImageMemoryCache.OnImageCallbackListener;
 import cn.trinea.android.common.service.impl.RemoveTypeLastUsedTimeFirst;
-import cn.trinea.android.common.util.FileUtils;
 
 /**
  * ImageCacheDemo
@@ -36,11 +34,13 @@ public class ImageCacheDemo extends BaseActivity {
     public static final int    IMAGEVIEW_DEFAULT_HEIGHT = 400;
     public static final String TAG_CACHE                = "image_cache";
     /** cache folder path which be used when saving images **/
-    public static final String DEFAULT_CACHE_FOLDER     = new StringBuilder()
-                                                .append(Environment.getExternalStorageDirectory().getAbsolutePath())
-                                                .append(File.separator).append("Trinea").append(File.separator)
-                                                .append("AndroidDemo").append(File.separator)
-                                                .append("ImageCache").toString();
+    public static final String DEFAULT_CACHE_FOLDER     = new StringBuilder().append(Environment.getExternalStorageDirectory()
+                                                                                                .getAbsolutePath())
+                                                                             .append(File.separator).append("Trinea")
+                                                                             .append(File.separator)
+                                                                             .append("AndroidDemo")
+                                                                             .append(File.separator)
+                                                                             .append("ImageCache").toString();
     private RelativeLayout     parentLayout;
 
     @Override
@@ -121,15 +121,15 @@ public class ImageCacheDemo extends BaseActivity {
              * callback function after get image successfully, run on ui thread
              * 
              * @param imageUrl imageUrl
-             * @param imageDrawable drawable
+             * @param loadedImage bitmap
              * @param view view need the image
              * @param isInCache whether already in cache or got realtime
              */
             @Override
-            public void onGetSuccess(String imageUrl, Drawable imageDrawable, View view, boolean isInCache) {
-                if (view != null && imageDrawable != null) {
+            public void onGetSuccess(String imageUrl, Bitmap loadedImage, View view, boolean isInCache) {
+                if (view != null && loadedImage != null) {
                     ImageView imageView = (ImageView)view;
-                    imageView.setImageDrawable(imageDrawable);
+                    imageView.setImageBitmap(loadedImage);
                     // first time show with animation
                     if (!isInCache) {
                         imageView.startAnimation(getInAlphaAnimation(2000));
@@ -137,8 +137,7 @@ public class ImageCacheDemo extends BaseActivity {
 
                     // auto set height accroding to rate between height and weight
                     LayoutParams imageParams = (LayoutParams)imageView.getLayoutParams();
-                    imageParams.height = imageParams.width * imageDrawable.getIntrinsicHeight()
-                                         / imageDrawable.getIntrinsicWidth();
+                    imageParams.height = imageParams.width * loadedImage.getHeight() / loadedImage.getWidth();
                     imageView.setScaleType(ScaleType.FIT_XY);
                 }
             }
@@ -158,12 +157,12 @@ public class ImageCacheDemo extends BaseActivity {
              * callback function after get image failed, run on ui thread
              * 
              * @param imageUrl imageUrl
-             * @param imageDrawable drawable
+             * @param loadedImage bitmap
              * @param view view need the image
              * @param failedReason failed reason for get image
              */
             @Override
-            public void onGetFailed(String imageUrl, Drawable imageDrawable, View view, FailedReason failedReason) {
+            public void onGetFailed(String imageUrl, Bitmap loadedImage, View view, FailedReason failedReason) {
                 Log.e(TAG_CACHE,
                       new StringBuilder(128).append("get image ").append(imageUrl).append(" error, failed type is: ")
                                             .append(failedReason.getFailedType()).append(", failed reason is: ")
@@ -178,11 +177,16 @@ public class ImageCacheDemo extends BaseActivity {
             }
         };
         IMAGE_CACHE.setOnImageCallbackListener(imageCallBack);
-        IMAGE_CACHE.setCacheFullRemoveType(new RemoveTypeLastUsedTimeFirst<Drawable>());
+        IMAGE_CACHE.setCacheFullRemoveType(new RemoveTypeLastUsedTimeFirst<Bitmap>());
 
         IMAGE_CACHE.setHttpReadTimeOut(10000);
         IMAGE_CACHE.setOpenWaitingQueue(true);
         IMAGE_CACHE.setValidTime(-1);
+        /**
+         * close connection, default is connect keep-alive to reuse connection. if image is from different server, you
+         * can set this
+         */
+        // IMAGE_CACHE.setRequestProperty("Connection", "false");
     }
 
     public static AlphaAnimation getInAlphaAnimation(long durationMillis) {

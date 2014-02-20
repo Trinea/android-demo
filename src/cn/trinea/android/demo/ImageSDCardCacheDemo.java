@@ -32,14 +32,15 @@ import cn.trinea.android.common.view.SlideOnePageGallery;
  */
 public class ImageSDCardCacheDemo extends BaseActivity {
 
-    public static final String TAG_CACHE = "image_sdcard_cache";
+    public static final String TAG_CACHE            = "image_sdcard_cache";
     /** cache folder path which be used when saving images **/
-    public static final String DEFAULT_CACHE_FOLDER     = new StringBuilder()
-                                                .append(Environment.getExternalStorageDirectory().getAbsolutePath())
-                                                .append(File.separator).append("Trinea").append(File.separator)
-                                                .append("AndroidDemo").append(File.separator)
-                                                .append("ImageSDCardCache").toString();
-    
+    public static final String DEFAULT_CACHE_FOLDER = new StringBuilder().append(Environment.getExternalStorageDirectory()
+                                                                                            .getAbsolutePath())
+                                                                         .append(File.separator).append("Trinea")
+                                                                         .append(File.separator).append("AndroidDemo")
+                                                                         .append(File.separator)
+                                                                         .append("ImageSDCardCache").toString();
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState, R.layout.image_sdcard_cache_demo);
@@ -142,6 +143,11 @@ public class ImageSDCardCacheDemo extends BaseActivity {
         IMAGE_SD_CACHE.setHttpReadTimeOut(10000);
         IMAGE_SD_CACHE.setOpenWaitingQueue(true);
         IMAGE_SD_CACHE.setValidTime(-1);
+        /**
+         * close connection, default is connect keep-alive to reuse connection. if image is from different server, you
+         * can set this
+         */
+        // IMAGE_SD_CACHE.setRequestProperty("Connection", "false");
     }
 
     public static AlphaAnimation getInAlphaAnimation(long durationMillis) {
