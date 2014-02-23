@@ -41,6 +41,9 @@
     <string name="app_status_downloading">下載中</string>
     <string name="tip_download_file">文件將下載到：</string>
     
+    <string name="auto_scroll_view_pager_single">單個ViewPager</string>
+    <string name="auto_scroll_view_pager_inner">ViewPager嵌套</string>
+    
     <string name="update_at">更新于:&#160;</string>
     
     <string name="profile">個人主頁:&#160;</string>
