@@ -10,11 +10,11 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 
 /**
- * ViewPager with Fragment
+ * AutoScrollViewPagerSingleDemo
  * 
- * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2012-11-14
+ * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2014-2-22
  */
-public class ViewPagerDemo extends BaseFragmentActivity {
+public class AutoScrollViewPagerInnerDemo extends BaseFragmentActivity {
 
     private static int TOTAL_COUNT = 3;
 
@@ -26,17 +26,16 @@ public class ViewPagerDemo extends BaseFragmentActivity {
         List<Fragment> fragmentList = new ArrayList<Fragment>();
         List<String> titleList = new ArrayList<String>();
         for (int i = 0; i < TOTAL_COUNT; i++) {
-            ViewPagerFragment viewPagerFragment1 = new ViewPagerFragment();
+            ImagePagerFragment viewPagerFragment1 = new ImagePagerFragment();
             Bundle bundle = new Bundle();
-            bundle.putInt("upImageId", 0);
-            bundle.putString("text", "Page " + i);
+            bundle.putInt("index", i);
             viewPagerFragment1.setArguments(bundle);
             titleList.add("title " + i);
             fragmentList.add(viewPagerFragment1);
         }
 
         vp.setAdapter(new myPagerAdapter(getSupportFragmentManager(), fragmentList, titleList));
-
+        vp.setCurrentItem(1);
     }
 
     /**

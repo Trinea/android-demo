@@ -20,10 +20,10 @@ public class MainActivity extends BaseActivity {
 
     public static final String    TAG      = "DemoList";
 
-    private static final String[] mStrings = { "HttpCache Demo", "ImageCache Demo", "ImageSDCardCache Demo",
-            "DropDownListView Demo", "onBottom onTop ScrollView Demo", "DownloadManager Demo", "SearchView Demo",
-            "ViewPager Multi Fragment Demo", "Slide One Page Gallery Demo", "ViewPager Demo", "Service Demo",
-            "BroadcastReceiver Demo"      };
+    private static final String[] mStrings = { "AutoScrollViewPager Demo", "HttpCache Demo", "ImageCache Demo",
+            "ImageSDCardCache Demo", "DropDownListView Demo", "onBottom onTop ScrollView Demo", "DownloadManager Demo",
+            "SearchView Demo", "ViewPager Multi Fragment Demo", "Slide One Page Gallery Demo", "ViewPager Demo",
+            "Service Demo", "BroadcastReceiver Demo" };
 
     private static final int      total    = mStrings.length - 1;
 
@@ -41,7 +41,9 @@ public class MainActivity extends BaseActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (position == total - 11) {
+                if (position == total - 12) {
+                    startActivity(AutoScrollViewPagerDemo.class);
+                } else if (position == total - 11) {
                     startActivity(HttpCacheDemo.class);
                 } else if (position == total - 10) {
                     startActivity(ImageCacheDemo.class);
