@@ -4,7 +4,7 @@
 
 <strong>依赖</strong>：<a title="包含缓存 个性化View 工具类库" href="https://github.com/Trinea/android-common" target="_blank">trinea-android-common</a>&nbsp;&nbsp;&nbsp;&nbsp;<a title="自动滚动 循环轮播的ViewPager" href="https://github.com/Trinea/android-auto-scroll-view-pager" target="_blank">android-auto-scroll-view-pager</a>。  
 
-微博：<a title="Android技术及移动互联网分享" href="http://weibo.com/trinea" target="_blank">Trinea</a>&nbsp;&nbsp;&nbsp;&nbsp;主页：<a title="关注与Android Java 性能优化 开源项目" href="http://www.trinea.cn/" target="_blank">www.trinea.cn</a>&nbsp;&nbsp;&nbsp;&nbsp;邮箱：<a title="欢迎邮件与我交流" href="mailto:trinea.cn@gmail.com" target="_blank">trinea.cn@gmail.com</a>&nbsp;&nbsp;&nbsp;&nbsp;QQ：<a title="欢迎Q我" href="http://wpa.qq.com/msgrd?v=3&amp;uin=717763774&amp;site=qq&amp;menu=yes" target="_blank">717763774</a>  
+微博：<a title="Android技术及移动互联网分享" href="http://weibo.com/trinea" target="_blank">Trinea</a>&nbsp;&nbsp;&nbsp;&nbsp;主页：<a title="关注与AndroidJava性能优化开源项目" href="http://www.trinea.cn/" target="_blank">trinea.cn</a>&nbsp;&nbsp;&nbsp;&nbsp;邮箱：<a title="欢迎邮件与我交流" href="mailto:trinea.cn@gmail.com" target="_blank">trinea.cn#gmail.com</a>&nbsp;&nbsp;&nbsp;&nbsp;QQ：<a title="欢迎Q我" href="http://wpa.qq.com/msgrd?v=3&amp;uin=717763774&amp;site=qq&amp;menu=yes" target="_blank">717763774</a>  
 
 ####示例APK下载:  
 <a href="https://play.google.com/store/apps/details?id=cn.trinea.android.demo" target="_blank" title="从Google Play下载"><img src="http://www.android.com/images/brand/get_it_on_play_logo_small.png" title="从Google Play下载"/></a>
