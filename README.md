@@ -1,9 +1,12 @@
 ![Trinea](http://farm8.staticflickr.com/7426/9456847893_053161c7a4_o.png)android-demo
 -------------
 **主要包括**：[网络缓存Demo](http://www.trinea.cn/android/android-http-cache)，[图片缓存Demo](http://www.trinea.cn/android/android-imagecache/)，[图片SD卡缓存Demo](http://www.trinea.cn/android/android-imagesdcardcache/)，[下拉刷新及滚动到底部加载更多listview Demo](http://www.trinea.cn/android/dropdown-to-refresh-and-bottom-load-more-listview/)，[Android系统下载管理DownloadManager功能介绍及使用示例](http://www.trinea.cn/android/android-downloadmanager/)，[ViewPager Multi Page](http://www.trinea.cn/android/viewpager-multi-fragment-effect/)，[滚动到底部或顶部响应的ScrollView使用](http://www.trinea.cn/android/on-bottom-load-more-scrollview/)，[Gallery滑动一页效果 Demo](http://www.trinea.cn/android/gallery-scroll-one-page/)，[SearchView Demo](http://www.trinea.cn/android/android-searchview-and-search-tips-impl/)，[ViewPager、Fragment使用](http://www.cnblogs.com/trinea/archive/2012/11/23/2771273.html)，[Service Demo](http://www.cnblogs.com/trinea/archive/2012/11/08/2699856.html)，[BroadcastReceiver Demo](http://www.cnblogs.com/trinea/archive/2012/11/09/2763182.html)。  
-**个人博客**：[www.trinea.cn](http://www.trinea.cn/) 关注于[Android](http://www.trinea.cn/category/android/)、[Java](http://www.trinea.cn/category/java/)、[性能优化](http://www.trinea.cn/category/perf/)、[开源代码](http://www.trinea.cn/category/open-code/)。  
-<strong>依&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;赖</strong>：[trinea-android-common](https://github.com/Trinea/android-common)，[android-auto-scroll-view-pager](https://github.com/Trinea/android-auto-scroll-view-pager)。  
-####示例APK下载(Demo Download):  
+
+<strong>依赖</strong>：[trinea-android-common](https://github.com/Trinea/android-common)，[android-auto-scroll-view-pager](https://github.com/Trinea/android-auto-scroll-view-pager)。  
+
+微博：[Trinea](https://weibo.com/trinea)&nbsp;&nbsp;&nbsp;&nbsp;主页：[trinea.cn](http://www.trinea.cn/)&nbsp;&nbsp;&nbsp;&nbsp;邮箱：[trinea.cn@gmail.com](mailto:trinea.cn@gmail.com)&nbsp;&nbsp;&nbsp;&nbsp;QQ：[717763774](http://wpa.qq.com/msgrd?v=3&uin=717763774&site=qq&menu=yes)  
+
+####示例APK下载:  
 <a href="https://play.google.com/store/apps/details?id=cn.trinea.android.demo" target="_blank" title="从Google Play下载"><img src="http://www.android.com/images/brand/get_it_on_play_logo_small.png" title="从Google Play下载"/></a>
     <a href="http://as.baidu.com/a/item?docid=5499464" target="_blank" title="从Baidu手机助手下载"><img src="http://farm3.staticflickr.com/2826/11928623406_b9e8d39bd7_o.png" title="从Baidu手机助手下载"/></a>
     <a href="http://zhushou.360.cn/detail/index/soft_id/994107" target="_blank" title="从360手机助手下载"><img src="http://farm4.staticflickr.com/3775/11983355756_f8548f4c17_o.png" title="从360手机助手下载"/></a>
