@@ -51,6 +51,8 @@ public class AutoScrollViewPagerSingleDemo extends BaseActivity {
         // // set how to process when sliding at the last or first item
         // // default is AutoScrollViewPager#SLIDE_BORDER_NONE
         // viewPager.setBorderProcessWhenSlide(AutoScrollViewPager.SLIDE_BORDER_CYCLE);
+        // viewPager.setScrollDurationFactor(3);
+        // viewPager.setBorderAnimation(false);
     }
 
     @Override
