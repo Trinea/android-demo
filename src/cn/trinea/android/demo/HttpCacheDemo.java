@@ -55,6 +55,7 @@ public class HttpCacheDemo extends BaseActivity {
                     protected void onPreGet() {
                         httpCacheInfoTV.setText("");
                         httpGetContentTV.setText("wating…");
+                        httpGetBT.setEnabled(false);
                     }
 
                     protected void onPostGet(HttpResponse httpResponse, boolean isInCache) {
@@ -71,6 +72,7 @@ public class HttpCacheDemo extends BaseActivity {
                             httpCacheInfoTV.setText("");
                             httpGetContentTV.setText("response is null.");
                         }
+                        httpGetBT.setEnabled(true);
                     }
                 });
             }
