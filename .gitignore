@@ -9,7 +9,6 @@ proguard/*
 res/values/analytics.xml
 
 *.pydevproject
-.project
 .metadata
 bin/
 tmp/
