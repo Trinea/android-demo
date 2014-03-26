@@ -67,6 +67,7 @@
     <string name="github">GitHub</string>
     <string name="github_tip">TrineaAndroidCommon on GitHub</string>
     
+    <string name="image_content">image</string>
     <string name="profile">Profile:&#160;</string>
     <string name="description">Description:&#160;</string>
     <string name="http_cache_get">Get content</string>
