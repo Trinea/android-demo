@@ -20,10 +20,10 @@ public class MainActivity extends BaseActivity {
 
     public static final String    TAG      = "DemoList";
 
-    private static final String[] mStrings = { "AutoScrollViewPager Demo", "HttpCache Demo", "ImageCache Demo",
+    private static final String[] mStrings = {"AutoScrollViewPager Demo", "HttpCache Demo", "ImageCache Demo",
             "ImageSDCardCache Demo", "DropDownListView Demo", "onBottom onTop ScrollView Demo", "DownloadManager Demo",
             "SearchView Demo", "ViewPager Multi Fragment Demo", "Slide One Page Gallery Demo", "ViewPager Demo",
-            "Service Demo", "BroadcastReceiver Demo" };
+            "Service Demo", "BroadcastReceiver Demo"};
 
     private static final int      total    = mStrings.length - 1;
 

@@ -110,7 +110,7 @@ public class DownloadManagerDemo extends BaseActivity {
         downloadProgress = (ProgressBar)findViewById(R.id.download_progress);
         downloadTip = (TextView)findViewById(R.id.download_tip);
         downloadTip.setText(getString(R.string.tip_download_file)
-                            + Environment.getExternalStoragePublicDirectory(DOWNLOAD_FOLDER_NAME));
+                + Environment.getExternalStoragePublicDirectory(DOWNLOAD_FOLDER_NAME));
         downloadSize = (TextView)findViewById(R.id.download_size);
         downloadPrecent = (TextView)findViewById(R.id.download_precent);
     }
@@ -179,7 +179,7 @@ public class DownloadManagerDemo extends BaseActivity {
 
     class DownloadChangeObserver extends ContentObserver {
 
-        public DownloadChangeObserver(){
+        public DownloadChangeObserver() {
             super(handler);
         }
 
@@ -204,11 +204,9 @@ public class DownloadManagerDemo extends BaseActivity {
                 updateView();
                 // if download successful, install apk
                 if (downloadManagerPro.getStatusById(downloadId) == DownloadManager.STATUS_SUCCESSFUL) {
-                    String apkFilePath = new StringBuilder(Environment.getExternalStorageDirectory().getAbsolutePath()).append(File.separator)
-                                                                                                                       .append(DOWNLOAD_FOLDER_NAME)
-                                                                                                                       .append(File.separator)
-                                                                                                                       .append(DOWNLOAD_FILE_NAME)
-                                                                                                                       .toString();
+                    String apkFilePath = new StringBuilder(Environment.getExternalStorageDirectory().getAbsolutePath())
+                            .append(File.separator).append(DOWNLOAD_FOLDER_NAME).append(File.separator)
+                            .append(DOWNLOAD_FILE_NAME).toString();
                     install(context, apkFilePath);
                 }
             }
@@ -313,7 +311,7 @@ public class DownloadManagerDemo extends BaseActivity {
 
     public static boolean isDownloading(int downloadManagerStatus) {
         return downloadManagerStatus == DownloadManager.STATUS_RUNNING
-               || downloadManagerStatus == DownloadManager.STATUS_PAUSED
-               || downloadManagerStatus == DownloadManager.STATUS_PENDING;
+                || downloadManagerStatus == DownloadManager.STATUS_PAUSED
+                || downloadManagerStatus == DownloadManager.STATUS_PENDING;
     }
 }

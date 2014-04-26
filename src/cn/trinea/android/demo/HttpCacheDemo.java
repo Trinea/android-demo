@@ -64,7 +64,7 @@ public class HttpCacheDemo extends BaseActivity {
                             sb.append("is in cache: ").append(isInCache).append("\r\n");
                             if (isInCache) {
                                 sb.append("expires: ").append(new Date(httpResponse.getExpiredTime()).toGMTString())
-                                  .append("\r\n");
+                                        .append("\r\n");
                             }
                             httpCacheInfoTV.setText(sb.toString());
                             httpGetContentTV.setText(httpResponse.getResponseBody());

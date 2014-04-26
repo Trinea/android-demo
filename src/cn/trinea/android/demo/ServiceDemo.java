@@ -46,7 +46,7 @@ public class ServiceDemo extends BaseActivity {
                                       @Override
                                       public void onServiceDisconnected(ComponentName name) {
                                           Toast.makeText(getApplicationContext(), "Service disconnect",
-                                                         Toast.LENGTH_SHORT).show();
+                                                  Toast.LENGTH_SHORT).show();
                                       }
 
                                       /**
@@ -55,7 +55,8 @@ public class ServiceDemo extends BaseActivity {
                                       @Override
                                       public void onServiceConnected(ComponentName name, IBinder service) {
                                           myService = ((MyBinder)service).getService();
-                                          Toast.makeText(getApplicationContext(), "Service Connect", Toast.LENGTH_SHORT).show();
+                                          Toast.makeText(getApplicationContext(), "Service Connect", Toast.LENGTH_SHORT)
+                                                  .show();
                                       }
                                   };
 
@@ -112,7 +113,7 @@ public class ServiceDemo extends BaseActivity {
             public void onClick(View v) {
                 if (myService != null) {
                     ToastUtils.show(context, R.string.operate_value_success,
-                                    Integer.toString(myService.increaseCount()));
+                            Integer.toString(myService.increaseCount()));
                 } else {
                     ToastUtils.show(context, R.string.bind_service_tip, Toast.LENGTH_SHORT);
                 }

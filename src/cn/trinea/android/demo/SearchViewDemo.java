@@ -26,7 +26,7 @@ import android.widget.TextView;
  * SearchViewDemo
  * 
  * @author <a href="http://www.trinea.cn/android/android-searchview-and-search-tips-impl/" target="_blank">Trinea</a>
- * 2013-5-9
+ *         2013-5-9
  */
 public class SearchViewDemo extends BaseActivity {
 
@@ -52,7 +52,7 @@ public class SearchViewDemo extends BaseActivity {
         // set title style
         ActionBar bar = getActionBar();
         bar.setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE | ActionBar.DISPLAY_HOME_AS_UP
-                              | ActionBar.DISPLAY_SHOW_CUSTOM);
+                | ActionBar.DISPLAY_SHOW_CUSTOM);
         setTitle(" ");
         LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View customActionBarView = inflater.inflate(R.layout.search_view_demo_title, null);
@@ -90,13 +90,14 @@ public class SearchViewDemo extends BaseActivity {
             }
         });
         Display display = getWindowManager().getDefaultDisplay();
-        LayoutParams params = new LayoutParams(LayoutParams.WRAP_CONTENT,
-                                               LayoutParams.WRAP_CONTENT, Gravity.CENTER_VERTICAL | Gravity.RIGHT);
+        LayoutParams params = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT,
+                Gravity.CENTER_VERTICAL | Gravity.RIGHT);
         bar.setCustomView(customActionBarView, params);
 
         // show keyboard
-        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE
-                                             | WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
+        getWindow().setSoftInputMode(
+                WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE
+                        | WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
     }
 
     public void showSearchTip(String newText) {
@@ -108,7 +109,7 @@ public class SearchViewDemo extends BaseActivity {
 
         String newText;
 
-        public SearchTipThread(String newText){
+        public SearchTipThread(String newText) {
             this.newText = newText;
         }
 

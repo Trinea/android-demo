@@ -103,8 +103,7 @@ public class ViewPagerMulTiFragmentDemo extends BaseActivity {
         }
 
         @Override
-        public void onPageScrollStateChanged(int arg0) {
-        }
+        public void onPageScrollStateChanged(int arg0) {}
     }
 
     @Override

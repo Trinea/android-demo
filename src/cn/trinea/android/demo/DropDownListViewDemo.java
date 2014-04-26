@@ -20,7 +20,7 @@ import cn.trinea.android.common.view.DropDownListView.OnDropDownListener;
  * DropDownListViewDemo
  * 
  * @author <a href="http://www.trinea.cn/android/dropdown-to-refresh-and-bottom-load-more-listview/"
- * target="_blank">Trinea</a> 2013-6-1
+ *         target="_blank">Trinea</a> 2013-6-1
  */
 public class DropDownListViewDemo extends BaseActivity {
 
@@ -28,8 +28,8 @@ public class DropDownListViewDemo extends BaseActivity {
     private DropDownListView     listView            = null;
     private ArrayAdapter<String> adapter;
 
-    private String[]             mStrings            = { "Aaaaaa", "Bbbbbb", "Cccccc", "Dddddd", "Eeeeee", "Ffffff",
-            "Gggggg", "Hhhhhh", "Iiiiii", "Jjjjjj", "Kkkkkk", "Llllll", "Mmmmmm", "Nnnnnn", };
+    private String[]             mStrings            = {"Aaaaaa", "Bbbbbb", "Cccccc", "Dddddd", "Eeeeee", "Ffffff",
+            "Gggggg", "Hhhhhh", "Iiiiii", "Jjjjjj", "Kkkkkk", "Llllll", "Mmmmmm", "Nnnnnn",};
     public static final int      MORE_DATA_MAX_COUNT = 3;
     public int                   moreDataCount       = 0;
 
@@ -74,7 +74,7 @@ public class DropDownListViewDemo extends BaseActivity {
 
         private boolean isDropDown;
 
-        public GetDataTask(boolean isDropDown){
+        public GetDataTask(boolean isDropDown) {
             this.isDropDown = isDropDown;
         }
 

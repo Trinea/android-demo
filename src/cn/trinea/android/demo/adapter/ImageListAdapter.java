@@ -21,7 +21,7 @@ public class ImageListAdapter extends BaseAdapter {
     private LayoutInflater inflater;
     public List<Integer>   imageResIdList;
 
-    public ImageListAdapter(Context context){
+    public ImageListAdapter(Context context) {
         super();
         inflater = LayoutInflater.from(context);
     }

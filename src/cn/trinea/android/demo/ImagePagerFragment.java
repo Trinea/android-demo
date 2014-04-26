@@ -26,7 +26,7 @@ public class ImagePagerFragment extends Fragment {
 
     private List<Integer>       imageIdList;
 
-    public ImagePagerFragment(){
+    public ImagePagerFragment() {
         super();
     }
 
@@ -69,11 +69,9 @@ public class ImagePagerFragment extends Fragment {
         }
 
         @Override
-        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-        }
+        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
 
         @Override
-        public void onPageScrollStateChanged(int arg0) {
-        }
+        public void onPageScrollStateChanged(int arg0) {}
     }
 }

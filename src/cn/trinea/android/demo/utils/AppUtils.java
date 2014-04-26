@@ -52,10 +52,10 @@ public class AppUtils {
         ActionBar bar = activity.getActionBar();
         if (activity instanceof MainActivity) {
             bar.setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE | ActionBar.DISPLAY_SHOW_CUSTOM
-                                  | ActionBar.DISPLAY_SHOW_HOME);
+                    | ActionBar.DISPLAY_SHOW_HOME);
         } else {
             bar.setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE | ActionBar.DISPLAY_HOME_AS_UP
-                                  | ActionBar.DISPLAY_SHOW_CUSTOM);
+                    | ActionBar.DISPLAY_SHOW_CUSTOM);
         }
     }
 
@@ -130,12 +130,13 @@ public class AppUtils {
             url = "http://www.trinea.cn";
             contentSrcId = R.string.desc_default;
         }
-        String[] result = new String[] { url,
-                getUrlInfo(activity.getString(prefixSrcId), url, activity.getString(contentSrcId)) };
+        String[] result = new String[] {url,
+                getUrlInfo(activity.getString(prefixSrcId), url, activity.getString(contentSrcId))};
         return result;
     }
 
     private static String getUrlInfo(String prefix, String url, String content) {
-        return new StringBuilder().append(prefix).append("<a href=\"").append(url).append("\">").append(content).append("</a>").toString();
+        return new StringBuilder().append(prefix).append("<a href=\"").append(url).append("\">").append(content)
+                .append("</a>").toString();
     }
 }

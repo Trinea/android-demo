@@ -1,9 +1,7 @@
 /*
- * Copyright 2014 trinea.cn All right reserved. This software is the
- * confidential and proprietary information of trinea.cn ("Confidential
- * Information"). You shall not disclose such Confidential Information and shall
- * use it only in accordance with the terms of the license agreement you entered
- * into with trinea.cn.
+ * Copyright 2014 trinea.cn All right reserved. This software is the confidential and proprietary information of
+ * trinea.cn ("Confidential Information"). You shall not disclose such Confidential Information and shall use it only in
+ * accordance with the terms of the license agreement you entered into with trinea.cn.
  */
 package cn.trinea.android.demo.adapter;
 
@@ -27,7 +25,7 @@ public class ImagePagerAdapter extends PagerAdapter {
     private Context       context;
     private List<Integer> imageIdList;
 
-    public ImagePagerAdapter(Context context, List<Integer> imageIdList){
+    public ImagePagerAdapter(Context context, List<Integer> imageIdList) {
         this.context = context;
         this.imageIdList = imageIdList;
     }

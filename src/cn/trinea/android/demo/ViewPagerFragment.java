@@ -13,7 +13,7 @@ import android.widget.TextView;
  */
 public class ViewPagerFragment extends Fragment {
 
-    public ViewPagerFragment(){
+    public ViewPagerFragment() {
         super();
     }
 

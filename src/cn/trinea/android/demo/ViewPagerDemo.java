@@ -49,7 +49,7 @@ public class ViewPagerDemo extends BaseFragmentActivity {
         private List<Fragment> fragmentList;
         private List<String>   titleList;
 
-        public myPagerAdapter(FragmentManager fm, List<Fragment> fragmentList, List<String> titleList){
+        public myPagerAdapter(FragmentManager fm, List<Fragment> fragmentList, List<String> titleList) {
             super(fm);
             this.fragmentList = fragmentList;
             this.titleList = titleList;

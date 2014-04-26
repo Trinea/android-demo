@@ -89,7 +89,7 @@ public class BroadcastReceiverDemo extends BaseActivity {
                 Intent i = new Intent(ACTION_ORDERED_SEND);
                 i.putExtra(MSG_KEY, getString(R.string.ordered_broadcast_msg));
                 sendOrderedBroadcast(i, null, new OrderedBroadcastReceiverResultReceiver(), null, Activity.RESULT_OK,
-                                     null, null);
+                        null, null);
             }
         });
 
@@ -184,7 +184,7 @@ public class BroadcastReceiverDemo extends BaseActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             orderedMsg.setText(String.format(getString(R.string.ordered_broadcast_high_tip),
-                                             intent.getStringExtra(MSG_KEY)));
+                    intent.getStringExtra(MSG_KEY)));
             // modify broadcast content
             getResultExtras(true).putString(RUSULT_MSG_KEY, "High");
         }
@@ -197,18 +197,16 @@ public class BroadcastReceiverDemo extends BaseActivity {
             boolean isCancel = false;
             if (isCancel) {
                 orderedMsg.setText(orderedMsg.getText()
-                                   + "\r\n"
-                                   + String.format(getString(R.string.ordered_broadcast_medium_cancel_tip),
-                                                   intent.getStringExtra(MSG_KEY),
-                                                   getResultExtras(true).getString(RUSULT_MSG_KEY)));
+                        + "\r\n"
+                        + String.format(getString(R.string.ordered_broadcast_medium_cancel_tip),
+                                intent.getStringExtra(MSG_KEY), getResultExtras(true).getString(RUSULT_MSG_KEY)));
                 // calcel broadcast
                 abortBroadcast();
             } else {
                 orderedMsg.setText(orderedMsg.getText()
-                                   + "\r\n"
-                                   + String.format(getString(R.string.ordered_broadcast_medium_tip),
-                                                   intent.getStringExtra(MSG_KEY),
-                                                   getResultExtras(true).getString(RUSULT_MSG_KEY)));
+                        + "\r\n"
+                        + String.format(getString(R.string.ordered_broadcast_medium_tip),
+                                intent.getStringExtra(MSG_KEY), getResultExtras(true).getString(RUSULT_MSG_KEY)));
                 getResultExtras(true).putString(RUSULT_MSG_KEY, "Medium");
             }
         }
@@ -219,10 +217,9 @@ public class BroadcastReceiverDemo extends BaseActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             orderedMsg.setText(orderedMsg.getText()
-                               + "\r\n"
-                               + String.format(getString(R.string.ordered_broadcast_low_tip),
-                                               intent.getStringExtra(MSG_KEY),
-                                               getResultExtras(true).getString(RUSULT_MSG_KEY)));
+                    + "\r\n"
+                    + String.format(getString(R.string.ordered_broadcast_low_tip), intent.getStringExtra(MSG_KEY),
+                            getResultExtras(true).getString(RUSULT_MSG_KEY)));
             getResultExtras(true).putString(RUSULT_MSG_KEY, "Low");
         }
     }
@@ -232,10 +229,9 @@ public class BroadcastReceiverDemo extends BaseActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             orderedMsg.setText(orderedMsg.getText()
-                               + "\r\n"
-                               + String.format(getString(R.string.ordered_broadcast_tip),
-                                               intent.getStringExtra(MSG_KEY),
-                                               getResultExtras(true).getString(RUSULT_MSG_KEY)));
+                    + "\r\n"
+                    + String.format(getString(R.string.ordered_broadcast_tip), intent.getStringExtra(MSG_KEY),
+                            getResultExtras(true).getString(RUSULT_MSG_KEY)));
         }
     }
 }

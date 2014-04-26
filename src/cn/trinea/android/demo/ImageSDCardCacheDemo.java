@@ -34,12 +34,12 @@ public class ImageSDCardCacheDemo extends BaseActivity {
 
     public static final String TAG_CACHE            = "image_sdcard_cache";
     /** cache folder path which be used when saving images **/
-    public static final String DEFAULT_CACHE_FOLDER = new StringBuilder().append(Environment.getExternalStorageDirectory()
-                                                                                            .getAbsolutePath())
-                                                                         .append(File.separator).append("Trinea")
-                                                                         .append(File.separator).append("AndroidDemo")
-                                                                         .append(File.separator)
-                                                                         .append("ImageSDCardCache").toString();
+    public static final String DEFAULT_CACHE_FOLDER = new StringBuilder()
+                                                            .append(Environment.getExternalStorageDirectory()
+                                                                    .getAbsolutePath()).append(File.separator)
+                                                            .append("Trinea").append(File.separator)
+                                                            .append("AndroidDemo").append(File.separator)
+                                                            .append("ImageSDCardCache").toString();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -131,9 +131,9 @@ public class ImageSDCardCacheDemo extends BaseActivity {
             @Override
             public void onGetFailed(String imageUrl, String imagePath, View view, FailedReason failedReason) {
                 Log.e(TAG_CACHE,
-                      new StringBuilder(128).append("get image ").append(imageUrl).append(" error, failed type is: ")
-                                            .append(failedReason.getFailedType()).append(", failed reason is: ")
-                                            .append(failedReason.getCause().getMessage()).toString());
+                        new StringBuilder(128).append("get image ").append(imageUrl).append(" error, failed type is: ")
+                                .append(failedReason.getFailedType()).append(", failed reason is: ")
+                                .append(failedReason.getCause().getMessage()).toString());
             }
         };
         IMAGE_SD_CACHE.setOnImageSDCallbackListener(imageCallBack);
@@ -201,7 +201,7 @@ public class ImageSDCardCacheDemo extends BaseActivity {
         private LayoutInflater inflater;
         public List<String>    imageUrlList;
 
-        public ImageAdapter(Context context){
+        public ImageAdapter(Context context) {
             super();
             inflater = LayoutInflater.from(context);
         }

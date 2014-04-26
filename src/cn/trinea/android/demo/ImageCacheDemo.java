@@ -34,13 +34,12 @@ public class ImageCacheDemo extends BaseActivity {
     public static final int    IMAGEVIEW_DEFAULT_HEIGHT = 400;
     public static final String TAG_CACHE                = "image_cache";
     /** cache folder path which be used when saving images **/
-    public static final String DEFAULT_CACHE_FOLDER     = new StringBuilder().append(Environment.getExternalStorageDirectory()
-                                                                                                .getAbsolutePath())
-                                                                             .append(File.separator).append("Trinea")
-                                                                             .append(File.separator)
-                                                                             .append("AndroidDemo")
-                                                                             .append(File.separator)
-                                                                             .append("ImageCache").toString();
+    public static final String DEFAULT_CACHE_FOLDER     = new StringBuilder()
+                                                                .append(Environment.getExternalStorageDirectory()
+                                                                        .getAbsolutePath()).append(File.separator)
+                                                                .append("Trinea").append(File.separator)
+                                                                .append("AndroidDemo").append(File.separator)
+                                                                .append("ImageCache").toString();
     private RelativeLayout     parentLayout;
 
     @Override
@@ -164,9 +163,9 @@ public class ImageCacheDemo extends BaseActivity {
             @Override
             public void onGetFailed(String imageUrl, Bitmap loadedImage, View view, FailedReason failedReason) {
                 Log.e(TAG_CACHE,
-                      new StringBuilder(128).append("get image ").append(imageUrl).append(" error, failed type is: ")
-                                            .append(failedReason.getFailedType()).append(", failed reason is: ")
-                                            .append(failedReason.getCause().getMessage()).toString());
+                        new StringBuilder(128).append("get image ").append(imageUrl).append(" error, failed type is: ")
+                                .append(failedReason.getFailedType()).append(", failed reason is: ")
+                                .append(failedReason.getCause().getMessage()).toString());
             }
 
             @Override

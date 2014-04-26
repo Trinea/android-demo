@@ -26,15 +26,13 @@ public class SlideOnePageGalleryDemo extends BaseActivity {
         imageGallery.setOnItemClickListener(new OnItemClickListener() {
 
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            }
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {}
         });
 
         imageGallery.setOnItemSelectedListener(new OnItemSelectedListener() {
 
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-            }
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {}
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
