@@ -64,6 +64,12 @@ public class ImageSDCardCacheDemo extends BaseActivity {
         super.onDestroy();
     }
 
+    /**
+     * if you just want load image for ImageView, just like this, no need to setOnImageSDCallbackListener and so on like
+     * <code>static</code> below
+     */
+    // public static final ImageSDCardCache IMAGE_SD_CACHE = CacheManager.getImageSDCardCache();
+
     /** image cache **/
     public static final ImageSDCardCache IMAGE_SD_CACHE = new ImageSDCardCache();
 

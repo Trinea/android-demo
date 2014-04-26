@@ -109,6 +109,12 @@ public class ImageCacheDemo extends BaseActivity {
         super.onDestroy();
     }
 
+    /**
+     * if you just want load image for ImageView, just like this, no need to setOnImageCallbackListener and so on like
+     * <code>static</code> below
+     */
+    // public static final ImageCache IMAGE_CACHE = CacheManager.getImageCache();
+
     /** icon cache **/
     public static final ImageCache IMAGE_CACHE = new ImageCache(128, 512);
 
