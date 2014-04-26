@@ -77,8 +77,6 @@ public class ImageSDCardCacheDemo extends BaseActivity {
         /** init image cache **/
         OnImageSDCallbackListener imageCallBack = new OnImageSDCallbackListener() {
 
-            private static final long serialVersionUID = 1L;
-
             /**
              * callback function after get image successfully, run on ui thread
              * 

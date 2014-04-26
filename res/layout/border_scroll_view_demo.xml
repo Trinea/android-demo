@@ -17,7 +17,7 @@
             <TextView
                 android:id="@+id/top_text"
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
+                android:layout_height="@dimen/dp_20"
                 android:gravity="center"
                 android:text="top text" />
 
@@ -40,7 +40,7 @@
             <TextView
                 android:id="@+id/bottom_text"
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
+                android:layout_height="@dimen/dp_20"
                 android:layout_below="@+id/text2"
                 android:gravity="center"
                 android:text="bottom text" />
@@ -48,6 +48,7 @@
     </cn.trinea.android.common.view.BorderScrollView>
 
     <include
+        android:id="@+id/trinea_info_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

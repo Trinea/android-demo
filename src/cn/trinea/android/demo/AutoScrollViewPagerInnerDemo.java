@@ -3,39 +3,51 @@ package cn.trinea.android.demo;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.ViewPager;
+import android.support.v4.view.ViewPager.OnPageChangeListener;
+import cn.trinea.android.common.util.ListUtils;
 
 /**
- * AutoScrollViewPagerSingleDemo
+ * AutoScrollViewPagerInnerDemo
  * 
  * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2014-2-22
  */
 public class AutoScrollViewPagerInnerDemo extends BaseFragmentActivity {
 
-    private static int TOTAL_COUNT = 3;
+    private static int         TOTAL_COUNT              = 3;
+    public final static String ACTION_FRAGMENT_SELECTED = "cn.trinea.android.demo.ACTION_FRAGMENT_SELECTED";
+    public static final String EXTRA_SELECTED_POSITION  = "selected_position";
+    public static final String EXTRA_INDEX              = "index";
+    public static final String EXTRA_TITLE              = "title";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState, R.layout.view_pager_demo);
 
-        ViewPager vp = (ViewPager)findViewById(R.id.view_pager);
+        ViewPager viewPager = (ViewPager)findViewById(R.id.view_pager);
         List<Fragment> fragmentList = new ArrayList<Fragment>();
         List<String> titleList = new ArrayList<String>();
         for (int i = 0; i < TOTAL_COUNT; i++) {
             ImagePagerFragment viewPagerFragment1 = new ImagePagerFragment();
             Bundle bundle = new Bundle();
-            bundle.putInt("index", i);
+            bundle.putInt(EXTRA_INDEX, i);
             viewPagerFragment1.setArguments(bundle);
-            titleList.add("title " + i);
+            titleList.add(EXTRA_TITLE + i);
             fragmentList.add(viewPagerFragment1);
         }
 
-        vp.setAdapter(new myPagerAdapter(getSupportFragmentManager(), fragmentList, titleList));
-        vp.setCurrentItem(1);
+        viewPager.setAdapter(new myPagerAdapter(getSupportFragmentManager(), fragmentList, titleList));
+        viewPager.setOnPageChangeListener(new MyOnPageChangeListener());
+
+        int defaultPosition = 1;
+        viewPager.setCurrentItem(defaultPosition);
+        sendSelectedBroadcast(defaultPosition);
     }
 
     /**
@@ -55,8 +67,8 @@ public class AutoScrollViewPagerInnerDemo extends BaseFragmentActivity {
         }
 
         @Override
-        public Fragment getItem(int arg0) {
-            return (fragmentList == null || fragmentList.size() == 0) ? null : fragmentList.get(arg0);
+        public Fragment getItem(int index) {
+            return ListUtils.getSize(fragmentList) == 0 ? null : fragmentList.get(index);
         }
 
         @Override
@@ -66,7 +78,32 @@ public class AutoScrollViewPagerInnerDemo extends BaseFragmentActivity {
 
         @Override
         public int getCount() {
-            return fragmentList == null ? 0 : fragmentList.size();
+            return ListUtils.getSize(fragmentList);
         }
+    }
+
+    /**
+     * send broadcast that selected fragment have changed, to tell child ViewPager to start or stop auto scroll
+     * 
+     * @param position
+     */
+    private void sendSelectedBroadcast(int position) {
+        Intent i = new Intent(ACTION_FRAGMENT_SELECTED);
+        i.putExtra(EXTRA_SELECTED_POSITION, position);
+        LocalBroadcastManager.getInstance(context).sendBroadcast(i);
+    }
+
+    public class MyOnPageChangeListener implements OnPageChangeListener {
+
+        @Override
+        public void onPageSelected(int position) {
+            sendSelectedBroadcast(position);
+        }
+
+        @Override
+        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
+
+        @Override
+        public void onPageScrollStateChanged(int arg0) {}
     }
 }

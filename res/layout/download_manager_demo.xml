@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="20dp" >
+    android:paddingTop="@dimen/dp_20" >
 
     <Button
         android:id="@+id/download_button"
@@ -14,7 +14,7 @@
         android:id="@+id/download_size"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="@dimen/dp_20"
         android:ellipsize="end"
         android:singleLine="true"
         android:visibility="gone" />
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/download_size"
-        android:layout_marginRight="50dp"
+        android:layout_marginRight="@dimen/dp_50"
         android:ellipsize="end"
         android:singleLine="true"
         android:visibility="gone" />
@@ -36,14 +36,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/download_size"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="50dp"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_50"
         android:visibility="gone" />
 
     <Button
         android:id="@+id/download_cancel"
         style="?android:attr/buttonBarButtonStyle"
-        android:layout_width="40dp"
+        android:layout_width="@dimen/dp_40"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/download_progress"
         android:layout_alignParentRight="true"
@@ -57,8 +57,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_70"
         android:gravity="left" />
 
     <include

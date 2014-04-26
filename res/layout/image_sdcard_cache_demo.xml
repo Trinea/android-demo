@@ -10,9 +10,10 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/trinea_info_layout"
         android:layout_gravity="center"
-        android:spacing="4dp" />
+        android:spacing="@dimen/dp_4" />
 
     <include
+        android:id="@+id/trinea_info_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

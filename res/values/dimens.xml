@@ -5,9 +5,16 @@
     <dimen name="page_margin">15dp</dimen>
     <dimen name="dp_4">4dp</dimen>
     <dimen name="dp_8">8dp</dimen>
+    <dimen name="dp_20">20dp</dimen>
     <dimen name="dp_40">40dp</dimen>
+    <dimen name="dp_50">50dp</dimen>
+    <dimen name="dp_70">70dp</dimen>
     <dimen name="sp_16">16sp</dimen>
     <dimen name="search_view_margin_left">55dp</dimen>
     <dimen name="divider_height">2px</dimen>
+    <dimen name="view_pager_witdh">450dp</dimen>
+    <dimen name="view_pager_height">150dp</dimen>
+    <dimen name="image_width">300dp</dimen>
+    <dimen name="image_height">500dp</dimen>
 
 </resources>

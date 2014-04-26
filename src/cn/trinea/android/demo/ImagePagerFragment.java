@@ -3,16 +3,20 @@ package cn.trinea.android.demo;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager.OnPageChangeListener;
-import android.util.Log;
+import android.support.v4.content.LocalBroadcastManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import cn.trinea.android.demo.adapter.ImagePagerAdapter;
 import cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager;
+
+import com.viewpagerindicator.CirclePageIndicator;
 
 /**
  * ImagePagerFragment
@@ -21,57 +25,73 @@ import cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager;
  */
 public class ImagePagerFragment extends Fragment {
 
-    private AutoScrollViewPager viewPager;
-    private TextView            indexText;
+    private Context               context;
+    private AutoScrollViewPager   viewPager;
+    private CirclePageIndicator   indicator;
 
-    private List<Integer>       imageIdList;
-
-    public ImagePagerFragment() {
-        super();
-    }
+    private int                   index;
+    private ScrollControlReceiver scrollControlReceiver;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        context = getActivity().getApplicationContext();
+
         View v = inflater.inflate(R.layout.auto_scroll_view_pager_inner_fragment_demo, container, false);
-
         viewPager = (AutoScrollViewPager)v.findViewById(R.id.view_pager);
-        indexText = (TextView)v.findViewById(R.id.view_pager_index);
+        indicator = (CirclePageIndicator)v.findViewById(R.id.indicator);
 
-        imageIdList = new ArrayList<Integer>();
+        List<Integer> imageIdList = new ArrayList<Integer>();
         imageIdList.add(R.drawable.banner1);
         imageIdList.add(R.drawable.banner2);
         imageIdList.add(R.drawable.banner3);
         imageIdList.add(R.drawable.banner4);
         viewPager.setAdapter(new ImagePagerAdapter(getActivity().getApplicationContext(), imageIdList));
-        viewPager.setOnPageChangeListener(new MyOnPageChangeListener());
-        indexText.setText(new StringBuilder().append("1/").append(imageIdList.size()));
+        indicator.setViewPager(viewPager);
+
+        viewPager.setInterval(2000);
+        viewPager.setSlideBorderMode(AutoScrollViewPager.SLIDE_BORDER_MODE_TO_PARENT);
 
         Bundle bundle = getArguments();
-        int index = 0;
         if (bundle != null) {
-            index = bundle.getInt("index");
+            index = bundle.getInt(AutoScrollViewPagerInnerDemo.EXTRA_INDEX);
         }
 
-        if (index == 1) {
-            viewPager.setInterval(2000);
-            viewPager.startAutoScroll();
-            viewPager.setSlideBorderMode(AutoScrollViewPager.SLIDE_BORDER_MODE_CYCLE);
-        }
         return v;
     }
 
-    public class MyOnPageChangeListener implements OnPageChangeListener {
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        // receive broadcast that selected fragment have changed, to start or stop auto scroll ViewPager
+        scrollControlReceiver = new ScrollControlReceiver();
+        LocalBroadcastManager.getInstance(context).registerReceiver(scrollControlReceiver,
+                new IntentFilter(AutoScrollViewPagerInnerDemo.ACTION_FRAGMENT_SELECTED));
+    }
+
+    @Override
+    public void onStop() {
+        LocalBroadcastManager.getInstance(context).unregisterReceiver(scrollControlReceiver);
+        super.onStop();
+    }
+
+    /**
+     * ScrollControlReceiver
+     * 
+     * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2014年4月26日
+     */
+    private class ScrollControlReceiver extends BroadcastReceiver {
 
         @Override
-        public void onPageSelected(int position) {
-            Log.i("image", "touch:" + position);
-            indexText.setText(new StringBuilder().append(position + 1).append("/").append(imageIdList.size()));
+        public void onReceive(Context context, Intent intent) {
+            if (intent != null) {
+                int selectedPosition = intent.getIntExtra(AutoScrollViewPagerInnerDemo.EXTRA_SELECTED_POSITION, 0);
+                if (index == selectedPosition) {
+                    viewPager.startAutoScroll();
+                } else {
+                    viewPager.stopAutoScroll();
+                }
+            }
         }
-
-        @Override
-        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
-
-        @Override
-        public void onPageScrollStateChanged(int arg0) {}
     }
 }

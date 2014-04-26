@@ -5,15 +5,15 @@
 
     <cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager
         android:id="@+id/view_pager"
-        android:layout_width="450dp"
-        android:layout_height="200dp" />
+        android:layout_width="@dimen/view_pager_witdh"
+        android:layout_height="@dimen/view_pager_height" />
 
-    <TextView
-        android:id="@+id/view_pager_index"
+    <com.viewpagerindicator.CirclePageIndicator
+        android:id="@+id/indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/view_pager"
+        android:layout_alignBottom="@+id/view_pager"
         android:layout_centerHorizontal="true"
-        android:textSize="14sp" />
+        android:padding="@dimen/dp_8" />
 
 </RelativeLayout>

@@ -4,17 +4,25 @@
     android:layout_height="match_parent" >
 
     <Button
-        android:id="@+id/auto_scroll_view_pager_single"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/auto_scroll_view_pager_single" />
-
-    <Button
         android:id="@+id/auto_scroll_view_pager_inner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/auto_scroll_view_pager_single"
+        android:layout_marginBottom="@dimen/dp_40"
         android:text="@string/auto_scroll_view_pager_inner" />
+
+    <cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="@dimen/view_pager_witdh"
+        android:layout_height="@dimen/view_pager_height"
+        android:layout_below="@+id/auto_scroll_view_pager_inner" />
+
+    <com.viewpagerindicator.CirclePageIndicator
+        android:id="@+id/indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/view_pager"
+        android:layout_centerHorizontal="true"
+        android:padding="@dimen/dp_8" />
 
     <include
         android:layout_width="match_parent"

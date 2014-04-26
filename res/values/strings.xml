@@ -8,7 +8,6 @@
     <string name="imagecache_demo_activity_title">ImageCache Demo</string>
     <string name="dropdownlistview_demo_activity_title">Drop Down And Load More ListView Demo</string>
     <string name="auto_scroll_view_pager_activity_title">Auto Scroll ViewPager Demo</string>
-    <string name="auto_scroll_view_pager_single_activity_title">Auto Scroll Single Pager Demo</string>
     <string name="auto_scroll_view_pager_inner_activity_title">Auto Scroll Inner Pager Demo</string>
     <string name="borderscrollview_demo_activity_title">onBottom onTop ScrollView Demo</string>
     <string name="search_view_demo_activity_title">SearchView Demo</string>

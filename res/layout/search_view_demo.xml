@@ -7,9 +7,9 @@
         android:id="@+id/search_info"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_40"
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="@dimen/dp_8"
         android:gravity="center_vertical"
-        android:textSize="18sp" />
+        android:textSize="@dimen/sp_16" />
 
     <include
         android:layout_width="match_parent"

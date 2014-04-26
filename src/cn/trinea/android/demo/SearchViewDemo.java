@@ -12,7 +12,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.view.Display;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -89,7 +88,6 @@ public class SearchViewDemo extends BaseActivity {
                 return true;
             }
         });
-        Display display = getWindowManager().getDefaultDisplay();
         LayoutParams params = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT,
                 Gravity.CENTER_VERTICAL | Gravity.RIGHT);
         bar.setCustomView(customActionBarView, params);
