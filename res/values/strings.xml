@@ -59,8 +59,7 @@
     <string name="app_status_downloading">downloading</string>
     <string name="tip_download_file">file will be saved to sdcard, the path is: </string>
     
-    <string name="auto_scroll_view_pager_single">Single ViewPager</string>
-    <string name="auto_scroll_view_pager_inner">ViewPager in ViewPager</string>
+    <string name="auto_scroll_view_pager_inner">ViewPager in ViewPager Demo</string>
     
     <string name="update_at">updated at:&#160;</string>
     <string name="github">GitHub</string>

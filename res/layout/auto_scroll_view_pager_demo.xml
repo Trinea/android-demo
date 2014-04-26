@@ -7,6 +7,7 @@
         android:id="@+id/auto_scroll_view_pager_inner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
         android:layout_marginBottom="@dimen/dp_40"
         android:text="@string/auto_scroll_view_pager_inner" />
 

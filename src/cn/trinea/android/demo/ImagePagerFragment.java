@@ -54,6 +54,9 @@ public class ImagePagerFragment extends Fragment {
         Bundle bundle = getArguments();
         if (bundle != null) {
             index = bundle.getInt(AutoScrollViewPagerInnerDemo.EXTRA_INDEX);
+            if (index == AutoScrollViewPagerInnerDemo.DEFAULT_INDEX) {
+                viewPager.startAutoScroll();
+            }
         }
 
         return v;

@@ -26,6 +26,8 @@ public class AutoScrollViewPagerInnerDemo extends BaseFragmentActivity {
     public static final String EXTRA_INDEX              = "index";
     public static final String EXTRA_TITLE              = "title";
 
+    static final int           DEFAULT_INDEX            = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState, R.layout.view_pager_demo);
@@ -45,9 +47,7 @@ public class AutoScrollViewPagerInnerDemo extends BaseFragmentActivity {
         viewPager.setAdapter(new myPagerAdapter(getSupportFragmentManager(), fragmentList, titleList));
         viewPager.setOnPageChangeListener(new MyOnPageChangeListener());
 
-        int defaultPosition = 1;
-        viewPager.setCurrentItem(defaultPosition);
-        sendSelectedBroadcast(defaultPosition);
+        viewPager.setCurrentItem(DEFAULT_INDEX);
     }
 
     /**

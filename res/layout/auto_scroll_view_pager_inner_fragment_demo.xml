@@ -6,7 +6,8 @@
     <cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager
         android:id="@+id/view_pager"
         android:layout_width="@dimen/view_pager_witdh"
-        android:layout_height="@dimen/view_pager_height" />
+        android:layout_height="@dimen/view_pager_height"
+        android:layout_marginTop="@dimen/dp_40" />
 
     <com.viewpagerindicator.CirclePageIndicator
         android:id="@+id/indicator"
