@@ -10,6 +10,8 @@ import android.text.Spanned;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import cn.trinea.android.demo.AutoScrollViewPagerDemo;
+import cn.trinea.android.demo.AutoScrollViewPagerInnerDemo;
 import cn.trinea.android.demo.BorderScrollViewDemo;
 import cn.trinea.android.demo.BroadcastReceiverDemo;
 import cn.trinea.android.demo.DownloadManagerDemo;
@@ -125,6 +127,12 @@ public class AppUtils {
         } else if (sourClass == HttpCacheDemo.class) {
             url = "http://www.trinea.cn/android/android-http-cache/";
             contentSrcId = R.string.desc_http_cache;
+        } else if (sourClass == AutoScrollViewPagerInnerDemo.class) {
+            url = "http://www.trinea.cn/android/auto-scroll-view-pager/";
+            contentSrcId = R.string.desc_auto_scroll_view_pager_inner;
+        } else if (sourClass == AutoScrollViewPagerDemo.class) {
+            url = "http://www.trinea.cn/android/auto-scroll-view-pager/";
+            contentSrcId = R.string.desc_auto_scroll_view_pager;
         } else {
             prefixSrcId = R.string.profile;
             url = "http://www.trinea.cn";

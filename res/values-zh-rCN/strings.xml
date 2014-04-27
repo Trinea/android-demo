@@ -64,5 +64,7 @@
     <string name="desc_image_cache">ImageCache使用</string>
     <string name="desc_image_sdcard_cache">ImageSDCardCache使用</string>
     <string name="desc_http_cache">HttpCache使用</string>
+    <string name="desc_auto_scroll_view_pager_inner">自动滚动ViewPager嵌套使用</string>
+    <string name="desc_auto_scroll_view_pager">自动滚动ViewPager使用</string>
     <string name="desc_default">Trinea</string>
 </resources>

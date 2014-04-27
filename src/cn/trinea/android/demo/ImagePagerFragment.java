@@ -81,7 +81,7 @@ public class ImagePagerFragment extends Fragment {
     /**
      * ScrollControlReceiver
      * 
-     * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2014年4月26日
+     * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2014-4-26
      */
     private class ScrollControlReceiver extends BroadcastReceiver {
 
