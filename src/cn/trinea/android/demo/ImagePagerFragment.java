@@ -45,7 +45,7 @@ public class ImagePagerFragment extends Fragment {
         imageIdList.add(R.drawable.banner2);
         imageIdList.add(R.drawable.banner3);
         imageIdList.add(R.drawable.banner4);
-        viewPager.setAdapter(new ImagePagerAdapter(getActivity().getApplicationContext(), imageIdList));
+        viewPager.setAdapter(new ImagePagerAdapter(context, imageIdList));
         indicator.setViewPager(viewPager);
 
         viewPager.setInterval(2000);

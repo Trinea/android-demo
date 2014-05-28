@@ -40,7 +40,7 @@ public class SlideOnePageGalleryDemo extends BaseActivity {
             }
         });
 
-        ImageListAdapter adapter = new ImageListAdapter(getApplicationContext());
+        ImageListAdapter adapter = new ImageListAdapter(context);
         List<Integer> idList = new ArrayList<Integer>();
         idList.add(R.drawable.image1);
         idList.add(R.drawable.image2);

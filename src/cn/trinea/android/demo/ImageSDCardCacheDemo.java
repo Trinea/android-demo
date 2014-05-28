@@ -45,7 +45,6 @@ public class ImageSDCardCacheDemo extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState, R.layout.image_sdcard_cache_demo);
 
-        Context context = getApplicationContext();
         initImageUrlList();
         IMAGE_SD_CACHE.initData(context, TAG_CACHE);
         IMAGE_SD_CACHE.setContext(context);

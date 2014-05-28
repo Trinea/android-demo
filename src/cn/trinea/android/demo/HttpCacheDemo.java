@@ -2,7 +2,6 @@ package cn.trinea.android.demo;
 
 import java.util.Date;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -35,7 +34,6 @@ public class HttpCacheDemo extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState, R.layout.http_cache_demo);
 
-        Context context = getApplicationContext();
         // get the singleton instance of HttpCache
         httpCache = CacheManager.getHttpCache(context);
         // or create a new HttpCache, like this:

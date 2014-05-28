@@ -4,7 +4,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Environment;
@@ -46,7 +45,6 @@ public class ImageCacheDemo extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState, R.layout.image_cache_demo);
 
-        Context context = getApplicationContext();
         parentLayout = (RelativeLayout)findViewById(R.id.image_cache_parent_layout);
         initImageUrlList();
         IMAGE_CACHE.initData(this, TAG_CACHE);

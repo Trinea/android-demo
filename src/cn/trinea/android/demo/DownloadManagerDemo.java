@@ -47,7 +47,6 @@ public class DownloadManagerDemo extends BaseActivity {
     private DownloadManagerPro     downloadManagerPro;
     private long                   downloadId           = 0;
 
-    private Context                context;
     private MyHandler              handler;
 
     private DownloadChangeObserver downloadObserver;
@@ -57,7 +56,6 @@ public class DownloadManagerDemo extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState, R.layout.download_manager_demo);
 
-        context = getApplicationContext();
         handler = new MyHandler();
         downloadManager = (DownloadManager)getSystemService(DOWNLOAD_SERVICE);
         downloadManagerPro = new DownloadManagerPro(downloadManager);
@@ -71,7 +69,7 @@ public class DownloadManagerDemo extends BaseActivity {
              */
             Uri data = intent.getData();
             if (data != null) {
-                Toast.makeText(getApplicationContext(), data.toString(), Toast.LENGTH_LONG).show();
+                Toast.makeText(context, data.toString(), Toast.LENGTH_LONG).show();
             }
         }
 
