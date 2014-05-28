@@ -42,6 +42,7 @@ public class AutoScrollViewPagerDemo extends BaseActivity {
 
         viewPager.setInterval(2000);
         viewPager.startAutoScroll();
+        viewPager.setCurrentItem(Integer.MAX_VALUE / 2 - Integer.MAX_VALUE / 2 % imageIdList.size());
 
         // the more properties whose you can set
         // // set whether stop auto scroll when touching, default is true

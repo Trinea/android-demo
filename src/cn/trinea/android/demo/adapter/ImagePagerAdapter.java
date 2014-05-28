@@ -25,14 +25,17 @@ public class ImagePagerAdapter extends PagerAdapter {
     private Context       context;
     private List<Integer> imageIdList;
 
+    private int           size;
+
     public ImagePagerAdapter(Context context, List<Integer> imageIdList) {
         this.context = context;
         this.imageIdList = imageIdList;
+        this.size = ListUtils.getSize(imageIdList);
     }
 
     @Override
     public int getCount() {
-        return ListUtils.getSize(imageIdList);
+        return Integer.MAX_VALUE;// ListUtils.getSize(imageIdList);
     }
 
     @Override
@@ -43,7 +46,7 @@ public class ImagePagerAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
         ImageView imageView = new ImageView(context);
-        imageView.setImageResource(imageIdList.get(position));
+        imageView.setImageResource(imageIdList.get(position % size));
         ((ViewPager)container).addView(imageView, 0);
         return imageView;
     }
