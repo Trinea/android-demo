@@ -41,8 +41,7 @@ public class ViewPagerMulTiFragmentDemo extends BaseActivity {
         // to cache all page, or we will see the right item delayed
         viewPager.setOffscreenPageLimit(TOTAL_COUNT);
         viewPager.setPageMargin(getResources().getDimensionPixelSize(R.dimen.page_margin));
-        MyOnPageChangeListener myOnPageChangeListener = new MyOnPageChangeListener();
-        viewPager.setOnPageChangeListener(myOnPageChangeListener);
+        viewPager.setOnPageChangeListener(new MyOnPageChangeListener());
 
         viewPagerContainer.setOnTouchListener(new OnTouchListener() {
 

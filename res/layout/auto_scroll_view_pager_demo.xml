@@ -7,8 +7,8 @@
         android:id="@+id/auto_scroll_view_pager_inner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_20"
         android:layout_marginBottom="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_20"
         android:text="@string/auto_scroll_view_pager_inner" />
 
     <cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager
@@ -17,13 +17,13 @@
         android:layout_height="@dimen/view_pager_height"
         android:layout_below="@+id/auto_scroll_view_pager_inner" />
 
-    <com.viewpagerindicator.CirclePageIndicator
-        android:id="@+id/indicator"
+    <TextView
+        android:id="@+id/view_pager_index"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/view_pager"
+        android:layout_below="@+id/view_pager"
         android:layout_centerHorizontal="true"
-        android:padding="@dimen/dp_8" />
+        android:textSize="14sp" />
 
     <include
         android:layout_width="match_parent"
