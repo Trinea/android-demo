@@ -8,19 +8,19 @@ package cn.trinea.android.demo.adapter;
 import java.util.List;
 
 import android.content.Context;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import cn.trinea.android.common.util.ListUtils;
+
+import com.jakewharton.salvage.RecyclingPagerAdapter;
 
 /**
  * ImagePagerAdapter
  * 
  * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2014-2-23
  */
-public class ImagePagerAdapter extends PagerAdapter {
+public class ImagePagerAdapter extends RecyclingPagerAdapter {
 
     private Context       context;
     private List<Integer> imageIdList;
@@ -35,24 +35,26 @@ public class ImagePagerAdapter extends PagerAdapter {
 
     @Override
     public int getCount() {
-        return Integer.MAX_VALUE;// ListUtils.getSize(imageIdList);
+        // Infinite loop
+        return Integer.MAX_VALUE;
     }
 
     @Override
-    public boolean isViewFromObject(View view, Object object) {
-        return (view == object);
+    public View getView(int position, View view, ViewGroup container) {
+        ViewHolder holder;
+        if (view == null) {
+            holder = new ViewHolder();
+            view = holder.imageView = new ImageView(context);
+            view.setTag(holder);
+        } else {
+            holder = (ViewHolder)view.getTag();
+        }
+        holder.imageView.setImageResource(imageIdList.get(position % size));
+        return view;
     }
 
-    @Override
-    public Object instantiateItem(ViewGroup container, int position) {
-        ImageView imageView = new ImageView(context);
-        imageView.setImageResource(imageIdList.get(position % size));
-        ((ViewPager)container).addView(imageView, 0);
-        return imageView;
-    }
+    private static class ViewHolder {
 
-    @Override
-    public void destroyItem(ViewGroup container, int position, Object object) {
-        ((ViewPager)container).removeView((ImageView)object);
+        ImageView imageView;
     }
 }

@@ -38,7 +38,7 @@ public class AutoScrollViewPagerDemo extends BaseActivity {
         imageIdList.add(R.drawable.banner3);
         imageIdList.add(R.drawable.banner4);
         viewPager.setAdapter(new ImagePagerAdapter(context, imageIdList));
-        indicator.setViewPager(viewPager);
+        // indicator.setViewPager(viewPager);
 
         viewPager.setInterval(2000);
         viewPager.startAutoScroll();
