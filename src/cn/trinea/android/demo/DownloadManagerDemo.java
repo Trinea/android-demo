@@ -124,7 +124,7 @@ public class DownloadManagerDemo extends BaseActivity {
 
             @Override
             public void onClick(View v) {
-                File folder = new File(DOWNLOAD_FOLDER_NAME);
+                File folder = Environment.getExternalStoragePublicDirectory(DOWNLOAD_FOLDER_NAME);
                 if (!folder.exists() || !folder.isDirectory()) {
                     folder.mkdirs();
                 }
