@@ -1,7 +1,7 @@
 ![Trinea](http://farm8.staticflickr.com/7426/9456847893_053161c7a4_o.png)android-demo
 -------------
 > **关于我，欢迎关注**  
-> 微博：<a title="Android 技术及移动互联网分享" href="http://weibo.com/trinea?s=6cm7D0" target="_blank">Trinea</a>&nbsp;&nbsp;&nbsp;&nbsp;主页：<a title="关注于 Android、Java、性能优化、开源项目" href="http://www.trinea.cn/" target="_blank">trinea.cn</a>&nbsp;&nbsp;&nbsp;&nbsp;邮箱：<a title="欢迎邮件与我交流" href="mailto:trinea.cn@gmail.com" target="_blank">trinea.cn#gmail.com</a>&nbsp;&nbsp;&nbsp;&nbsp;QQ：<a title="欢迎 Q 我" href="http://wpa.qq.com/msgrd?v=3&amp;uin=717763774&amp;site=qq&amp;menu=yes" target="_blank">717763774</a>  
+ 微博：<a title="Android 技术及移动互联网分享" href="http://weibo.com/trinea?s=6cm7D0" target="_blank">Trinea</a>&nbsp;&nbsp;&nbsp;&nbsp;主页：<a title="关注于 Android、Java、性能优化、开源项目" href="http://www.trinea.cn/" target="_blank">trinea.cn</a>&nbsp;&nbsp;&nbsp;&nbsp;邮箱：<a title="欢迎邮件与我交流" href="mailto:trinea.cn@gmail.com" target="_blank">trinea.cn#gmail.com</a>&nbsp;&nbsp;&nbsp;&nbsp;微信：<a title="点击查看二维码" href="http://codekk.com/about" target="_blank">codek2</a>  
 
 **依赖**：<a title="包含缓存 个性化View 工具类库" href="https://github.com/Trinea/android-common" target="_blank">trinea-android-common</a>&nbsp;&nbsp;&nbsp;&nbsp;<a title="自动滚动 循环轮播的ViewPager" href="https://github.com/Trinea/android-auto-scroll-view-pager" target="_blank">android-auto-scroll-view-pager</a>&nbsp;&nbsp;&nbsp;&nbsp;<a title="ViewPager Indicator" href="https://github.com/JakeWharton/Android-ViewPagerIndicator" target="_blank">viewpager-indicator</a>。  
 
