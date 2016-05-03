@@ -45,7 +45,8 @@ public class AutoScrollViewPagerDemo extends BaseActivity {
 
         viewPager.setInterval(2000);
         viewPager.startAutoScroll();
-        viewPager.setCurrentItem(Integer.MAX_VALUE / 2 - Integer.MAX_VALUE / 2 % ListUtils.getSize(imageIdList));
+        //viewPager.setCurrentItem(Integer.MAX_VALUE / 2 - Integer.MAX_VALUE / 2 % ListUtils.getSize(imageIdList));
+        viewPager.setCurrentItem(ImagePagerAdapter.allSize / 2 - ImagePagerAdapter.allSize / 2 % ListUtils.getSize(imageIdLis));
 
         // the more properties whose you can set
         // // set whether stop auto scroll when touching, default is true
@@ -77,6 +78,9 @@ public class AutoScrollViewPagerDemo extends BaseActivity {
         public void onPageSelected(int position) {
             indexText.setText(new StringBuilder().append((position) % ListUtils.getSize(imageIdList) + 1).append("/")
                     .append(ListUtils.getSize(imageIdList)));
+			if ((position + 1) == ImagePagerAdapter.allSize || position == 0) {
+                viewPager.setCurrentItem(ImagePagerAdapter.allSize / 2 - ImagePagerAdapter.allSize / 2 % ListUtils.getSize(imageIdList), false);
+            }
         }
 
         @Override

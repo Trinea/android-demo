@@ -28,6 +28,8 @@ public class ImagePagerAdapter extends RecyclingPagerAdapter {
     private int           size;
     private boolean       isInfiniteLoop;
 
+	public static final int allSize = 17;
+	
     public ImagePagerAdapter(Context context, List<Integer> imageIdList) {
         this.context = context;
         this.imageIdList = imageIdList;
@@ -38,7 +40,7 @@ public class ImagePagerAdapter extends RecyclingPagerAdapter {
     @Override
     public int getCount() {
         // Infinite loop
-        return isInfiniteLoop ? Integer.MAX_VALUE : ListUtils.getSize(imageIdList);
+         return isInfiniteLoop ? allSize : ListUtils.getSize(imageIdList);//Integer.MAX_VALUE
     }
 
     /**
