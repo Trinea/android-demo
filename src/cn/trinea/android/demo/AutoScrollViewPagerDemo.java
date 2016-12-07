@@ -16,7 +16,7 @@ import cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager;
 
 /**
  * AutoScrollViewPagerDemo
- * 
+ * //
  * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2014-2-22
  */
 public class AutoScrollViewPagerDemo extends BaseActivity {
