@@ -23,7 +23,7 @@ import cn.trinea.android.common.service.impl.RemoveTypeLastUsedTimeFirst;
 /**
  * ImageCacheDemo
  * 
- * @author <a href="http://www.trinea.cn/android/android-imagecache/" target="_blank">Trinea</a> 2013-6-25
+ * @author <a href="https://www.trinea.cn/android/android-imagecache/" target="_blank">Trinea</a> 2013-6-25
  */
 public class ImageCacheDemo extends BaseActivity {
 
@@ -33,12 +33,7 @@ public class ImageCacheDemo extends BaseActivity {
     public static final int    IMAGEVIEW_DEFAULT_HEIGHT = 400;
     public static final String TAG_CACHE                = "image_cache";
     /** cache folder path which be used when saving images **/
-    public static final String DEFAULT_CACHE_FOLDER     = new StringBuilder()
-                                                                .append(Environment.getExternalStorageDirectory()
-                                                                        .getAbsolutePath()).append(File.separator)
-                                                                .append("Trinea").append(File.separator)
-                                                                .append("AndroidDemo").append(File.separator)
-                                                                .append("ImageCache").toString();
+    public static String       DEFAULT_CACHE_FOLDER;
     private RelativeLayout     parentLayout;
 
     @Override
@@ -47,6 +42,7 @@ public class ImageCacheDemo extends BaseActivity {
 
         parentLayout = (RelativeLayout)findViewById(R.id.image_cache_parent_layout);
         initImageUrlList();
+        DEFAULT_CACHE_FOLDER = getExternalCacheDir().getAbsolutePath() + File.separator + "ImageCache";
         IMAGE_CACHE.initData(this, TAG_CACHE);
         IMAGE_CACHE.setContext(context);
         IMAGE_CACHE.setCacheFolder(DEFAULT_CACHE_FOLDER);
@@ -71,8 +67,8 @@ public class ImageCacheDemo extends BaseActivity {
         int count = 0, viewId = 0x7F24FFF0;
         int verticalSpacing, horizontalSpacing;
         verticalSpacing = horizontalSpacing = getResources().getDimensionPixelSize(R.dimen.dp_4);
-        Display display = getWindowManager().getDefaultDisplay();
-        int imageWidth = (display.getWidth() - (COLUMNS + 1) * horizontalSpacing) / COLUMNS;
+        int displayWidth = getResources().getDisplayMetrics().widthPixels;
+        int imageWidth = (displayWidth - (COLUMNS + 1) * horizontalSpacing) / COLUMNS;
         for (String imageUrl : imageUrlList) {
             ImageView imageView = new ImageView(context);
             imageView.setId(++viewId);
@@ -202,16 +198,17 @@ public class ImageCacheDemo extends BaseActivity {
 
     private void initImageUrlList() {
         imageUrlList = new ArrayList<String>();
-        imageUrlList.add("http://farm8.staticflickr.com/7409/9148527822_36fa37d7ca_z.jpg");
-        imageUrlList.add("http://farm4.staticflickr.com/3755/9148527824_6c156185ea.jpg");
-        imageUrlList.add("http://farm8.staticflickr.com/7318/9148527808_e804baef0b.jpg");
-        imageUrlList.add("http://farm8.staticflickr.com/7318/9146300275_5fe995d123.jpg");
-        imageUrlList.add("http://farm8.staticflickr.com/7288/9146300469_bd3420c75b_z.jpg");
-        imageUrlList.add("http://farm8.staticflickr.com/7351/9148527976_8a4e75ae87.jpg");
-        imageUrlList.add("http://farm3.staticflickr.com/2888/9148527996_f05118d7de_o.jpg");
-        imageUrlList.add("http://farm3.staticflickr.com/2863/9148527892_31f9377351_o.jpg");
-        imageUrlList.add("http://farm8.staticflickr.com/7310/9148528008_8e8f51997a.jpg");
-        imageUrlList.add("http://farm3.staticflickr.com/2849/9148528108_dfcda19507.jpg");
-        imageUrlList.add("http://farm4.staticflickr.com/3739/9148528022_e9bf03058f.jpg");
+        // Test images from diverse sources
+        imageUrlList.add("https://farm8.staticflickr.com/7409/9148527822_36fa37d7ca_z.jpg");
+        imageUrlList.add("https://farm4.staticflickr.com/3755/9148527824_6c156185ea.jpg");
+        imageUrlList.add("https://farm8.staticflickr.com/7318/9148527808_e804baef0b.jpg");
+        imageUrlList.add("https://farm8.staticflickr.com/7318/9146300275_5fe995d123.jpg");
+        imageUrlList.add("https://farm8.staticflickr.com/7288/9146300469_bd3420c75b_z.jpg");
+        imageUrlList.add("https://farm8.staticflickr.com/7351/9148527976_8a4e75ae87.jpg");
+        imageUrlList.add("https://farm3.staticflickr.com/2888/9148527996_f05118d7de_o.jpg");
+        imageUrlList.add("https://farm3.staticflickr.com/2863/9148527892_31f9377351_o.jpg");
+        imageUrlList.add("https://farm8.staticflickr.com/7310/9148528008_8e8f51997a.jpg");
+        imageUrlList.add("https://farm3.staticflickr.com/2849/9148528108_dfcda19507.jpg");
+        imageUrlList.add("https://farm4.staticflickr.com/3739/9148528022_e9bf03058f.jpg");
     }
 }
