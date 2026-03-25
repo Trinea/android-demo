@@ -1,0 +1,44 @@
+apply plugin: 'com.android.application'
+
+android {
+    namespace 'cn.trinea.android.demo'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "cn.trinea.android.demo"
+        minSdk 21
+        targetSdk 34
+        versionCode 50
+        versionName "3.2.5"
+    }
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        aidl true
+    }
+
+    sourceSets {
+        main {
+            aidl.srcDirs = ['src/main/java']
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.cfg'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':android-common')
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+}

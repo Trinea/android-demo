@@ -1,9 +1,9 @@
 package cn.trinea.android.demo;
 
 import android.os.Bundle;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v4.view.ViewPager.OnPageChangeListener;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager.widget.ViewPager.OnPageChangeListener;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -15,7 +15,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import cn.trinea.android.demo.utils.AppUtils;
 
-import com.google.analytics.tracking.android.EasyTracker;
+// import com.google.analytics.tracking.android.EasyTracker;
 
 /**
  * ViewPager implements gallery effect
@@ -123,13 +123,13 @@ public class ViewPagerMulTiFragmentDemo extends BaseActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        EasyTracker.getInstance(this).activityStart(this);
+        // EasyTracker.getInstance(this).activityStart(this);
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        EasyTracker.getInstance(this).activityStop(this);
+        // EasyTracker.getInstance(this).activityStop(this);
     }
 
     @Override

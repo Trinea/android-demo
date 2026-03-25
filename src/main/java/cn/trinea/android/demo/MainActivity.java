@@ -42,7 +42,6 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position == total - 12) {
-                    startActivity(AutoScrollViewPagerDemo.class);
                 } else if (position == total - 11) {
                     startActivity(HttpCacheDemo.class);
                 } else if (position == total - 10) {

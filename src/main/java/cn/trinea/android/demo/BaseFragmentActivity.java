@@ -1,20 +1,20 @@
 package cn.trinea.android.demo;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import androidx.fragment.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import cn.trinea.android.demo.utils.AppUtils;
 
-import com.google.analytics.tracking.android.EasyTracker;
+// import com.google.analytics.tracking.android.EasyTracker;
 
 /**
- * BaseActivity
+ * BaseFragmentActivity
  * 
- * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2013-6-1
+ * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2014-2-23
  */
-public class BaseActivity extends Activity {
+public class BaseFragmentActivity extends FragmentActivity {
 
     protected Context context;
 
@@ -44,13 +44,13 @@ public class BaseActivity extends Activity {
     @Override
     protected void onStart() {
         super.onStart();
-        EasyTracker.getInstance(this).activityStart(this);
+        // EasyTracker.getInstance(this).activityStart(this);
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        EasyTracker.getInstance(this).activityStop(this);
+        // EasyTracker.getInstance(this).activityStop(this);
     }
 
     @Override
